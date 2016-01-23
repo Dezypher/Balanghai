@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &128856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454608}
+  - 114: {fileID: 11442548}
+  m_Layer: 0
+  m_Name: ShipReference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &454608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 355.63956, y: 159.12682, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11442548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c409302a9a5463d43b3b353919e1d470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ships:
+  - shipName: NaN
+    sprite: {fileID: 0}
+    type: 1
+    speed: 0
+    capacity: 0
+    hullStrength: 0
+    location: 0
+    traveling: 0
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+    shipWidth: 0
+    shipHeight: 0
+    destination: -1
+  - shipName: Bangka
+    sprite: {fileID: 21300000, guid: b7f8d8273c4e94846997940fbfc268b7, type: 3}
+    type: 1
+    speed: 12
+    capacity: 50
+    hullStrength: 50
+    location: 0
+    traveling: 0
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+    shipWidth: 0
+    shipHeight: 0
+    destination: -1
+  - shipName: Balanghai
+    sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
+    type: 2
+    speed: 5
+    capacity: 150
+    hullStrength: 20
+    location: 0
+    traveling: 0
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+    shipWidth: 0
+    shipHeight: 0
+    destination: -1
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b7f8d8273c4e94846997940fbfc268b7,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[2].shipName
+      value: Balanghai
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[2].capacity
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[1].capacity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[0].shipName
+      value: NaN
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 128856}
+  m_IsPrefabParent: 1

@@ -1,0 +1,339 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &150664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 464538}
+  - 114: {fileID: 11445796}
+  m_Layer: 0
+  m_Name: CargoReference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &464538
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11445796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c155ad847fb514eb91adc3b4901902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cargos:
+  - cargoName: NaN
+    sprite: {fileID: 0}
+    weight: 0
+    type: 7
+    basePrice: 0
+  - cargoName: Animal Skin
+    sprite: {fileID: 21300000, guid: e0be4cc5e00fc884a9729e8928d53f91, type: 3}
+    weight: 2
+    type: 6
+    basePrice: 10
+  - cargoName: Banana
+    sprite: {fileID: 21300000, guid: 3ed031a8a5f5ec646a94aaeeaf4a1bb3, type: 3}
+    weight: 1
+    type: 0
+    basePrice: 4
+  - cargoName: Barong
+    sprite: {fileID: 21300000, guid: 6c4c0058dfce48e4a87ce8d042c320b0, type: 3}
+    weight: 1
+    type: 6
+    basePrice: 20
+  - cargoName: Batik Cloth
+    sprite: {fileID: 21300000, guid: d813d9b7725e7c94184491fab761766d, type: 3}
+    weight: 1
+    type: 6
+    basePrice: 7
+  - cargoName: Coffee
+    sprite: {fileID: 21300000, guid: 3e7d19c080ab2554a9e96ea9c53ac9ee, type: 3}
+    weight: 3
+    type: 0
+    basePrice: 9
+  - cargoName: Gold
+    sprite: {fileID: 21300000, guid: d5353dae66f38834cb2c82413f53d24d, type: 3}
+    weight: 1
+    type: 1
+    basePrice: 100
+  - cargoName: Gold Jewelry
+    sprite: {fileID: 21300000, guid: e40eb0ff343431b428d44cf78fc49296, type: 3}
+    weight: 1
+    type: 6
+    basePrice: 50
+  - cargoName: Ivory
+    sprite: {fileID: 21300000, guid: 5d210c8b8c7456040a1fd354c22efe01, type: 3}
+    weight: 1
+    type: 1
+    basePrice: 30
+  - cargoName: Kris Sword
+    sprite: {fileID: 21300000, guid: d1f02441c9fca474db0489f8439e7e2d, type: 3}
+    weight: 2
+    type: 2
+    basePrice: 30
+  - cargoName: Leather
+    sprite: {fileID: 21300000, guid: c60f33f2ca7d95c4da2d8b8471396ec4, type: 3}
+    weight: 1
+    type: 6
+    basePrice: 10
+  cargoSounds: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[0].cargoName
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[0].type
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[1].cargoName
+      value: ee
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[1].type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0be4cc5e00fc884a9729e8928d53f91,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[1].weight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ed031a8a5f5ec646a94aaeeaf4a1bb3,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[2].cargoName
+      value: Banana
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[2].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6c4c0058dfce48e4a87ce8d042c320b0,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[3].cargoName
+      value: Barong
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[3].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[3].type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d813d9b7725e7c94184491fab761766d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[4].cargoName
+      value: Batik Cloth
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[4].type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[4].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[5].cargoName
+      value: Coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3e7d19c080ab2554a9e96ea9c53ac9ee,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[5].weight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[5].type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[6].cargoName
+      value: Gold
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5353dae66f38834cb2c82413f53d24d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[6].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[6].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[7].cargoName
+      value: Gold Jewelry
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e40eb0ff343431b428d44cf78fc49296,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[7].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[7].type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[8].cargoName
+      value: Ivory
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[8].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d210c8b8c7456040a1fd354c22efe01,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[8].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[8].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[9].cargoName
+      value: Kris Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[9].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1f02441c9fca474db0489f8439e7e2d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[9].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[9].weight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[2].type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[10].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c60f33f2ca7d95c4da2d8b8471396ec4,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[10].cargoName
+      value: Leather
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[10].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[10].type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[2].basePrice
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[3].basePrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[4].basePrice
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[5].basePrice
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[6].basePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[7].basePrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[8].basePrice
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[9].basePrice
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[1].basePrice
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cargos.Array.data[10].basePrice
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 150664}
+  m_IsPrefabParent: 1
