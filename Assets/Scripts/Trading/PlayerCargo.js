@@ -9,7 +9,7 @@ private var player : Player;
 
 function Awake () {
 	player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
-	cargoReference = Resources.Load("Reference/CargoReference");
+	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
 
 	if(autoInstantiate)
 		Instantiate();
@@ -31,8 +31,6 @@ function Instantiate() {
 			if(cargoReference.GetComponent(CargoRefScript).cargos[itemID].type == filter)
 				numItems++;
 		}
-
-	Debug.Log("numItems: " + numItems);
 
 	container.GetComponent(CargoDisplay).cargo = player.cargo;
 	container.GetComponent(CargoDisplay).filter = filter;

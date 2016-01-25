@@ -65,5 +65,6 @@ function Generate () {
 		}
 	}
 
-	GetComponent(RectTransform).rect.height = ((spaceButton + spacePadding) * rowNum) + spacePadding;
+	var rect : Rect = GetComponent(RectTransform).rect;
+	rect.height = ((spaceButton + spacePadding) * rowNum) + spacePadding;
 }

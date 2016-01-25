@@ -11,7 +11,7 @@ private var settlements : Trader;
 function Start () {
 	player = GameObject.Find("PlayerStatus")
 				.GetComponent(PlayerStatus).player;
-	var backgroundPrefab : GameObject = Resources.Load("Reference/SettlementSpriteRef");
+	var backgroundPrefab : GameObject = Resources.Load("Reference/SettlementSpriteRef") as GameObject;
 	backgroundReference = backgroundPrefab.GetComponent(SettlementSpriteRef);
 	settlements = GameObject.Find("Settlements")
 					.GetComponent(Trader);

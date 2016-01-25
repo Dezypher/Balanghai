@@ -9,7 +9,7 @@ private var instantiated : boolean;
 private var cargoReference : GameObject;
 
 function Awake () {
-	cargoReference = Resources.Load("Reference/CargoReference");
+	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
 
 	if(autoInstantiate)
 		Instantiate();

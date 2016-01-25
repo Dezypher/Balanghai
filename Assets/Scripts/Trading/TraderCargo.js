@@ -10,7 +10,7 @@ private var settlement : Settlement;
 function Awake () {
 	player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
 	settlement = GameObject.Find("Settlements").GetComponent(Trader).settlements[player.location];
-	cargoReference = Resources.Load("Reference/CargoReference");
+	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
 
 	if(autoInstantiate)
 		Instantiate();

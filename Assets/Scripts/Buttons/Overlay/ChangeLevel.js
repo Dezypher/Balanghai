@@ -1,7 +1,8 @@
 ﻿#pragma strict
+import UnityEngine.SceneManagement;
 
 public var levelId : int;
 
 function ChangeLevel () {
-	Application.LoadLevel(levelId);
+	SceneManager.LoadScene(levelId);
 }

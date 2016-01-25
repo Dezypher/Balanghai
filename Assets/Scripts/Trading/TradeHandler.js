@@ -16,12 +16,11 @@ private var trader : Shop;
 function Start () {
 	playerRef = GameObject.Find("PlayerStatus");
 	settlementsRef = GameObject.Find("Settlements");
-	cargoReference = Resources.Load("Reference/CargoReference");
+	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
 
 	player = playerRef.GetComponent(PlayerStatus).player;
 	trader = settlementsRef.GetComponent(Trader).settlements[player.location].market;
 	shopIndex = player.location;
-	cargoReference = Resources.Load ("Reference/CargoReference");
 }
 
 function Sell (itemID : int, qty : int) {
@@ -86,8 +85,8 @@ function Buy (itemID : int, qty : int) {
 }
 
 function ActivateAmountPanel(character : int, index : int){
-	var itemID;
-	var maxQty;
+	var itemID : int;
+	var maxQty : int;
 
 	if(character == 0){
 		itemID = player.cargo.cargo[index].itemID;
@@ -100,8 +99,8 @@ function ActivateAmountPanel(character : int, index : int){
 	var shopRatio = settlementsRef.GetComponent(Trader).settlements[shopIndex].market.shopPriceRatio;
 	var shopPrices = settlementsRef.GetComponent(Trader).settlements[shopIndex].market.itemPriceRatio;
 	var itemPriceRatio : float = 1.0f;
-	var priceRatio = shopRatio;
-	var pricePerQty = 0;
+	var priceRatio : float = shopRatio;
+	var pricePerQty : int = 0;
 
 	if(character == 0)
 		pricePerQty = cargoReference.GetComponent(CargoRefScript).cargos[itemID].basePrice * priceRatio * itemPriceRatio;

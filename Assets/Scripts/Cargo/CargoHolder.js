@@ -9,7 +9,7 @@ class CargoHolder {
 	private var cargoReference : CargoRefScript;
 
 	function Start(){
-		var cargoPrefab : GameObject = Resources.Load("Reference/CargoReference");
+		var cargoPrefab : GameObject = Resources.Load("Reference/CargoReference") as GameObject;
 		cargoReference = cargoPrefab.GetComponent(CargoRefScript);
 		currWeight = 0;
 		CalculateWeight();
@@ -92,11 +92,11 @@ class CargoHolder {
 		}
 	}
 
-	function GetCargoItemID(index){
+	function GetCargoItemID(index : int){
 		return cargo[index].itemID;
 	}
 
-	function GetCargoQuantity(index){
+	function GetCargoQuantity(index : int){
 		return cargo[index].quantity;
 	}
 }

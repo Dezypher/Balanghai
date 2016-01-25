@@ -15,7 +15,7 @@ private var settlements : Trader;
 
 function Start () {
 	player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
-	var shipPrefab : GameObject = Resources.Load("Reference/ShipReference");
+	var shipPrefab : GameObject = Resources.Load("Reference/ShipReference") as GameObject;
 	shipReference = shipPrefab.GetComponent(ShipReference);
 	player.location = player.ships[currShip].location;
 	SwitchShip(player.currShip);
