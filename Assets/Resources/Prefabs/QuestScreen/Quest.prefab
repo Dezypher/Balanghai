@@ -141,6 +141,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22412462}
+  - 114: {fileID: 11481950}
   m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
@@ -421,6 +422,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: x N
+--- !u!114 &11481950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7f3e144c29de745abd230a91441d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest:
+    requiredCargoID: 0
+    requiredCargoAmount: 0
+    rewardCargoID: 0
+    rewardCargoAmount: 0
+    location: 0
+    accomplished: 0
+  questView: {fileID: 199704}
 --- !u!222 &22216218
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -648,7 +668,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: questView
+      value: 
+      objectReference: {fileID: 199704}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199704}

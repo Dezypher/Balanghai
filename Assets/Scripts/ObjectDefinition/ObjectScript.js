@@ -48,6 +48,18 @@ class Player {
 	var cargo : CargoHolder;
 	var location : int;
 	var quests : Quest[];
+
+	function addQuest(newQuest : Quest) {
+
+	}
+
+	function removeQuest(index : int) {
+
+	}
+
+	function notifyQuests(cargoID : int, quantity : int) {
+
+	}
 }
 
 /*
@@ -112,6 +124,10 @@ class Quest {
 		player.cargo.AddCargo(rewardCargoID,rewardCargoAmount); //rewardCargo
 		player.cargo.RemoveCargo(requiredCargoID,requiredCargoAmount); //remove the required cargo
 		accomplished = true;
+	}
+
+	function notify(cargoID : int, amount : int) {
+
 	}
 }
 
