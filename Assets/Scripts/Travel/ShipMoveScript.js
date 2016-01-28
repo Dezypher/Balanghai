@@ -2,13 +2,24 @@
 
 public var locationList : RectTransform[];
 public var map : RectTransform;
+private var player : Player;
 
 public var boat : RectTransform[];
+
 function Start () {
+	settoplace();
+	player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
+
+}
+
+
+function settoplace(){
 	for(var i=0;i<boat.length;i++){
 		boat[i].position.x=GetVector3(0).x;
 		boat[i].position.y=GetVector3(0).y;
 	}
+
+
 }
 
 function GetVector3 (index : int){
@@ -44,11 +55,12 @@ var cy :float;
 			cx=dx/d;
 			cy=dy/d;
 			
+			Debug.Log("THE VALUE_d_"+d);
 
-
-
-	 boat[boatindex].position.x=GetVector3(i).x-cx*(1+dink);
-	 boat[boatindex].position.y=GetVector3(i).y-cy*(1+dink);
+			if(d>=0){
+	 boat[boatindex].position.x=GetVector3(i).x-cx*(dink);
+	 boat[boatindex].position.y=GetVector3(i).y-cy*(dink);
+	 }
 	
 }
 
@@ -58,7 +70,7 @@ var cy :float;
 
 
 function Update(){
-Debug.Log("THE VALUE__"+GetVector3(0).x);
+
 
 move(0,1,0);
 move(0,2,1);
