@@ -25,14 +25,14 @@ function Instantiate() {
 	var numItems = 0;
 
 	if(filter == 8)
-		numItems = player.cargo.amtInCargo;
+		numItems = player.ships[player.currShip].cargo.amtInCargo;
 	else for(var i = 0; i < player.cargo.amtInCargo; i++){
-			var itemID = player.cargo.cargo[i].itemID;
+			var itemID = player.ships[player.currShip].cargo.cargo[i].itemID;
 			if(cargoReference.GetComponent(CargoRefScript).cargos[itemID].type == filter)
 				numItems++;
 		}
 
-	container.GetComponent(CargoDisplay).cargo = player.cargo;
+	container.GetComponent(CargoDisplay).cargo = player.ships[player.currShip].cargo;
 	container.GetComponent(CargoDisplay).filter = filter;
 	container.GetComponent(PrefabListGenerate).numPrefabs = numItems;
 	container.GetComponent(PrefabListGenerate).Generate();

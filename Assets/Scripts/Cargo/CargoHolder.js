@@ -86,6 +86,8 @@ class CargoHolder {
 	}
 
 	function CalculateWeight(){
+		currWeight = 0;
+
 		for(var i = 0; i < amtInCargo; i++){
 			currWeight += cargo[i].quantity * 
 							cargoReference.cargos[cargo[i].itemID].weight;

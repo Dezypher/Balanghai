@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 public var buttons : GameObject[];
 public var cargo : CargoHolder;
@@ -6,7 +6,7 @@ public var autoInstantiate : boolean;
 public var filter : int = 8;
 
 private var instantiated : boolean;
-public var cargoReference : GameObject;
+private var cargoReference : GameObject;
 
 function Awake () {
 	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
@@ -16,7 +16,6 @@ function Awake () {
 }
 
 function Instantiate () {
-	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
 	/*
 		This script assumes that the number of buttons is equal to the number of
 		cargo in cargo. If the number of cargo is less than the buttons it won't
@@ -32,8 +31,8 @@ function Instantiate () {
 		var type : int = cargoReference.GetComponent(CargoRefScript).cargos[itemID].type;
 
 		if(filter == 8 || filter == type){
-			buttons[i].GetComponent(CargoButton).SetItem(itemID, quantity);
-			buttons[i].GetComponent(CargoButton).index = itemIndex;
+			buttons[i].GetComponent(ItemButtonScript).SetItem(itemID, quantity);
+			buttons[i].GetComponent(ItemButtonScript).index = itemIndex;
 		}else i--;
 
 		itemIndex++;

@@ -34,8 +34,8 @@ function Instantiate() {
 
 	container.GetComponent(CargoDisplay).cargo = player.cargo;
 	container.GetComponent(CargoDisplay).filter = filter;
-	container.GetComponent(PrefabListGenerate).numPrefabs = numItems;
-	container.GetComponent(PrefabListGenerate).Generate();
-	container.GetComponent(CargoDisplay).buttons = container.GetComponent(PrefabListGenerate).generatedPrefabs;
+	container.GetComponent(ButtonListGenerate).totalNumButtons = numItems;
+	container.GetComponent(ButtonListGenerate).Generate();
+	container.GetComponent(CargoDisplay).buttons = container.GetComponent(ButtonListGenerate).buttons;
 	container.GetComponent(CargoDisplay).Instantiate();
 }

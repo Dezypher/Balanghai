@@ -2,10 +2,15 @@
 
 public var totalNumButtons : int;
 public var buttonReference : GameObject;
+public var rows : int;
 public var columns : int;
+public var panelHeight : int;
 public var panelWidth : int;
 public var buttonPadding : int;
 public var autoGenerate : boolean = false;
+
+enum Orientation{Vertical, Horizontal};
+public var orientation : Orientation;
 
 public var cornerX : float;
 public var cornerY : float;
@@ -21,17 +26,21 @@ function Start () {
 function Generate () {
 	for(var z = 0; z < buttons.length; z++)
 		Destroy(buttons[z]);
-
+	
 	buttons = new GameObject[totalNumButtons];
 
-	var numRows = Mathf.CeilToInt((totalNumButtons* (1.0f)) / columns);
+	if(columns == 0)
+		columns = Mathf.CeilToInt((totalNumButtons* (1.0f)) / rows);
+	else if(rows == 0)
+		rows = Mathf.CeilToInt((totalNumButtons* (1.0f)) / columns);
+
 	var spacePadding = buttonPadding * (columns + 1);
 	var spaceButton = (panelWidth - spacePadding);
 	var buttonDimensions = spaceButton/columns;
 	var columnIndex = 1;
 	var rowNum = 1;
 	var numButtons = 0;
-	var panelHeight = (numRows * (buttonPadding + buttonDimensions)) + buttonPadding;
+	var panelHeight = (rows * (buttonPadding + buttonDimensions)) + buttonPadding;
 
 	GetComponent(RectTransform).sizeDelta = 
 		new Vector2 (panelWidth, panelHeight);

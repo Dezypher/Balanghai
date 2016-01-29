@@ -57,6 +57,15 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 902b953258025c54baa4d81ba4bc7465, type: 3}
   - {fileID: 2800000, guid: f744bee9c9427fb4a88cc43e89efef2a, type: 3}
   - {fileID: 2800000, guid: 26c3d6d77aee2eb4cbe9baa940072cee, type: 3}
+  typeName:
+  - Food
+  - Ore
+  - Weapon
+  - Wood
+  - Art
+  - Textile
+  - Clothing
+  - Misc
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -64,6 +73,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: typeIcons.Array.data[0]
       value: 
@@ -128,6 +141,38 @@ Prefab:
       propertyPath: typeMiniIcon.Array.data[7]
       value: 
       objectReference: {fileID: 2800000, guid: 26c3d6d77aee2eb4cbe9baa940072cee, type: 3}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[0]
+      value: Food
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[1]
+      value: Ore
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[2]
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[3]
+      value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[4]
+      value: Art
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[5]
+      value: Textile
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[6]
+      value: Clothing
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: typeName.Array.data[7]
+      value: Misc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185616}
