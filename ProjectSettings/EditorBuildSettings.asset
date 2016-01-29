@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Screens/MapScreen.unity
   - enabled: 1
     path: Assets/Scenes/Screens/QuestScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/Screens/MapScreen2.unity

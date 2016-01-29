@@ -47,7 +47,7 @@ class Player {
 	var ships : Ship[];
 	var cargo : CargoHolder;
 	var location : int;
-	var quests : Quest[];
+	var quests : Array;
 
 	function addQuest(newQuest : Quest) {
 		quests.Push(newQuest);
