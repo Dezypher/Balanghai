@@ -5,6 +5,11 @@ class QuestAdapter extends MonoBehaviour {
 	var questModel : Quest;
 	var questView : GameObject;
 
+	function AddQuest(newQuest : Quest) {
+		questModel = newQuest;
+		DisplayQuestDetails();
+	}
+
 	function DisplayQuestDetails() {
 		//update the View with the data from the Model
 		var demandCargo : Cargo = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos[questModel.requiredCargoID];
@@ -13,6 +18,7 @@ class QuestAdapter extends MonoBehaviour {
 		questView.transform.GetChild(1).transform.GetChild(1).GetComponent(UI.Text).text = "x " + questModel.requiredCargoAmount; //update the Quantity Text to the amount
 		questView.transform.GetChild(2).transform.GetChild(0).GetComponent(UI.Image).sprite = rewardCargo.sprite; //Reward Cargo Image
 		questView.transform.GetChild(2).transform.GetChild(1).GetComponent(UI.Text).text = "x " + questModel.rewardCargoAmount;
+		questView.transform.GetChild(0).GetComponent(UI.Text).text = questModel.location;
 	}
 
 	function ClaimQuest() {
