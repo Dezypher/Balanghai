@@ -1,13 +1,15 @@
 ﻿#pragma strict
 
-class QuestGenerator {
+class QuestGenerator extends MonoBehaviour {
 
 	var requiredAmountMax : int = 10;
+	var questViewRef : GameObject;
 
-	function generateQuest() {
+	function generateQuestModel() {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
 		var requiredCargoID : int = Random.Range(1,cargoTypes);
 		var rewardCargoID : int = Random.Range(1,cargoTypes);
+		var settlementRef = GameObject.Find("Settlements");
 		while(requiredCargoID == rewardCargoID) {
 			rewardCargoID = Random.Range(1,cargoTypes);
 		}
@@ -21,8 +23,18 @@ class QuestGenerator {
 		newQuest.requiredCargoAmount = requiredAmount;
 		newQuest.rewardCargoID = rewardCargoID;
 		newQuest.rewardCargoAmount = rewardAmount;
-		newQuest.location = Random.Range(1,5);
+		newQuest.location = settlementRef.GetComponent(Trader).settlements[1].name;
 		return newQuest;
+	}
+
+	function generateQuest() {
+		var newQuest : GameObject = Instantiate(questViewRef);
+		newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
+		newQuest.GetComponent(QuestAdapter).AddQuest(generateQuestModel());
+	}
+
+	function Start() {
+		generateQuest();
 	}
 
 }

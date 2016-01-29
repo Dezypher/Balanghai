@@ -101,7 +101,7 @@ class Quest {
 	var requiredCargoAmount : int;
 	var rewardCargoID : int;
 	var rewardCargoAmount : int;
-	var location : int;
+	var location : String;
 	var accomplished : boolean = false;
 
 	//Check if a ship of a player is located in the location
