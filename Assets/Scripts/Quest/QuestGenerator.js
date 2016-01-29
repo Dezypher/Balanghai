@@ -4,8 +4,9 @@ class QuestGenerator extends MonoBehaviour {
 
 	var requiredAmountMax : int = 10;
 	var questViewRef : GameObject;
+	var availableQuests : Array = new Array();
 
-	function generateQuestModel() {
+	function generateQuest() {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
 		var requiredCargoID : int = Random.Range(1,cargoTypes);
 		var rewardCargoID : int = Random.Range(1,cargoTypes);
@@ -18,23 +19,33 @@ class QuestGenerator extends MonoBehaviour {
 		while(rewardAmount < requiredAmount) {
 			rewardAmount = Random.Range(1,requiredAmountMax);
 		}
+		var locationIndex = Random.Range(1,settlementRef.GetComponent(Trader).settlements.length-1);
 		var newQuest = new Quest();
 		newQuest.requiredCargoID = requiredCargoID;
 		newQuest.requiredCargoAmount = requiredAmount;
 		newQuest.rewardCargoID = rewardCargoID;
 		newQuest.rewardCargoAmount = rewardAmount;
-		newQuest.location = settlementRef.GetComponent(Trader).settlements[1].name;
-		return newQuest;
+		newQuest.location = settlementRef.GetComponent(Trader).settlements[locationIndex].name;
+		availableQuests.push(newQuest);
 	}
 
-	function generateQuest() {
-		var newQuest : GameObject = Instantiate(questViewRef);
-		newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
-		newQuest.GetComponent(QuestAdapter).AddQuest(generateQuestModel());
+	function DisplayAvailableQuests() {
+		if(availableQuests.length > 0) {
+			var newQuest : GameObject;
+			for(var i : int = 0; i < availableQuests.length; i++) {
+				newQuest = Instantiate(questViewRef);
+				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
+				newQuest.transform.position.y += (25 - (i*50));
+				newQuest.GetComponent(QuestAdapter).AddQuest(availableQuests[i]);
+			}
+		}
 	}
 
 	function Start() {
-		generateQuest();
+		for(var i : int = 1; i < 5; i++) {
+			generateQuest();
+		}
+		DisplayAvailableQuests();
 	}
 
 }
