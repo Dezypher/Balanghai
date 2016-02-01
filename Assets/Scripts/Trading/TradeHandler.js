@@ -71,10 +71,11 @@ function Buy (itemID : int, qty : int) {
 		price *= qty;
 
 		if(price <= player.gold){
-			player.cargo.AddCargo(itemID, qty);
+			var result : boolean = player.ships[player.currShip].cargo.AddCargo(itemID, qty);
 			//trader.cargo.RemoveCargo(itemID, qty);
-					
-			player.gold -= price;
+
+			if(result)	
+				player.gold -= price;
 			//trader.gold -= price;
 			
 			//amtPanel.GetComponent(AmtPanelScript).Refresh();
@@ -89,11 +90,11 @@ function ActivateAmountPanel(character : int, index : int){
 	var maxQty : int;
 
 	if(character == 0){
-		itemID = player.cargo.cargo[index].itemID;
-		maxQty = player.cargo.cargo[index].quantity;
+		itemID = player.cargo.GetItem(index).itemID;
+		maxQty = player.cargo.GetItem(index).quantity;
 	}else {
-		itemID = trader.cargo.cargo[index].itemID;
-		maxQty = trader.cargo.cargo[index].quantity;
+		itemID = trader.cargo.GetItem(index).itemID;
+		maxQty = trader.cargo.GetItem(index).quantity;
 	}
 
 	var shopRatio = settlementsRef.GetComponent(Trader).settlements[shopIndex].market.shopPriceRatio;
@@ -111,5 +112,5 @@ function ActivateAmountPanel(character : int, index : int){
 }
 
 function UpdateElements() {
-	playerCargoList.GetComponent(PlayerCargo).Instantiate();
+	playerCargoList.GetComponent(ShipCargoDisplay).Instantiate();
 }

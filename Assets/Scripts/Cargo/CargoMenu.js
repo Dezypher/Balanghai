@@ -63,8 +63,8 @@ function SetSettlementID(settlementID : int){
 function UpdateDisplay() {
 	for(var i = 0; i < displayList.length; i++){
 		if(i < cargo.capacity){
-			displayList[i] = cargo.cargo[i].itemID;
-			amtDisplayList[i] = cargo.cargo[i].quantity;
+			displayList[i] = cargo.GetItem(i).itemID;
+			amtDisplayList[i] = cargo.GetItem(i).quantity;
 		}else {
 			displayList[i] = 0;
 			amtDisplayList[i] = 0;
@@ -75,7 +75,7 @@ function UpdateDisplay() {
 	
 	for(i = 0; i < numButtons; i++){
 		if((i + itemOffset) < displayList.length &&displayList[i + itemOffset] != 0 && 
-			(cargoReference.GetComponent(CargoRefScript).cargos[cargo.cargo[i + itemOffset].itemID].type == filter || filter == 7)){
+			(cargoReference.GetComponent(CargoRefScript).cargos[cargo.GetItem(i + itemOffset).itemID].type == filter || filter == 7)){
 			itemButtons[index].SetActive(true);
 			itemButtons[index].GetComponent(UI.Image).sprite = cargoReference.GetComponent(CargoRefScript).cargos[displayList[i + itemOffset]].sprite;
 			itemButtons[index].GetComponent(ItemButtonScript).ChangeText(amtDisplayList[i + itemOffset] + " " + cargoReference.GetComponent(CargoRefScript).cargos[displayList[i + itemOffset]].cargoName);
@@ -105,12 +105,12 @@ function UpdateDisplay() {
 function UpdateInfo(buttonID : int){
 	infoPanel.SetActive(true);
 	
-	var itemID = cargo.cargo[cargoIndex[buttonID]].itemID;	
+	var itemID = cargo.GetItem(cargoIndex[buttonID]).itemID;	
 	if(itemID != 0){
 		cargoName.text = cargoReference.GetComponent(CargoRefScript).cargos[itemID].cargoName;
 		singleWeight.text = "" + cargoReference.GetComponent(CargoRefScript).cargos[itemID].weight;
-		amtInCargo.text = "" + cargo.cargo[cargoIndex[buttonID]].quantity;
-		totalWeight.text = "" + cargo.cargo[cargoIndex[buttonID]].quantity * cargoReference.GetComponent(CargoRefScript).cargos[itemID].weight;
+		amtInCargo.text = "" + cargo.GetItem(cargoIndex[buttonID]).quantity;
+		totalWeight.text = "" + cargo.GetItem(cargoIndex[buttonID]).quantity * cargoReference.GetComponent(CargoRefScript).cargos[itemID].weight;
 		itemType.texture = UIReference.GetComponent(UIReferenceScript).typeIcons[cargoReference.GetComponent(CargoRefScript).cargos[itemID].type];
 		cargoImage.sprite = cargoReference.GetComponent(CargoRefScript).cargos[itemID].sprite;
 	}

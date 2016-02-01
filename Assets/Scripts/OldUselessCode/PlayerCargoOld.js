@@ -27,7 +27,7 @@ function Instantiate() {
 	if(filter == 8)
 		numItems = player.cargo.amtInCargo;
 	else for(var i = 0; i < player.cargo.amtInCargo; i++){
-			var itemID = player.cargo.cargo[i].itemID;
+			var itemID = player.cargo.GetItem(i).itemID;
 			if(cargoReference.GetComponent(CargoRefScript).cargos[itemID].type == filter)
 				numItems++;
 		}

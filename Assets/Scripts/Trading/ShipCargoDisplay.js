@@ -26,8 +26,8 @@ function Instantiate() {
 
 	if(filter == 8)
 		numItems = player.ships[player.currShip].cargo.amtInCargo;
-	else for(var i = 0; i < player.cargo.amtInCargo; i++){
-			var itemID = player.ships[player.currShip].cargo.cargo[i].itemID;
+	else for(var i = 0; i < player.ships[player.currShip].cargo.amtInCargo; i++){
+			var itemID = player.ships[player.currShip].cargo.GetItem(i).itemID;
 			if(cargoReference.GetComponent(CargoRefScript).cargos[itemID].type == filter)
 				numItems++;
 		}

@@ -26,8 +26,8 @@ function Instantiate () {
 	var itemIndex = 0;
 
 	for(var i = 0; i < buttons.length; i++){
-		var itemID = cargo.cargo[itemIndex].itemID;
-		var quantity = cargo.cargo[itemIndex].quantity;
+		var itemID = cargo.GetItem(itemIndex).itemID;
+		var quantity = cargo.GetItem(itemIndex).quantity;
 		var type : int = cargoReference.GetComponent(CargoRefScript).cargos[itemID].type;
 
 		if(filter == 8 || filter == type){
