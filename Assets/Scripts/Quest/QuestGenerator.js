@@ -29,15 +29,35 @@ class QuestGenerator extends MonoBehaviour {
 		availableQuests.push(newQuest);
 	}
 
+	function DisplayCurrentQuests() {
+		var player : GameObject = GameObject.Find("PlayerStatus"); 
+		if(player.GetComponent(PlayerStatus).player.quests.length > 0) {
+			var newQuest : GameObject;
+			for(var i : int = 0; i < player.GetComponent(PlayerStatus).player.quests.length; i++) {
+				newQuest = Instantiate(questViewRef);
+				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
+				newQuest.transform.position.y += (135 - (i*50));
+				newQuest.GetComponent(QuestAdapter).AddQuest(availableQuests[i]);
+			}
+		}
+	}
+
 	function DisplayAvailableQuests() {
 		if(availableQuests.length > 0) {
 			var newQuest : GameObject;
 			for(var i : int = 0; i < availableQuests.length; i++) {
 				newQuest = Instantiate(questViewRef);
 				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
-				newQuest.transform.position.y += (25 - (i*50));
+				newQuest.transform.position.y += (135 - (i*50));
 				newQuest.GetComponent(QuestAdapter).AddQuest(availableQuests[i]);
 			}
+		}
+	}
+
+	function DeleteQuestViews() {
+		var questLists : GameObject = GameObject.Find("Quest List");
+		for(var i : int = 0; i < questLists.transform.childCount; i++) {
+			GameObject.Destroy(questLists.transform.GetChild(i).gameObject);
 		}
 	}
 
@@ -46,6 +66,16 @@ class QuestGenerator extends MonoBehaviour {
 			generateQuest();
 		}
 		DisplayAvailableQuests();
+	}
+
+	function AvailableButtonClick() {
+		DeleteQuestViews();
+		DisplayAvailableQuests();
+	}
+
+	function CurrentButtonClick() {
+		DeleteQuestViews();
+		DisplayCurrentQuests();
 	}
 
 }
