@@ -12,7 +12,11 @@ function Start(){
 
 function OnClick(){
 	var inventory : int = inventoryOf;
-	var itemIndex = GetComponent(ItemButtonScript).index;
+	var itemIndex : int;
+
+	if(inventoryOf == 0)
+		itemIndex = GetComponent(CargoButton).index;
+	else itemIndex = GetComponent(ItemButtonScript).index;
 	
 	tradeHandler.GetComponent(TradeHandler).ActivateAmountPanel(inventory, itemIndex);
 }
