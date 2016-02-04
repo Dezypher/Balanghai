@@ -41,7 +41,7 @@ function Sell (itemID : int, qty : int) {
 		price *= qty;
 		
 		//trader.cargo.AddCargo(itemID, qty);
-		player.cargo.RemoveCargo(itemID, qty);
+		player.ships[player.currShip].cargo.RemoveCargo(itemID, qty);
 				
 		playerRef.GetComponent(PlayerStatus).player.gold += price;
 		//settlementsRef.GetComponent(Trader).settlements[shopIndex].market.gold -= price;
@@ -90,8 +90,8 @@ function ActivateAmountPanel(character : int, index : int){
 	var maxQty : int;
 
 	if(character == 0){
-		itemID = player.cargo.GetItem(index).itemID;
-		maxQty = player.cargo.GetItem(index).quantity;
+		itemID = player.ships[player.currShip].cargo.GetItem(index).itemID;
+		maxQty = player.ships[player.currShip].cargo.GetItem(index).quantity;
 	}else {
 		itemID = trader.cargo.GetItem(index).itemID;
 		maxQty = trader.cargo.GetItem(index).quantity;

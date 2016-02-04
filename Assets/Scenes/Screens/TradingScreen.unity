@@ -4728,7 +4728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numPrefabs: 30
   autoGenerate: 0
-  prefabReference: {fileID: 161922, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+  prefabReference: {fileID: 188858, guid: 5566b47fcc7b9384bbc0a295623164e4, type: 2}
   spacing: 10
   panelHeight: 0
   panelWidth: 750
