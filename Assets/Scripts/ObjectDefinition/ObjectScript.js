@@ -54,7 +54,7 @@ class Player {
 	}
 
 	function removeQuest(index : int) {
-
+		quests.RemoveAt(index);
 	}
 
 	function notifyQuests(cargoID : int, quantity : int) {
@@ -103,6 +103,7 @@ class Quest {
 	var rewardCargoAmount : int;
 	var location : String;
 	var accomplished : boolean = false;
+	var id : int;
 
 	//Check if a ship of a player is located in the location
 	function CheckLocation(player : Player) {

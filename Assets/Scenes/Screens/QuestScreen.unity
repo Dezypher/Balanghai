@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredAmountMax: 10
-  questViewRef: {fileID: 199704, guid: 569c7eaed70fc4f43b7bed58b03798be, type: 2}
+  questViewRef: {fileID: 150428, guid: 92238d2d541050c4b90074ae752e3534, type: 2}
 --- !u!1 &1284304310
 GameObject:
   m_ObjectHideFlags: 0

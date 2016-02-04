@@ -27,16 +27,34 @@ class QuestAdapter extends MonoBehaviour {
 		}
 	}
 
+	function onButtonClick() {
+		var questLists : GameObject = GameObject.Find("Quest List");
+		for(var i : int = 0; i < questLists.transform.childCount; i++) {
+			questLists.transform.GetChild(i).gameObject.GetComponent(QuestAdapter).index = i;
+		}
+		if(type == 1) {
+			ClaimQuest();
+		}
+		else if(type == 2) {
+			AbandonQuest();
+		}
+	}
+
 	function ClaimQuest() {
 		var player : GameObject = GameObject.Find("PlayerStatus");
 		if(player != null) {
-			
 				player.GetComponent(PlayerStatus).player.addQuest(questModel);
-				if(type == 1) {
-					GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
-				}
+				GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
 				GameObject.Destroy(this.gameObject);
-			
+		}
+	}
+
+	function AbandonQuest() {
+		var player : GameObject = GameObject.Find("PlayerStatus");
+		if(player != null) {
+				player.GetComponent(PlayerStatus).player.removeQuest(index);
+				GameObject.Destroy(this.gameObject);
+				
 		}
 	}
 
