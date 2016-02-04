@@ -1420,105 +1420,11 @@ MonoBehaviour:
         currWeight: 0
         cargo:
         - itemID: 3
-          quantity: 5
+          quantity: 4
         - itemID: 5
-          quantity: 7
-        - itemID: 9
           quantity: 3
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
+        - itemID: 10
+          quantity: 1
       shipWidth: 500
       shipHeight: 150
       destination: -1
@@ -1535,214 +1441,22 @@ MonoBehaviour:
         amtInCargo: 4
         currWeight: 0
         cargo:
-        - itemID: 5
-          quantity: 9
         - itemID: 3
+          quantity: 9
+        - itemID: 1
+          quantity: 3
+        - itemID: 8
           quantity: 2
         - itemID: 6
           quantity: 3
-        - itemID: 9
-          quantity: 7
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
       shipWidth: 700
       shipHeight: 340
       destination: -1
     cargo:
       capacity: 200
-      amtInCargo: 7
+      amtInCargo: 0
       currWeight: 0
-      cargo:
-      - itemID: 4
-        quantity: 4
-      - itemID: 1
-        quantity: 5
-      - itemID: 2
-        quantity: 6
-      - itemID: 9
-        quantity: 3
-      - itemID: 5
-        quantity: 30
-      - itemID: 10
-        quantity: 1
-      - itemID: 8
-        quantity: 4
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
-      - itemID: 0
-        quantity: 0
+      cargo: []
     location: 1
 --- !u!4 &509335120
 Transform:
@@ -1769,6 +1483,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
       propertyPath: settlements.Array.data[0].market.cargo.cargo.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[1].market.cargo.cargo.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 451410, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
@@ -1857,11 +1579,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
       propertyPath: settlements.Array.data[1].market.cargo.cargo.Array.data[0].itemID
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
       propertyPath: settlements.Array.data[1].market.cargo.cargo.Array.data[1].itemID
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
       propertyPath: settlements.Array.data[1].market.gold
@@ -1886,6 +1608,42 @@ Prefab:
     - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
       propertyPath: settlements.Array.data[2].backgroundID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[1].market.cargo.cargo.Array.data[0].quantity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[1].market.cargo.cargo.Array.data[1].quantity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[1].market.cargo.cargo.Array.data[2].quantity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.data[0].itemID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.data[0].quantity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.data[1].itemID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.data[1].quantity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.data[2].itemID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446204, guid: d2b0d589bda07354a8b4994f15506db5, type: 2}
+      propertyPath: settlements.Array.data[2].market.cargo.cargo.Array.data[2].quantity
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -2286,13 +2044,7 @@ MonoBehaviour:
         capacity: 3
         amtInCargo: 3
         currWeight: 0
-        cargo:
-        - itemID: 3
-          quantity: 10
-        - itemID: 5
-          quantity: 10
-        - itemID: 9
-          quantity: 10
+        cargo: []
       shopPriceRatio: 0.9
       itemPriceRatio: []
       gold: 0
@@ -2306,9 +2058,9 @@ MonoBehaviour:
         amtInCargo: 3
         currWeight: 0
         cargo:
-        - itemID: 2
+        - itemID: 5
           quantity: 10
-        - itemID: 3
+        - itemID: 2
           quantity: 10
         - itemID: 7
           quantity: 10
@@ -2325,9 +2077,9 @@ MonoBehaviour:
         amtInCargo: 3
         currWeight: 0
         cargo:
-        - itemID: 6
+        - itemID: 2
           quantity: 10
-        - itemID: 9
+        - itemID: 3
           quantity: 10
         - itemID: 4
           quantity: 10
@@ -2967,6 +2719,92 @@ MonoBehaviour:
   villageName: {fileID: 372614439}
   playerName: {fileID: 494067751}
   goldAmt: {fileID: 380152985}
+--- !u!1001 &1234539974
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 730
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 599
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 720
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22421934, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417512, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1bd6d6d4e845d5c42b7ccd9e854ca1ca, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1263001449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,15 +3305,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.cargo.cargo.Array.size
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[0].cargo.cargo.Array.size
-      value: 50
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.size
-      value: 50
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 493748, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3527,7 +3365,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.cargo.amtInCargo
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 111116, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: m_TagString
@@ -4037,7 +3875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[0].cargo.cargo.Array.data[0].quantity
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[0].cargo.cargo.Array.data[1].itemID
@@ -4045,15 +3883,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[0].cargo.cargo.Array.data[1].quantity
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[0].cargo.cargo.Array.data[2].itemID
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[0].cargo.cargo.Array.data[2].quantity
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.capacity
@@ -4065,7 +3903,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[0].itemID
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[0].quantity
@@ -4073,27 +3911,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[1].itemID
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[1].quantity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
-      propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[2].itemID
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
-      propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[2].quantity
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
+      propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[2].itemID
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
+      propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[2].quantity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[3].itemID
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
       propertyPath: player.ships.Array.data[1].cargo.cargo.Array.data[3].quantity
-      value: 7
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433218, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}
+      propertyPath: player.ships.Array.data[1].cargo.currWeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de0d9d3b6b614e640bd5b6c7affeecf6, type: 2}

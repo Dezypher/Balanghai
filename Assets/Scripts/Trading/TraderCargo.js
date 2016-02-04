@@ -19,7 +19,7 @@ function Awake () {
 function Instantiate() {
 	var numItems = 0;
 
-	container.GetComponent(CargoDisplay).cargo = settlement.market.cargo;
-	container.GetComponent(CargoDisplay).filter = 8;
-	container.GetComponent(CargoDisplay).Instantiate();
+	container.GetComponent(CargoDisplayButton).cargo = settlement.market.cargo;
+	container.GetComponent(CargoDisplayButton).filter = 8;
+	container.GetComponent(CargoDisplayButton).Instantiate();
 }

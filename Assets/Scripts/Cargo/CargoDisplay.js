@@ -5,7 +5,7 @@ public var cargo : CargoHolder;
 public var autoInstantiate : boolean;
 public var filter : int = 8;
 
-private var instantiated : boolean;
+public var instantiated : boolean;
 public var cargoReference : GameObject;
 
 function Awake () {
@@ -27,8 +27,8 @@ function Instantiate () {
 	var itemIndex = 0;
 
 	for(var i = 0; i < buttons.length; i++){
-		var itemID = cargo.cargo[itemIndex].itemID;
-		var quantity = cargo.cargo[itemIndex].quantity;
+		var itemID = cargo.GetItem(itemIndex).itemID;
+		var quantity = cargo.GetItem(itemIndex).quantity;
 		var type : int = cargoReference.GetComponent(CargoRefScript).cargos[itemID].type;
 
 		if(filter == 8 || filter == type){

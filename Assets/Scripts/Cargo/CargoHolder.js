@@ -4,8 +4,8 @@ class CargoHolder {
 	public var capacity : int;
 	public var amtInCargo : int;
 	public var currWeight : int;
-	public var cargo = new InventorySlot[capacity];
 
+	public var cargo = new InventorySlot[capacity];
 	private var cargoReference : CargoRefScript;
 
 	function Start(){
@@ -37,9 +37,14 @@ class CargoHolder {
 				cargo[amtInCargo] = newCargo;
 				amtInCargo++;
 			}
+
+			CalculateWeight();
+			return true;
 		}else {
 			// SEND BACK A MESSAGE THAT CAPACITY IS FULL
 			Debug.Log("Cargo is full!");
+			AlertHandler.AlertPopup("Your cargo cannot hold that much!");
+			return false;
 		}
 	}
 
@@ -69,6 +74,8 @@ class CargoHolder {
 			//Send error that cargo has not been found
 			Debug.Log("ERROR: Tried to remove non existent cargo");
 		}
+
+		CalculateWeight();
 	}
 
 	function CheckCargo(itemID : int, qty : int){
@@ -84,6 +91,10 @@ class CargoHolder {
 
 		return hasCargo;
 	}
+
+	function GetItem(index : int){
+		return cargo[index];
+	}	
 
 	function CalculateWeight(){
 		currWeight = 0;
