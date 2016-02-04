@@ -4,6 +4,8 @@ class QuestAdapter extends MonoBehaviour {
 
 	var questModel : Quest;
 	var questView : GameObject;
+	var index : int;
+	var type : int;
 
 	function AddQuest(newQuest : Quest) {
 		questModel = newQuest;
@@ -19,12 +21,22 @@ class QuestAdapter extends MonoBehaviour {
 		questView.transform.GetChild(2).transform.GetChild(0).GetComponent(UI.Image).sprite = rewardCargo.sprite; //Reward Cargo Image
 		questView.transform.GetChild(2).transform.GetChild(1).GetComponent(UI.Text).text = "x " + questModel.rewardCargoAmount;
 		questView.transform.GetChild(0).GetComponent(UI.Text).text = questModel.location;
+		if(type == 2) {
+			questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).fontSize = 14;
+			questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).text = "Abandon";
+		}
 	}
 
 	function ClaimQuest() {
 		var player : GameObject = GameObject.Find("PlayerStatus");
 		if(player != null) {
-			player.GetComponent(PlayerStatus).player.addQuest(questModel);
+			
+				player.GetComponent(PlayerStatus).player.addQuest(questModel);
+				if(type == 1) {
+					GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
+				}
+				GameObject.Destroy(this.gameObject);
+			
 		}
 	}
 
