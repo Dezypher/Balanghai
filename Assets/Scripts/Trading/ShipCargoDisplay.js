@@ -7,7 +7,7 @@ public var filter : int = 8;
 private var cargoReference : GameObject;
 private var player : Player;
 
-function Awake () {
+function Start () {
 	player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
 	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
 

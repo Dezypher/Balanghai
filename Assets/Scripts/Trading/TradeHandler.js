@@ -13,7 +13,7 @@ private var cargoReference : GameObject;
 private var player : Player;
 private var trader : Shop;
 
-function Start () {
+function Awake () {
 	playerRef = GameObject.Find("PlayerStatus");
 	settlementsRef = GameObject.Find("Settlements");
 	cargoReference = Resources.Load("Reference/CargoReference") as GameObject;
@@ -83,6 +83,28 @@ function Buy (itemID : int, qty : int) {
 			UpdateElements();
 		}
 	}
+}
+
+function GetPrice (itemID : int, qty : int, isTrader : boolean){
+	var shopRatio = settlementsRef.GetComponent(Trader).settlements[shopIndex].market.shopPriceRatio;
+	var shopPrices = settlementsRef.GetComponent(Trader).settlements[shopIndex].market.itemPriceRatio;
+	var itemPriceRatio : float = 1.0f;
+	var priceRatio = shopRatio;
+	var price = 0;
+
+	if(isTrader)
+		priceRatio = 1;
+
+	for(var i = 0; i < shopPrices.length; i++)
+		if(shopPrices[i].itemID == itemID){
+			itemPriceRatio = shopPrices[i].ratio;
+			break;
+		}
+
+	price = cargoReference.GetComponent(CargoRefScript).cargos[itemID].basePrice * priceRatio * itemPriceRatio;
+	price *= qty;
+
+	return price;
 }
 
 function ActivateAmountPanel(character : int, index : int){
