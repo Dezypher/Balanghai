@@ -58,7 +58,11 @@ class Player {
 	}
 
 	function notifyQuests(cargoID : int, quantity : int) {
-
+		for(var i : int = 0; i < quests.length; i++) {
+			if((quests[i]as Quest).notify(cargoID,quantity)) {
+				(quests[i]as Quest).RewardPlayer(this);
+			}
+		}
 	}
 }
 
@@ -128,7 +132,11 @@ class Quest {
 	}
 
 	function notify(cargoID : int, amount : int) {
-
+		if(cargoID == requiredCargoID && requiredCargoAmount == amount) {
+			return true;
+		}
+		else
+			return false;
 	}
 }
 
