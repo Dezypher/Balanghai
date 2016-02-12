@@ -19,6 +19,7 @@ class Cargo {
 class Ship {
 	var shipName : String;
 	var sprite : Sprite;
+	var icon : Sprite;
 	var type : int;
 	var speed : float;
 	var capacity : int;

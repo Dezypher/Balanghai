@@ -42,6 +42,7 @@ MonoBehaviour:
   ships:
   - shipName: NaN
     sprite: {fileID: 0}
+    icon: {fileID: 0}
     type: 1
     speed: 0
     capacity: 0
@@ -58,6 +59,7 @@ MonoBehaviour:
     destination: -1
   - shipName: Bangka
     sprite: {fileID: 21300000, guid: b7f8d8273c4e94846997940fbfc268b7, type: 3}
+    icon: {fileID: 21300000, guid: 8baa3df07f78d7940adeef3f4f04d827, type: 3}
     type: 1
     speed: 12
     capacity: 50
@@ -74,6 +76,7 @@ MonoBehaviour:
     destination: -1
   - shipName: Balanghai
     sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
+    icon: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f, type: 3}
     type: 2
     speed: 5
     capacity: 150
@@ -121,6 +124,16 @@ Prefab:
       propertyPath: ships.Array.data[0].shipName
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 8baa3df07f78d7940adeef3f4f04d827,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128856}
