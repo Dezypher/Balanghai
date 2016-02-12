@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-public var amtText : UI.Text;
+public var amtText : UI.InputField;
 public var goldText : UI.Text;
 public var itemID : int;
 public var character : int; //0 - Player 1 - Shop
@@ -25,7 +25,7 @@ function SetItem(itemID : int, maxQty : int, pricePerQty : int, character : int)
 }
 
 function Refresh(){
-	amtText.text = "Amount: " + qty + "/" + maxQty;
+	amtText.text = "" + qty;
 	goldText.text = "Gold: " + (pricePerQty * qty);
 }
 
@@ -43,6 +43,27 @@ function Accept(){
 	else tradeHandler.GetComponent(TradeHandler).Buy(itemID, qty);
 	
 	gameObject.SetActive(false);
+}
+
+function InputChanged(){	
+	var text : String = amtText.text;
+	var amt : int = 0;
+	if(text != ""){
+		amt = parseInt(text);
+		ChangeQty(amt);
+	}else { 
+		ChangeQty(0);
+	}
+}
+
+function ChangeQty(amt : int){
+	if(amt < 0)
+		qty = 0;
+	if(amt > maxQty)
+		qty = maxQty;
+	else qty = amt;
+
+	Refresh();
 }
 
 function SubQty(amt : int){
