@@ -33,7 +33,7 @@ class CargoHolder {
 				var newCargo = new InventorySlot();
 				newCargo.itemID = itemID;
 				newCargo.quantity = qty;
-				
+				Debug.Log(amtInCargo);
 				cargo[amtInCargo] = newCargo;
 				amtInCargo++;
 			}

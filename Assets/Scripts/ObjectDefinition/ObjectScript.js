@@ -59,11 +59,15 @@ class Player {
 	}
 
 	function notifyQuests(cargoID : int, quantity : int) {
+		var hasCompleted : boolean = false;
 		for(var i : int = 0; i < quests.length; i++) {
 			if((quests[i]as Quest).notify(cargoID,quantity)) {
 				(quests[i]as Quest).RewardPlayer(this);
+				hasCompleted = true;
+				break;
 			}
 		}
+		return hasCompleted;
 	}
 }
 
@@ -127,8 +131,7 @@ class Quest {
 	}
 
 	function RewardPlayer(player : Player) {
-		player.cargo.AddCargo(rewardCargoID,rewardCargoAmount); //rewardCargo
-		player.cargo.RemoveCargo(requiredCargoID,requiredCargoAmount); //remove the required cargo
+		player.ships[player.currShip].cargo.AddCargo(rewardCargoID,rewardCargoAmount); //rewardCargo
 		accomplished = true;
 	}
 
