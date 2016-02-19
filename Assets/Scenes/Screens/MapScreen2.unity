@@ -665,7 +665,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 139253478}
   m_Layer: 5
-  m_Name: Sikdagat
+  m_Name: Kagisnan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1053,7 +1053,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sikdagat
+  m_Text: KAGEEZNAN
 --- !u!222 &274967251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2528,7 +2528,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kagisnan
+  m_Text: Sikh dagat
 --- !u!222 &1136707470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2792,7 +2792,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1324255041}
   m_Layer: 5
-  m_Name: Kagisnan
+  m_Name: Sikdagat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

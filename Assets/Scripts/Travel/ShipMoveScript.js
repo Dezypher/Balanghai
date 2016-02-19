@@ -97,21 +97,12 @@ var cy :float;
 
 function Update(){
 
-<<<<<<< Updated upstream
 
-<<<<<<< HEAD
-//move(player.ships[0].location+1,2,0);
-//move(player.ships[1].location+1,3,1);
-=======
-move(player.ships[0].location,2,0);
-move(player.ships[1].location,3,1);
-=======
-/*
-move(0,1,0);
-move(0,2,1);
-*/
->>>>>>> Stashed changes
->>>>>>> origin/master
+
+move(player.ships[0].location-1,2,0);
+move(player.ships[1].location-1,3,1);
+
+
 dink=dink+.1;
 
 }
