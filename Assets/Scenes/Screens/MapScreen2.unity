@@ -3985,7 +3985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51825382b348d86409c1edee6cc8e675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalNumButtons: 10
+  totalNumButtons: 2
   buttonReference: {fileID: 142792, guid: b863914863ec2a249a47ce02fc15f9cf, type: 2}
   rows: 0
   columns: 5
@@ -4435,7 +4435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757bb1be13ebb10479987d49a9f76fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendshipPanel: {fileID: 0}
 --- !u!1 &2102957479
 GameObject:
   m_ObjectHideFlags: 0
