@@ -26,8 +26,8 @@ function Start () {
 
 function settoplace(){
 	for(var i=0;i<boats.length;i++){
-		boats[i].position.x=GetVector3(player.ships[i].location).x;
-		boats[i].position.y=GetVector3(player.ships[i].location).y;
+		boats[i].position.x=GetVector3(player.ships[i].location-1).x;
+		boats[i].position.y=GetVector3(player.ships[i].location-1).y;
 	}
 }
 
@@ -98,8 +98,8 @@ var cy :float;
 function Update(){
 
 
-move(player.ships[0].location,2,0);
-move(player.ships[1].location,3,1);
+//move(player.ships[0].location+1,2,0);
+//move(player.ships[1].location+1,3,1);
 dink=dink+.1;
 
 }
