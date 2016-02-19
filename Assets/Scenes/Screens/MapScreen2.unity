@@ -813,10 +813,10 @@ MonoBehaviour:
   locationList:
   - {fileID: 2090143423}
   - {fileID: 42428443}
-  - {fileID: 649665144}
-  - {fileID: 976031644}
-  - {fileID: 107345839}
-  - {fileID: 107345839}
+  - {fileID: 775864461}
+  - {fileID: 2128322433}
+  - {fileID: 1412026380}
+  - {fileID: 545864226}
   map: {fileID: 175191073}
   boatHolder:
     shipName: 

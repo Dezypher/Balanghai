@@ -1,4 +1,5 @@
 ﻿#pragma strict
+//import System;
 
 public var locationList : RectTransform[];
 public var map : RectTransform;
@@ -6,6 +7,7 @@ public var boatHolder : Ship;
 public var boats : RectTransform[];
 public var boatimages: Sprite[];
 public var shipReference : ShipReference;
+private var time_start : float;
 
 //public var boats : Array = new Array();
 
@@ -21,6 +23,8 @@ function Start () {
 	boats = new RectTransform[player.ships.length];
 	loadBoats();
 	settoplace();
+	//Debug.Log(Time.time);
+	time_start=Time.time;
 }
 
 
@@ -51,8 +55,15 @@ function loadBoats(){
 function GetVector3 (index : int){
 	var corners : Vector3[] = new Vector3[4];
  	locationList[index].GetWorldCorners(corners);
-	
+
+ 	var x = corners[0].x+locationList[index].sizeDelta.x/2;
+ 	var y = corners[0].y+locationList[index].sizeDelta.y/2;
+
+ 	var vector : Vector3 = new Vector3(x, y, 0);
+
 	return corners[0];
+
+
 }	
 
 function Distance (x1:float,y1:float,x2:float,y2:float) {
@@ -65,12 +76,14 @@ function Distance (x1:float,y1:float,x2:float,y2:float) {
 }
 var dink  : float;
 dink=0;
-function move(i: int,j: int,boatindex:int){
+function move(i: int,j: int,boatindex:int,totalTime:float){
 var dx :float;
 var	dy :float;
 var d :float;
 var cx :float;
 var cy :float;
+var elapsed = Time.time - time_start;
+  Debug.Log( elapsed + "s have elapsed.");
 
 //i= source area
 //j= destination
@@ -83,10 +96,15 @@ var cy :float;
 			
 			//Debug.Log("THE VALUE_d_"+d);
 
-			if(d>=0){
-	 boats[boatindex].position.x=GetVector3(i).x-cx*(dink);
-	 boats[boatindex].position.y=GetVector3(i).y-cy*(dink);
-	 }
+
+	 //boats[boatindex].position.x=GetVector3(i).x-cx*Time.deltaTime*10 totalTime;
+	// boats[boatindex].position.y=GetVector3(i).y-cy*Time.deltaTime*10 totalTime;>=
+	if(elapsed<=totalTime){
+	boats[boatindex].position.x=GetVector3(i).x-cx*((elapsed/totalTime)*d);
+	boats[boatindex].position.y=GetVector3(i).y-cy*((elapsed/totalTime)*d);
+	Debug.Log("moving");
+	}
+	 
 	
 }
 
@@ -99,8 +117,8 @@ function Update(){
 
 
 
-move(player.ships[0].location-1,2,0);
-move(player.ships[1].location-1,3,1);
+move(player.ships[0].location-1,2,0,3);
+move(player.ships[1].location-1,4,1,10);
 
 
 dink=dink+.1;
