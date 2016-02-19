@@ -1,5 +1,5 @@
 ﻿#pragma strict
 
 function OnClick(){
-	Destroy(GameObject.Find("QuestCompleted"));
+	Destroy(this.gameObject);
 }

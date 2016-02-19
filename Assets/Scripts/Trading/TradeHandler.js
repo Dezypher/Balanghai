@@ -9,8 +9,6 @@ public var traderCargoList : GameObject;
 public var shopIndex : int;
 public var amountPanel : GameObject;
 
-public var QuestPopup : GameObject;
-
 private var cargoReference : GameObject;
 private var player : Player;
 private var trader : Shop;
@@ -39,13 +37,7 @@ function Sell (itemID : int, qty : int) {
 				break;
 			}
 
-		if(playerRef.GetComponent(PlayerStatus).player.notifyQuests(itemID,qty)){
-			var temp : GameObject = Instantiate(QuestPopup);
-			temp.transform.SetParent(GameObject.Find("Canvas").transform,false);
-			temp.transform.GetChild(2).GetComponent(UI.Image).sprite = cargoReference.GetComponent(CargoRefScript).cargos[itemID].sprite;
-			temp.transform.GetChild(3).GetComponent(UI.Text).text = "x " + qty + " added";
-		}
-
+		player.notifyQuests(itemID,qty);
 
 		price = cargoReference.GetComponent(CargoRefScript).cargos[itemID].basePrice * priceRatio * itemPriceRatio;
 		price *= qty;

@@ -59,15 +59,9 @@ class Player {
 	}
 
 	function notifyQuests(cargoID : int, quantity : int) {
-		var hasCompleted : boolean = false;
 		for(var i : int = 0; i < quests.length; i++) {
-			if((quests[i]as Quest).notify(cargoID,quantity)) {
-				(quests[i]as Quest).RewardPlayer(this);
-				hasCompleted = true;
-				break;
-			}
+			(quests[i]as Quest).notify(cargoID,quantity);
 		}
-		return hasCompleted;
 	}
 }
 
@@ -132,15 +126,15 @@ class Quest {
 
 	function RewardPlayer(player : Player) {
 		player.ships[player.currShip].cargo.AddCargo(rewardCargoID,rewardCargoAmount); //rewardCargo
-		accomplished = true;
 	}
 
 	function notify(cargoID : int, amount : int) {
-		if(cargoID == requiredCargoID && requiredCargoAmount == amount) {
-			return true;
+		if(cargoID == requiredCargoID) {
+			requiredCargoAmount -= amount;
 		}
-		else
-			return false;
+		if(requiredCargoAmount <= 0) {
+			accomplished = true;
+		}
 	}
 }
 

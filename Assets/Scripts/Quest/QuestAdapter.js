@@ -17,13 +17,20 @@ class QuestAdapter extends MonoBehaviour {
 		var demandCargo : Cargo = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos[questModel.requiredCargoID];
 		var rewardCargo : Cargo = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos[questModel.rewardCargoID];
 		questView.transform.GetChild(1).transform.GetChild(0).GetComponent(UI.Image).sprite = demandCargo.sprite; //Demand Cargo Image
-		questView.transform.GetChild(1).transform.GetChild(1).GetComponent(UI.Text).text = "x " + questModel.requiredCargoAmount; //update the Quantity Text to the amount
+		if(questModel.requiredCargoAmount > 0)
+			questView.transform.GetChild(1).transform.GetChild(1).GetComponent(UI.Text).text = "x " + questModel.requiredCargoAmount; //update the Quantity Text to the amount
+		else
+			questView.transform.GetChild(1).transform.GetChild(1).GetComponent(UI.Text).text = "Complete!";
 		questView.transform.GetChild(2).transform.GetChild(0).GetComponent(UI.Image).sprite = rewardCargo.sprite; //Reward Cargo Image
 		questView.transform.GetChild(2).transform.GetChild(1).GetComponent(UI.Text).text = "x " + questModel.rewardCargoAmount;
+			
 		questView.transform.GetChild(0).GetComponent(UI.Text).text = questModel.location;
 		if(type == 2) {
 			questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).fontSize = 14;
-			questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).text = "Abandon";
+			if(!questModel.accomplished)
+				questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).text = "Abandon";
+			else
+				questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).text = "Claim";
 		}
 	}
 
@@ -36,25 +43,41 @@ class QuestAdapter extends MonoBehaviour {
 			ClaimQuest();
 		}
 		else if(type == 2) {
-			AbandonQuest();
+			if(!questModel.accomplished)
+				AbandonQuest();
+			else
+				RewardQuest();
 		}
 	}
 
 	function ClaimQuest() {
 		var player : GameObject = GameObject.Find("PlayerStatus");
 		if(player != null) {
-				player.GetComponent(PlayerStatus).player.addQuest(questModel);
-				GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
-				GameObject.Destroy(this.gameObject);
+			player.GetComponent(PlayerStatus).player.addQuest(questModel);
+			GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
+			GameObject.Destroy(this.gameObject);
 		}
 	}
 
 	function AbandonQuest() {
 		var player : GameObject = GameObject.Find("PlayerStatus");
 		if(player != null) {
-				player.GetComponent(PlayerStatus).player.removeQuest(index);
-				GameObject.Destroy(this.gameObject);
-				
+			player.GetComponent(PlayerStatus).player.removeQuest(index);
+			GameObject.Destroy(this.gameObject);
+		}
+	}
+
+	function RewardQuest() {
+		var player : GameObject = GameObject.Find("PlayerStatus");
+		if(player != null) {
+			questModel.RewardPlayer(player.GetComponent(PlayerStatus).player);
+			player.GetComponent(PlayerStatus).player.removeQuest(index);
+			var temp : GameObject = Instantiate(Resources.Load("Prefabs/QuestScreen/QuestCompleted"));
+			var rewardCargo : Cargo = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos[questModel.rewardCargoID];
+			temp.transform.SetParent(GameObject.Find("Canvas").transform,false);
+			temp.transform.GetChild(2).GetComponent(UI.Image).sprite = rewardCargo.sprite;
+			temp.transform.GetChild(3).GetComponent(UI.Text).text = "x " + questModel.rewardCargoAmount + " added";
+			GameObject.Destroy(this.gameObject);
 		}
 	}
 
