@@ -1335,7 +1335,7 @@ MonoBehaviour:
     ships:
     - shipName: Bangka
       sprite: {fileID: 21300000, guid: b7f8d8273c4e94846997940fbfc268b7, type: 3}
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: 8baa3df07f78d7940adeef3f4f04d827, type: 3}
       type: 1
       speed: 5
       capacity: 50
@@ -1452,7 +1452,7 @@ MonoBehaviour:
       destination: -1
     - shipName: Balanghai
       sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f, type: 3}
       type: 2
       speed: 12
       capacity: 150

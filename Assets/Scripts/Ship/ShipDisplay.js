@@ -1,15 +1,16 @@
 ﻿#pragma strict
-/*
+
 public var buttons : GameObject[];
-public var ship : Ship;
 public var autoInstantiate : boolean;
 public var filter : int = 8;
 
+public var player : Player;
 public var instantiated : boolean;
 public var shipReference : GameObject;
 
 function Awake () {
 	shipReference = Resources.Load("Reference/ShipReference") as GameObject;
+	player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
 
 	if(autoInstantiate)
 		Instantiate();
@@ -23,20 +24,17 @@ function Instantiate () {
 		work. If the number of cargo is more than the buttons it will display
 		until the index of the number of buttons.
 	*/
-	/*
+
 	var shipIndex = 0;
 
 	for(var i = 0; i < buttons.length; i++){
-		var shipType = cargo.GetItem(shipIndex).shipType;
-		var quantity = cargo.GetItem(shipIndex).quantity;
-		var type : int = cargoReference.GetComponent(CargoRefScript).cargos[shipType].type;
+		var shipType = player.ships[shipIndex].type;
+		var location = player.ships[shipIndex].location;
 
-		if(filter == 8 || filter == type){
-			buttons[i].GetComponent(ShipButton).SetItem(shipType, quantity);
-			buttons[i].GetComponent(ShipButton).index = shipIndex;
+		if(location == player.location && player.currShip != shipIndex){
+			buttons[i].GetComponent(ShipListButton).SetShip(shipIndex);
 		}else i--;
 
 		shipIndex++;
 	}
 }
-*/
