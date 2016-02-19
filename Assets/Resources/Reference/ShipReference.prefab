@@ -91,6 +91,57 @@ MonoBehaviour:
     shipWidth: 0
     shipHeight: 0
     destination: -1
+  - shipName: Junk
+    sprite: {fileID: 21300000, guid: 1d5b66a78deb4184f9726371df07c138, type: 3}
+    icon: {fileID: 21300000, guid: 7b3f320aa874684448f07f66a122a4d0, type: 3}
+    type: 3
+    speed: 3
+    capacity: 200
+    hullStrength: 40
+    location: 0
+    traveling: 0
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+    shipWidth: 0
+    shipHeight: 0
+    destination: -1
+  - shipName: Proa
+    sprite: {fileID: 21300000, guid: 4e85acd73e630324387f1d3e988f2dbc, type: 3}
+    icon: {fileID: 21300000, guid: d5318935a95995740a680afdb2fc554f, type: 3}
+    type: 4
+    speed: 10
+    capacity: 100
+    hullStrength: 15
+    location: 0
+    traveling: 0
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+    shipWidth: 0
+    shipHeight: 0
+    destination: -1
+  - shipName: Vinta
+    sprite: {fileID: 21300000, guid: d5368f289d5d1784ab8e7136590e4192, type: 3}
+    icon: {fileID: 21300000, guid: 556791c5972bf0443ab4ecfe17b5d30d, type: 3}
+    type: 5
+    speed: 8
+    capacity: 150
+    hullStrength: 25
+    location: 0
+    traveling: 0
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+    shipWidth: 0
+    shipHeight: 0
+    destination: -1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -98,6 +149,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ships.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ships.Array.data[2].sprite
       value: 
@@ -134,6 +189,96 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].shipName
+      value: Junk
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d5b66a78deb4184f9726371df07c138,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b3f320aa874684448f07f66a122a4d0,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].shipName
+      value: Proa
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e85acd73e630324387f1d3e988f2dbc,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d5318935a95995740a680afdb2fc554f,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].shipName
+      value: Vinta
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 556791c5972bf0443ab4ecfe17b5d30d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5368f289d5d1784ab8e7136590e4192,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].capacity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].hullStrength
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[3].type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].capacity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].capacity
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[4].hullStrength
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ships.Array.data[5].hullStrength
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128856}
