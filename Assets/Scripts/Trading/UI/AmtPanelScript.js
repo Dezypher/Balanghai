@@ -3,15 +3,24 @@
 public var amtText : UI.InputField;
 public var goldText : UI.Text;
 public var itemID : int;
-public var character : int; //0 - Player 1 - Shop
+public var character : int; //0 - Player 1 - Shop 2 - Ship to Ship
+public var trading : boolean;
 
 private var qty : int;
 private var maxQty : int;
 private var pricePerQty : int;
 private var tradeHandler : GameObject;
+private var shipTrader : ShipTradeHandler;
+private var toShipID : int;
+private var fromShipID : int;
 
 function Start(){
-	tradeHandler = GameObject.Find("TradingHandler");
+	if(trading){
+		tradeHandler = GameObject.Find("TradingHandler");
+	}else { 
+		shipTrader = GameObject.Find("ShipTradeHandler")
+						.GetComponent(ShipTradeHandler);
+	}
 }
 
 function SetItem(itemID : int, maxQty : int, pricePerQty : int, character : int){
@@ -19,6 +28,18 @@ function SetItem(itemID : int, maxQty : int, pricePerQty : int, character : int)
 	this.pricePerQty = pricePerQty;
 	this.itemID = itemID;
 	this.character = character;
+	qty = 0;
+
+	Refresh();
+}
+
+function SetItem(fromShipID : int, toShipID : int, itemID : int, maxQty : int, pricePerQty : int, character : int){
+	this.maxQty = maxQty;
+	this.pricePerQty = pricePerQty;
+	this.itemID = itemID;
+	this.character = character;
+	this.toShipID = toShipID;
+	this.fromShipID = fromShipID;
 	qty = 0;
 
 	Refresh();
@@ -40,7 +61,10 @@ function AddQty(amt : int){
 function Accept(){
 	if(character == 0)
 		tradeHandler.GetComponent(TradeHandler).Sell(itemID, qty);
-	else tradeHandler.GetComponent(TradeHandler).Buy(itemID, qty);
+	else if(character == 1) 
+		tradeHandler.GetComponent(TradeHandler).Buy(itemID, qty);
+	else if(character == 2)
+		shipTrader.Trade(fromShipID, toShipID, itemID, qty);
 	
 	gameObject.SetActive(false);
 }

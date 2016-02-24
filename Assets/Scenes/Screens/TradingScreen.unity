@@ -2734,6 +2734,7 @@ MonoBehaviour:
   goldText: {fileID: 131781392}
   itemID: 0
   character: 0
+  trading: 1
 --- !u!114 &672277715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6767,7 +6768,6 @@ MonoBehaviour:
   traderCargoList: {fileID: 1311352029}
   shopIndex: 0
   amountPanel: {fileID: 672277712}
-  QuestPopup: {fileID: 100990, guid: 49513e98174b8bf4585d8f2d95d85668, type: 2}
 --- !u!4 &1756855716
 Transform:
   m_ObjectHideFlags: 0
