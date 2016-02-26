@@ -25,8 +25,14 @@ function Instantiate () {
 			numShips++;
 	}
 
-	container.GetComponent(PrefabListGenerate).numPrefabs = numShips;
-	container.GetComponent(PrefabListGenerate).Generate();
-	container.GetComponent(ShipDisplay).buttons = container.GetComponent(PrefabListGenerate).generatedPrefabs;
-	container.GetComponent(ShipDisplay).Instantiate();
+
+	if(numShips > 0){
+		container.GetComponent(PrefabListGenerate).numPrefabs = numShips;
+		container.GetComponent(PrefabListGenerate).Generate();
+		container.GetComponent(ShipDisplay).buttons = container.GetComponent(PrefabListGenerate).generatedPrefabs;
+		container.GetComponent(ShipDisplay).Instantiate();
+	}else {
+		AlertHandler.AlertPopup("You have no other ships in the village to trade with.");
+		this.gameObject.SetActive(false);
+	}
 }

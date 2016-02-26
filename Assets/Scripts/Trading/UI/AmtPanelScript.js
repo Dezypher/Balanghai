@@ -2,6 +2,8 @@
 
 public var amtText : UI.InputField;
 public var goldText : UI.Text;
+public var itemIcon : UI.Image;
+public var itemText : UI.Text;
 public var itemID : int;
 public var character : int; //0 - Player 1 - Shop 2 - Ship to Ship
 public var trading : boolean;
@@ -13,6 +15,7 @@ private var tradeHandler : GameObject;
 private var shipTrader : ShipTradeHandler;
 private var toShipID : int;
 private var fromShipID : int;
+private var cargoRef : CargoRefScript;
 
 function Start(){
 	if(trading){
@@ -21,6 +24,9 @@ function Start(){
 		shipTrader = GameObject.Find("ShipTradeHandler")
 						.GetComponent(ShipTradeHandler);
 	}
+
+	cargoRef = (Resources.Load("Reference/CargoReference") as GameObject)
+					.GetComponent(CargoRefScript);
 }
 
 function SetItem(itemID : int, maxQty : int, pricePerQty : int, character : int){
@@ -48,6 +54,8 @@ function SetItem(fromShipID : int, toShipID : int, itemID : int, maxQty : int, p
 function Refresh(){
 	amtText.text = "" + qty;
 	goldText.text = "Gold: " + (pricePerQty * qty);
+	itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
+	itemIcon.sprite = cargoRef.cargos[itemID].sprite;
 }
 
 function AddQty(amt : int){
