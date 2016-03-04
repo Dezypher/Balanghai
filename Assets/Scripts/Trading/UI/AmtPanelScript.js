@@ -53,9 +53,12 @@ function SetItem(fromShipID : int, toShipID : int, itemID : int, maxQty : int, p
 
 function Refresh(){
 	amtText.text = "" + qty;
-	goldText.text = "Gold: " + (pricePerQty * qty);
-	itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
-	itemIcon.sprite = cargoRef.cargos[itemID].sprite;
+
+	if(trading){
+		goldText.text = "Gold: " + (pricePerQty * qty);
+		itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
+		itemIcon.sprite = cargoRef.cargos[itemID].sprite;
+	}
 }
 
 function AddQty(amt : int){
@@ -72,7 +75,7 @@ function Accept(){
 	else if(character == 1) 
 		tradeHandler.GetComponent(TradeHandler).Buy(itemID, qty);
 	else if(character == 2)
-		shipTrader.Trade(fromShipID, toShipID, itemID, qty);
+		shipTrader.Trade(qty);
 	
 	gameObject.SetActive(false);
 }

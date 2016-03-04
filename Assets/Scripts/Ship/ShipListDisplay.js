@@ -25,7 +25,6 @@ function Instantiate () {
 			numShips++;
 	}
 
-
 	if(numShips > 0){
 		container.GetComponent(PrefabListGenerate).numPrefabs = numShips;
 		container.GetComponent(PrefabListGenerate).Generate();
