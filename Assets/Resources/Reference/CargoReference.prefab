@@ -46,12 +46,12 @@ MonoBehaviour:
     type: 7
     basePrice: 0
   - cargoName: Animal Skin
-    sprite: {fileID: 21300000, guid: e0be4cc5e00fc884a9729e8928d53f91, type: 3}
+    sprite: {fileID: 21300000, guid: 84c7404efb26977479304ae56f2fad4b, type: 3}
     weight: 2
     type: 6
     basePrice: 10
   - cargoName: Banana
-    sprite: {fileID: 21300000, guid: 3ed031a8a5f5ec646a94aaeeaf4a1bb3, type: 3}
+    sprite: {fileID: 21300000, guid: e1bf663776efc8941a539df7faac3b82, type: 3}
     weight: 1
     type: 0
     basePrice: 4
@@ -71,7 +71,7 @@ MonoBehaviour:
     type: 0
     basePrice: 9
   - cargoName: Gold
-    sprite: {fileID: 21300000, guid: d5353dae66f38834cb2c82413f53d24d, type: 3}
+    sprite: {fileID: 21300000, guid: 2cff1021576a61346bddb9202a3ed578, type: 3}
     weight: 1
     type: 1
     basePrice: 100
@@ -81,7 +81,7 @@ MonoBehaviour:
     type: 6
     basePrice: 50
   - cargoName: Ivory
-    sprite: {fileID: 21300000, guid: 5d210c8b8c7456040a1fd354c22efe01, type: 3}
+    sprite: {fileID: 21300000, guid: 2dc50c509d11e2946b24c7e60088d5ca, type: 3}
     weight: 1
     type: 1
     basePrice: 30
@@ -91,7 +91,7 @@ MonoBehaviour:
     type: 2
     basePrice: 30
   - cargoName: Leather
-    sprite: {fileID: 21300000, guid: c60f33f2ca7d95c4da2d8b8471396ec4, type: 3}
+    sprite: {fileID: 21300000, guid: 455db8403e889f74fb248c55c1b98bc1, type: 3}
     weight: 1
     type: 6
     basePrice: 10
@@ -126,7 +126,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[1].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e0be4cc5e00fc884a9729e8928d53f91,
+      objectReference: {fileID: 21300000, guid: 84c7404efb26977479304ae56f2fad4b,
         type: 3}
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[1].weight
@@ -135,7 +135,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[2].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3ed031a8a5f5ec646a94aaeeaf4a1bb3,
+      objectReference: {fileID: 21300000, guid: e1bf663776efc8941a539df7faac3b82,
         type: 3}
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[2].cargoName
@@ -203,7 +203,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[6].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d5353dae66f38834cb2c82413f53d24d,
+      objectReference: {fileID: 21300000, guid: 2cff1021576a61346bddb9202a3ed578,
         type: 3}
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[6].weight
@@ -237,7 +237,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[8].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5d210c8b8c7456040a1fd354c22efe01,
+      objectReference: {fileID: 21300000, guid: 2dc50c509d11e2946b24c7e60088d5ca,
         type: 3}
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[8].weight
@@ -271,7 +271,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[10].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c60f33f2ca7d95c4da2d8b8471396ec4,
+      objectReference: {fileID: 21300000, guid: 455db8403e889f74fb248c55c1b98bc1,
         type: 3}
     - target: {fileID: 0}
       propertyPath: cargos.Array.data[10].cargoName

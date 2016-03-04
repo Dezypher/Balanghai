@@ -3,6 +3,7 @@
 class QuestGenerator extends MonoBehaviour {
 
 	var requiredAmountMax : int = 10;
+	var spacing : int = 0;
 	var questViewRef : GameObject;
 	var availableQuests : Array = new Array();
 
@@ -35,7 +36,7 @@ class QuestGenerator extends MonoBehaviour {
 			for(var i : int = 0; i < player.GetComponent(PlayerStatus).player.quests.length; i++) {
 				var newQuest : GameObject = Instantiate(questViewRef);
 				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
-				newQuest.transform.position.y += (135 - (i*50));
+				newQuest.transform.position.y += ((i*spacing));
 				newQuest.GetComponent(QuestAdapter).index = i;
 				newQuest.GetComponent(QuestAdapter).type = 2;
 				newQuest.GetComponent(QuestAdapter).AddQuest(player.GetComponent(PlayerStatus).player.quests[i]);
@@ -49,7 +50,7 @@ class QuestGenerator extends MonoBehaviour {
 			for(var i : int = 0; i < availableQuests.length; i++) {
 				var newQuest : GameObject = Instantiate(questViewRef);
 				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
-				newQuest.transform.position.y += (135 - (i*50));
+				newQuest.transform.position.y += ((i*spacing));
 				newQuest.GetComponent(QuestAdapter).AddQuest(availableQuests[i]);
 				newQuest.GetComponent(QuestAdapter).questView = newQuest;
 				newQuest.GetComponent(QuestAdapter).index = i;

@@ -1457,7 +1457,7 @@ MonoBehaviour:
       speed: 12
       capacity: 150
       hullStrength: 30
-      location: 2
+      location: 1
       traveling: 0
       cargo:
         capacity: 150
