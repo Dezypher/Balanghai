@@ -4,8 +4,9 @@ private var player : Player;
 private var cargoRef : CargoRefScript;
 private var amtPanel : GameObject;
 private var itemID : int;
-private var fromShip : int;
-private var toShip : int;
+private var maxQty : int;
+private var fromShipID : int;
+private var toShipID : int;
 
 function Awake () {
 	player = GameObject.Find("PlayerStatus")
@@ -16,12 +17,28 @@ function Awake () {
 	amtPanel = GameObject.Find("AmountPanel");
 }
 
-function ShowAmountPanel(shipIndex : int){
+function ShowAmountPanel(){
 	amtPanel.SetActive(true);
+
+	amtPanel.GetComponent(AmtPanelScript).
+		SetItem(itemID, maxQty, 0, 0);
+}
+
+function SetShipIndex(shipIndex : int){
+	fromShipID = shipIndex;
+}
+
+function SetIndex(index : int){
+	itemID = player.ships[fromShipID].cargo.cargo[index].itemID;
+	maxQty = player.ships[fromShipID].cargo.cargo[index].quantity;
 }
 
 function SetItem(itemID : int){
 	this.itemID = itemID;
+}
+
+function SetMaxQty(maxQty : int){
+	this.maxQty = maxQty;
 }
 
 function Trade(qty : int){
