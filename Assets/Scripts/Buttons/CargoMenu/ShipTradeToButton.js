@@ -3,18 +3,16 @@
 private var shipTradeHandler : ShipTradeHandler;
 private var shipTradeButton : ShipListButton;
 private var shipTrade : GameObject;
-private var shipIndex : int;
 
-function Awake () {
+function Start () {
 	shipTradeHandler = GameObject.Find("ShipTradeHandler")
 		.GetComponent(ShipTradeHandler);
 	shipTradeButton = GetComponent(ShipListButton);
 	shipTrade = GameObject.Find("ShipTradeUI");
-	shipIndex = GetComponent(ShipListButton).shipIndex;
 }
 
 function Trade () {
-	shipTradeHandler.SetShipIndex(shipIndex);
+	shipTradeHandler.SetShipIndex(GetComponent(ShipListButton).shipIndex);
 	shipTradeHandler.ShowAmountPanel();
 	shipTrade.SetActive(false);
 }

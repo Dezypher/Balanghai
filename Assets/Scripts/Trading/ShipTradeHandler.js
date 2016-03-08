@@ -1,12 +1,14 @@
 ﻿#pragma strict
 
+public var shipCargoDisplay : ShipCargoDisplay;
+
 private var player : Player;
 private var cargoRef : CargoRefScript;
 private var amtPanel : GameObject;
 private var itemID : int;
 private var maxQty : int;
-private var fromShipID : int;
-private var toShipID : int;
+public var fromShipID : int;
+public var toShipID : int;
 
 function Awake () {
 	player = GameObject.Find("PlayerStatus")
@@ -15,17 +17,19 @@ function Awake () {
 	cargoRef = (Resources.Load("Reference/CargoReference") as GameObject)
 					.GetComponent(CargoRefScript);
 	amtPanel = GameObject.Find("AmountPanel");
+	fromShipID = player.currShip;
 }
 
 function ShowAmountPanel(){
 	amtPanel.SetActive(true);
 
 	amtPanel.GetComponent(AmtPanelScript).
-		SetItem(itemID, maxQty, 0, 0);
+		SetItem(itemID, maxQty, 0, 2);
 }
 
 function SetShipIndex(shipIndex : int){
-	fromShipID = shipIndex;
+	fromShipID = player.currShip;
+	toShipID = shipIndex;
 }
 
 function SetIndex(index : int){
@@ -45,5 +49,6 @@ function Trade(qty : int){
 	if(player.ships[toShipID].cargo.AddCargo(itemID, qty)){
 		player.ships[fromShipID].cargo.RemoveCargo(itemID, qty);
 		AlertHandler.AlertPopup("Trade successful!");
+		shipCargoDisplay.Instantiate();
 	}
 }

@@ -39,11 +39,13 @@ function SetItem(itemID : int, maxQty : int, pricePerQty : int, character : int)
 
 function Refresh(){
 	amtText.text = "" + qty;
+	itemIcon.sprite = cargoRef.cargos[itemID].sprite;
 
 	if(trading){
 		goldText.text = "Gold: " + (pricePerQty * qty);
 		itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
-		itemIcon.sprite = cargoRef.cargos[itemID].sprite;
+	}else {
+		itemText.text = cargoRef.cargos[itemID].cargoName;
 	}
 }
 
