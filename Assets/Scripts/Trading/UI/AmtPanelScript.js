@@ -13,8 +13,6 @@ private var maxQty : int;
 private var pricePerQty : int;
 private var tradeHandler : GameObject;
 private var shipTrader : ShipTradeHandler;
-private var toShipID : int;
-private var fromShipID : int;
 private var cargoRef : CargoRefScript;
 
 function Start(){
@@ -39,23 +37,16 @@ function SetItem(itemID : int, maxQty : int, pricePerQty : int, character : int)
 	Refresh();
 }
 
-function SetItem(fromShipID : int, toShipID : int, itemID : int, maxQty : int, pricePerQty : int, character : int){
-	this.maxQty = maxQty;
-	this.pricePerQty = pricePerQty;
-	this.itemID = itemID;
-	this.character = character;
-	this.toShipID = toShipID;
-	this.fromShipID = fromShipID;
-	qty = 0;
-
-	Refresh();
-}
-
 function Refresh(){
 	amtText.text = "" + qty;
-	goldText.text = "Gold: " + (pricePerQty * qty);
-	itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
 	itemIcon.sprite = cargoRef.cargos[itemID].sprite;
+
+	if(trading){
+		goldText.text = "Gold: " + (pricePerQty * qty);
+		itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
+	}else {
+		itemText.text = cargoRef.cargos[itemID].cargoName;
+	}
 }
 
 function AddQty(amt : int){
@@ -68,11 +59,11 @@ function AddQty(amt : int){
 
 function Accept(){
 	if(character == 0)
-		tradeHandler.GetComponent(TradeHandler).Sell(itemID, qty);
+ 		tradeHandler.GetComponent(TradeHandler).Sell(itemID, qty);
 	else if(character == 1) 
 		tradeHandler.GetComponent(TradeHandler).Buy(itemID, qty);
 	else if(character == 2)
-		shipTrader.Trade(fromShipID, toShipID, itemID, qty);
+		shipTrader.Trade(qty);
 	
 	gameObject.SetActive(false);
 }
