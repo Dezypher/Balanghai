@@ -2176,8 +2176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredAmountMax: 10
-  spacing: 100
-  questViewRef: {fileID: 150428, guid: 92238d2d541050c4b90074ae752e3534, type: 2}
+  questList: {fileID: 2098499415}
 --- !u!1 &1284304310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,9 +2244,9 @@ RectTransform:
   - {fileID: 2098499416}
   m_Father: {fileID: 1254805233}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0000023841858, y: -91}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -90}
   m_SizeDelta: {x: 720, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453166206
@@ -3061,6 +3060,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 2098499416}
   - 114: {fileID: 2098499417}
+  - 114: {fileID: 2098499418}
   m_Layer: 5
   m_Name: Quest List
   m_TagString: Untagged
@@ -3082,8 +3082,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -285}
-  m_SizeDelta: {x: 520, y: 400}
+  m_AnchoredPosition: {x: 0, y: -205}
+  m_SizeDelta: {x: 520, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098499417
 MonoBehaviour:
@@ -3116,6 +3116,31 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2098499418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098499415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34035ec51b960454aa882130903f9945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPrefabs: 0
+  autoGenerate: 0
+  prefabReference: {fileID: 150428, guid: 92238d2d541050c4b90074ae752e3534, type: 2}
+  spacing: 10
+  panelHeight: 0
+  panelWidth: 520
+  leftPadding: 0
+  topPadding: 10
+  bottomPadding: 10
+  numColumns: 1
+  cornerX: 0
+  cornerY: 0
+  visibleHeight: 520
+  generatedPrefabs: []
 --- !u!1 &2114959226
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,8 @@
 class QuestGenerator extends MonoBehaviour {
 
 	var requiredAmountMax : int = 10;
-	var spacing : int = 0;
-	var questViewRef : GameObject;
 	var availableQuests : Array = new Array();
+	var questList : GameObject;
 
 	function generateQuest() {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
@@ -33,36 +32,27 @@ class QuestGenerator extends MonoBehaviour {
 	function DisplayCurrentQuests() {
 		var player : GameObject = GameObject.Find("PlayerStatus"); 
 		if(player.GetComponent(PlayerStatus).player.quests.length > 0) {
-			for(var i : int = 0; i < player.GetComponent(PlayerStatus).player.quests.length; i++) {
-				var newQuest : GameObject = Instantiate(questViewRef);
-				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
-				newQuest.transform.position.y += ((i*spacing));
-				newQuest.GetComponent(QuestAdapter).index = i;
-				newQuest.GetComponent(QuestAdapter).type = 2;
-				newQuest.GetComponent(QuestAdapter).AddQuest(player.GetComponent(PlayerStatus).player.quests[i]);
-				newQuest.GetComponent(QuestAdapter).questView = newQuest;
+			questList.GetComponent(PrefabListGenerate).numPrefabs = player.GetComponent(PlayerStatus).player.quests.length;
+			questList.GetComponent(PrefabListGenerate).Generate();
+			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i];
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 2;
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
 			}
 		}
 	}
 
 	function DisplayAvailableQuests() {
 		if(availableQuests.length > 0) {
-			for(var i : int = 0; i < availableQuests.length; i++) {
-				var newQuest : GameObject = Instantiate(questViewRef);
-				newQuest.transform.SetParent(GameObject.Find("Quest List").transform,false);
-				newQuest.transform.position.y += ((i*spacing));
-				newQuest.GetComponent(QuestAdapter).AddQuest(availableQuests[i]);
-				newQuest.GetComponent(QuestAdapter).questView = newQuest;
-				newQuest.GetComponent(QuestAdapter).index = i;
-				newQuest.GetComponent(QuestAdapter).type = 1;
+			questList.GetComponent(PrefabListGenerate).numPrefabs = availableQuests.length;
+			questList.GetComponent(PrefabListGenerate).Generate();
+			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i];
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 1;
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
 			}
-		}
-	}
-
-	function DeleteQuestViews() {
-		var questLists : GameObject = GameObject.Find("Quest List");
-		for(var i : int = 0; i < questLists.transform.childCount; i++) {
-			GameObject.Destroy(questLists.transform.GetChild(i).gameObject);
 		}
 	}
 
@@ -74,12 +64,10 @@ class QuestGenerator extends MonoBehaviour {
 	}
 
 	function AvailableButtonClick() {
-		DeleteQuestViews();
 		DisplayAvailableQuests();
 	}
 
 	function CurrentButtonClick() {
-		DeleteQuestViews();
 		DisplayCurrentQuests();
 	}
 
