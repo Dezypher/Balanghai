@@ -6,6 +6,12 @@ class QuestAdapter extends MonoBehaviour {
 	var questView : GameObject;
 	var index : int;
 	var type : int;
+	var questUI : QuestGenerator;
+
+	function Awake(){
+		questUI = GameObject.Find("QuestUI")
+					.GetComponent(QuestGenerator);
+	}
 
 	function AddQuest(newQuest : Quest) {
 		questModel = newQuest;
@@ -55,6 +61,7 @@ class QuestAdapter extends MonoBehaviour {
 		if(player != null) {
 			player.GetComponent(PlayerStatus).player.addQuest(questModel);
 			GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
+			questUI.DisplayAvailableQuests();
 			GameObject.Destroy(this.gameObject);
 		}
 	}
@@ -63,6 +70,7 @@ class QuestAdapter extends MonoBehaviour {
 		var player : GameObject = GameObject.Find("PlayerStatus");
 		if(player != null) {
 			player.GetComponent(PlayerStatus).player.removeQuest(index);
+			questUI.DisplayCurrentQuests();
 			GameObject.Destroy(this.gameObject);
 		}
 	}

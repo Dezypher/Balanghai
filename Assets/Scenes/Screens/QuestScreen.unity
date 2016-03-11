@@ -478,7 +478,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185, y: 139.99997}
+  m_AnchoredPosition: {x: 185.9, y: 181.3}
   m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341528243
@@ -670,8 +670,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 735, y: 334}
+  m_AnchoredPosition: {x: 0, y: 24.8}
+  m_SizeDelta: {x: 735, y: 383.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374537971
 MonoBehaviour:
@@ -1021,7 +1021,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 140}
+  m_AnchoredPosition: {x: -184.1, y: 181.3}
   m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627112541
@@ -1487,7 +1487,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 2
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1762,7 +1762,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 2
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2246,8 +2246,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -90}
-  m_SizeDelta: {x: 720, y: 250}
+  m_AnchoredPosition: {x: 50, y: -75}
+  m_SizeDelta: {x: 720, y: 255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453166206
 MonoBehaviour:
@@ -2920,7 +2920,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0.000002861, y: 128.4}
   m_SizeDelta: {x: 735, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1943399817
@@ -3061,6 +3061,8 @@ GameObject:
   - 224: {fileID: 2098499416}
   - 114: {fileID: 2098499417}
   - 114: {fileID: 2098499418}
+  - 222: {fileID: 2098499420}
+  - 114: {fileID: 2098499419}
   m_Layer: 5
   m_Name: Quest List
   m_TagString: Untagged
@@ -3082,8 +3084,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -205}
-  m_SizeDelta: {x: 520, y: 300}
+  m_AnchoredPosition: {x: 0.000002861023, y: -127.5}
+  m_SizeDelta: {x: 520, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098499417
 MonoBehaviour:
@@ -3099,7 +3101,7 @@ MonoBehaviour:
   m_Content: {fileID: 2098499416}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 2
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -3137,10 +3139,44 @@ MonoBehaviour:
   topPadding: 10
   bottomPadding: 10
   numColumns: 1
+  reposition: 0
   cornerX: 0
   cornerY: 0
-  visibleHeight: 520
+  visibleHeight: 180
   generatedPrefabs: []
+--- !u!114 &2098499419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098499415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: a0dbb38dd64b0b044bdb321644d0c996, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2098499420
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098499415}
 --- !u!1 &2114959226
 GameObject:
   m_ObjectHideFlags: 0

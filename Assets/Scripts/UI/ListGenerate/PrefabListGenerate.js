@@ -10,6 +10,7 @@ public var leftPadding : int;
 public var topPadding : int;
 public var bottomPadding: int;
 public var numColumns : int;
+public var reposition : boolean;
 
 public var cornerX : float;
 public var cornerY : float;
