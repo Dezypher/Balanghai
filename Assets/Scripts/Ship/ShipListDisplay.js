@@ -2,6 +2,7 @@
 
 public var container : GameObject;
 public var autoInstantiate : boolean = true;
+public var excludeCurrShip : boolean = true;
 
 private var shipReference : ShipReference;
 private var player : Player;
@@ -20,8 +21,8 @@ function Instantiate () {
 	var numShips : int = 0;
 
 	for(var i = 0; i < player.ships.length; i++){
-		if(player.ships[i].location == player.location
-			&& player.currShip != i)
+		if((player.ships[i].location == player.location
+			&& player.currShip != i) || !excludeCurrShip)
 			numShips++;
 	}
 

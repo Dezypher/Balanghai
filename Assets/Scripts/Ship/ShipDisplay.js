@@ -3,10 +3,11 @@
 public var buttons : GameObject[];
 public var autoInstantiate : boolean;
 public var filter : int = 8;
+public var excludeCurrShip : boolean = true;
 
-public var player : Player;
-public var instantiated : boolean;
-public var shipReference : GameObject;
+private var player : Player;
+private var instantiated : boolean;
+private var shipReference : GameObject;
 
 function Awake () {
 	shipReference = Resources.Load("Reference/ShipReference") as GameObject;
@@ -31,7 +32,8 @@ function Instantiate () {
 		var shipType = player.ships[shipIndex].type;
 		var location = player.ships[shipIndex].location;
 
-		if(location == player.location && player.currShip != shipIndex){
+		if((location == player.location && player.currShip != shipIndex)
+			|| !excludeCurrShip){
 			buttons[i].GetComponent(ShipListButton).SetShip(shipIndex);
 		}else i--;
 
