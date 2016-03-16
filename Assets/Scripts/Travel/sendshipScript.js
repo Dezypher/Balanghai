@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 private var player : Player;
-public var destination : int;
+private var destination : int;
 
 function Start () {
 	player = GameObject.Find("PlayerStatus")

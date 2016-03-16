@@ -21,7 +21,8 @@ function Instantiate () {
 	var numShips : int = 0;
 
 	for(var i = 0; i < player.ships.length; i++){
-		if((player.ships[i].location == player.location
+		if((player.ships[i].traveling && 
+			player.ships[i].location == player.location
 			&& player.currShip != i) || !excludeCurrShip)
 			numShips++;
 	}

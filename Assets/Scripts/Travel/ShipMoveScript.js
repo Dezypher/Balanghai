@@ -83,7 +83,7 @@ var d :float;
 var cx :float;
 var cy :float;
 var elapsed = Time.time - time_start;
-  Debug.Log( elapsed + "s have elapsed.");
+  //Debug.Log( elapsed + "s have elapsed.");
 
 //i= source area
 //j= destination
@@ -102,7 +102,7 @@ var elapsed = Time.time - time_start;
 	if(elapsed<=totalTime){
 	boats[boatindex].position.x=GetVector3(i).x-cx*((elapsed/totalTime)*d);
 	boats[boatindex].position.y=GetVector3(i).y-cy*((elapsed/totalTime)*d);
-	Debug.Log("moving");
+	//Debug.Log("moving");
 	}
 	 
 	
