@@ -30,8 +30,8 @@ function Start () {
 
 function settoplace(){
 	for(var i=0;i<boats.length;i++){
-		boats[i].position.x=GetVector3(player.ships[i].location-1).x;
-		boats[i].position.y=GetVector3(player.ships[i].location-1).y;
+		boats[i].position.x=GetVector3(player.ships[i].location).x;
+		boats[i].position.y=GetVector3(player.ships[i].location).y;
 	}
 }
 
@@ -76,51 +76,65 @@ function Distance (x1:float,y1:float,x2:float,y2:float) {
 }
 var dink  : float;
 dink=0;
+
+
+
+
+
 function move(i: int,j: int,boatindex:int,totalTime:float){
-var dx :float;
-var	dy :float;
-var d :float;
-var cx :float;
-var cy :float;
-var elapsed = Time.time - time_start;
-  //Debug.Log( elapsed + "s have elapsed.");
-
-//i= source area
-//j= destination
-			dx=(GetVector3(i).x-GetVector3(j).x);
-			dy=(GetVector3(i).y-GetVector3(j).y);
-			
-			d=Mathf.Sqrt((dx*dx)+(dy*dy)); 
-			cx=dx/d;
-			cy=dy/d;
-			
-			//Debug.Log("THE VALUE_d_"+d);
+	var dx :float;
+	var	dy :float;
+	var d :float;
+	var cx :float;
+	var cy :float;
+	var elapsed = Time.time - time_start;
+	  //Debug.Log( elapsed + "s have elapsed.");
 
 
-	 //boats[boatindex].position.x=GetVector3(i).x-cx*Time.deltaTime*10 totalTime;
-	// boats[boatindex].position.y=GetVector3(i).y-cy*Time.deltaTime*10 totalTime;>=
-	if(elapsed<=totalTime){
-	boats[boatindex].position.x=GetVector3(i).x-cx*((elapsed/totalTime)*d);
-	boats[boatindex].position.y=GetVector3(i).y-cy*((elapsed/totalTime)*d);
-	//Debug.Log("moving");
+				dx=(GetVector3(i).x-GetVector3(j).x);
+				dy=(GetVector3(i).y-GetVector3(j).y);
+				
+				d=Mathf.Sqrt((dx*dx)+(dy*dy)); 
+				cx=dx/d;
+				cy=dy/d;
+				
+
+
+
+
+		if(elapsed<=totalTime){
+		boats[boatindex].position.x=GetVector3(i).x-cx*((elapsed/totalTime)*d);
+		boats[boatindex].position.y=GetVector3(i).y-cy*((elapsed/totalTime)*d);
+		Debug.Log("moving");
+		}else{
+		player.ships[boatindex].location=player.ships[boatindex].destination;
+		//player.ships[boatindex].destination=-1;
+
+
+		}
+		 
+		
 	}
-	 
-	
-}
 
 
 
 
 
 
-function Update(){
+	function Update(){
 
 
 
-move(player.ships[0].location-1,2,0,3);
-move(player.ships[1].location-1,4,1,10);
+			for(var i=0;i<boats.length;i++){
+			if(player.ships[i].destination>0){
+				move(player.ships[i].location,player.ships[i].destination,i,30);
+			}
+			}
+
+	//move(player.ships[0].location-1,2,0,3);
+	//move(player.ships[1].location-1,4,1,10);
 
 
-dink=dink+.1;
+	//dink=dink+.1;
 
 }

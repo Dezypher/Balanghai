@@ -1588,7 +1588,7 @@ MonoBehaviour:
           quantity: 0
       shipWidth: 500
       shipHeight: 150
-      destination: -1
+      destination: 3
     - shipName: Balanghai
       sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
       icon: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f, type: 3}
@@ -1705,7 +1705,7 @@ MonoBehaviour:
           quantity: 0
       shipWidth: 700
       shipHeight: 340
-      destination: -1
+      destination: 4
     cargo:
       capacity: 200
       amtInCargo: 0
@@ -2146,6 +2146,82 @@ MonoBehaviour:
     coordX: 1200
     coordY: 800
   - name: Kagisnan
+    market:
+      cargo:
+        capacity: 3
+        amtInCargo: 3
+        currWeight: 0
+        cargo:
+        - itemID: 2
+          quantity: 10
+        - itemID: 3
+          quantity: 10
+        - itemID: 4
+          quantity: 10
+      shopPriceRatio: 0.9
+      itemPriceRatio: []
+      gold: 500
+    backgroundID: 1
+    coordX: 900
+    coordY: 700
+  - name: Mapawikan
+    market:
+      cargo:
+        capacity: 3
+        amtInCargo: 3
+        currWeight: 0
+        cargo:
+        - itemID: 2
+          quantity: 10
+        - itemID: 3
+          quantity: 10
+        - itemID: 4
+          quantity: 10
+      shopPriceRatio: 0.9
+      itemPriceRatio: []
+      gold: 500
+    backgroundID: 1
+    coordX: 900
+    coordY: 700
+  - name: Atabay
+    market:
+      cargo:
+        capacity: 3
+        amtInCargo: 3
+        currWeight: 0
+        cargo:
+        - itemID: 2
+          quantity: 10
+        - itemID: 3
+          quantity: 10
+        - itemID: 4
+          quantity: 10
+      shopPriceRatio: 0.9
+      itemPriceRatio: []
+      gold: 500
+    backgroundID: 1
+    coordX: 900
+    coordY: 700
+  - name: Balasin
+    market:
+      cargo:
+        capacity: 3
+        amtInCargo: 3
+        currWeight: 0
+        cargo:
+        - itemID: 2
+          quantity: 10
+        - itemID: 3
+          quantity: 10
+        - itemID: 4
+          quantity: 10
+      shopPriceRatio: 0.9
+      itemPriceRatio: []
+      gold: 500
+    backgroundID: 1
+    coordX: 900
+    coordY: 700
+  - name: Lungon
     market:
       cargo:
         capacity: 3
