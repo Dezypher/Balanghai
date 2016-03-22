@@ -57,8 +57,14 @@ class QuestGenerator extends MonoBehaviour {
 	}
 
 	function Start() {
-		for(var i : int = 1; i < 5; i++) {
-			generateQuest();
+		if(GameObject.Find("AvailableQuest").GetComponent(PersistentQuests).availableQuests == null) {
+			for(var i : int = 1; i < 5; i++) {
+				generateQuest();
+			}
+			GameObject.Find("AvailableQuest").GetComponent(PersistentQuests).availableQuests = this.availableQuests;
+		}
+		else {
+			availableQuests = GameObject.Find("AvailableQuest").GetComponent(PersistentQuests).availableQuests;
 		}
 		DisplayAvailableQuests();
 	}

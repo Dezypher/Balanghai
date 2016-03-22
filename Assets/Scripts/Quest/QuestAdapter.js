@@ -32,7 +32,7 @@ class QuestAdapter extends MonoBehaviour {
 			
 		questView.transform.GetChild(0).GetComponent(UI.Text).text = questModel.location;
 		if(type == 2) {
-			questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).fontSize = 14;
+			questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).fontSize = 50;
 			if(!questModel.accomplished)
 				questView.transform.GetChild(3).transform.GetChild(0).GetComponent(UI.Text).text = "Abandon";
 			else
