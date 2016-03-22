@@ -3169,7 +3169,7 @@ MonoBehaviour:
   numPrefabs: 0
   autoGenerate: 0
   prefabReference: {fileID: 150428, guid: 92238d2d541050c4b90074ae752e3534, type: 2}
-  spacing: 10
+  spacing: 30
   panelHeight: 0
   panelWidth: 1000
   leftPadding: 0
