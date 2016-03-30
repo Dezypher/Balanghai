@@ -32,7 +32,7 @@ function Instantiate () {
 		var shipType = player.ships[shipIndex].type;
 		var location = player.ships[shipIndex].location;
 
-		if((location == player.location && player.currShip != shipIndex)
+		if((!player.ships[i].traveling && location == player.location && player.currShip != shipIndex)
 			|| !excludeCurrShip){
 			buttons[i].GetComponent(ShipListButton).SetShip(shipIndex);
 		}else i--;

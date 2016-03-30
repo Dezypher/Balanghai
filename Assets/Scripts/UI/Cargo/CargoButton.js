@@ -27,10 +27,10 @@ function SetItem (itemID : int, quantity : int) {
 	ChangeText(quantity + " " + cargoReference.cargos[itemID].cargoName);
 	var type : int = cargoReference.GetComponent(CargoRefScript).cargos[itemID].type;
 	var weightText : String;
-	weightText = cargoReference.cargos[itemID].weight * quantity + " (" 
-				+ cargoReference.cargos[itemID].weight + " each)";
+	weightText = cargoReference.cargos[itemID].weight * quantity + "kg (" 
+				+ cargoReference.cargos[itemID].weight + "kg each)";
 	if(hasPrice)
-		ChangePrice(tradeHandler.GetPrice(itemID, 1, false) + " each");
+		ChangePrice(tradeHandler.GetPrice(itemID, 1, false) + " gold each");
 	ChangeWeightText(weightText);
 	ChangeTypeText(UIReference.typeName[type]);
 	ChangeTypeSprite(UIReference.typeIcons[type]);
