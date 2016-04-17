@@ -57,6 +57,8 @@ MonoBehaviour:
     shipWidth: 0
     shipHeight: 0
     destination: -1
+    voyageStartTime: 0
+    voyageEndTime: 0
   - shipName: Bangka
     sprite: {fileID: 21300000, guid: b7f8d8273c4e94846997940fbfc268b7, type: 3}
     icon: {fileID: 21300000, guid: 8baa3df07f78d7940adeef3f4f04d827, type: 3}
@@ -73,7 +75,9 @@ MonoBehaviour:
       cargo: []
     shipWidth: 0
     shipHeight: 0
-    destination: -1
+    destination: 3
+    voyageStartTime: 0
+    voyageEndTime: 0
   - shipName: Balanghai
     sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
     icon: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f, type: 3}
@@ -90,7 +94,9 @@ MonoBehaviour:
       cargo: []
     shipWidth: 0
     shipHeight: 0
-    destination: -1
+    destination: 3
+    voyageStartTime: 0
+    voyageEndTime: 0
   - shipName: Junk
     sprite: {fileID: 21300000, guid: 1d5b66a78deb4184f9726371df07c138, type: 3}
     icon: {fileID: 21300000, guid: 7b3f320aa874684448f07f66a122a4d0, type: 3}
@@ -108,6 +114,8 @@ MonoBehaviour:
     shipWidth: 0
     shipHeight: 0
     destination: -1
+    voyageStartTime: 0
+    voyageEndTime: 0
   - shipName: Proa
     sprite: {fileID: 21300000, guid: 4e85acd73e630324387f1d3e988f2dbc, type: 3}
     icon: {fileID: 21300000, guid: d5318935a95995740a680afdb2fc554f, type: 3}
@@ -125,6 +133,8 @@ MonoBehaviour:
     shipWidth: 0
     shipHeight: 0
     destination: -1
+    voyageStartTime: 0
+    voyageEndTime: 0
   - shipName: Vinta
     sprite: {fileID: 21300000, guid: d5368f289d5d1784ab8e7136590e4192, type: 3}
     icon: {fileID: 21300000, guid: 556791c5972bf0443ab4ecfe17b5d30d, type: 3}
@@ -142,6 +152,8 @@ MonoBehaviour:
     shipWidth: 0
     shipHeight: 0
     destination: -1
+    voyageStartTime: 0
+    voyageEndTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

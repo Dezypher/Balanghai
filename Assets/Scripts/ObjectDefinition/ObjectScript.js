@@ -30,6 +30,8 @@ class Ship {
 	var shipWidth : int;
 	var shipHeight : int;
 	var destination : int = -1;
+	var voyageStartTime :float;
+	var voyageEndTime :float;
 }
 
 class Settlement {
@@ -49,9 +51,16 @@ class Player {
 	var cargo : CargoHolder;
 	var location : int;
 	var quests : Array = new Array();
+	var time_start : float;
+
 
 	function addQuest(newQuest : Quest) {
 		quests.Push(newQuest);
+	}
+
+	function startTimer(){
+		time_start=Time.time;
+		Debug.Log("timer started:"+time_start);
 	}
 
 	function removeQuest(index : int) {

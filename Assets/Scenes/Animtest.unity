@@ -194,10 +194,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22449954, guid: 1373affeb20f0674083de23cdebb4b93, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.02531738
       objectReference: {fileID: 0}
     - target: {fileID: 22449954, guid: 1373affeb20f0674083de23cdebb4b93, type: 2}
       propertyPath: m_LocalRotation.w
+      value: -0.99967945
+      objectReference: {fileID: 0}
+    - target: {fileID: 22401076, guid: 1373affeb20f0674083de23cdebb4b93, type: 2}
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -492,6 +496,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

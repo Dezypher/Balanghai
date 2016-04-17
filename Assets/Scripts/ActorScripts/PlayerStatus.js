@@ -13,4 +13,5 @@ function Awake(){
 
 		DontDestroyOnLoad(this.gameObject);
 	}else Destroy(this.gameObject);
+	player.startTimer();
 }
