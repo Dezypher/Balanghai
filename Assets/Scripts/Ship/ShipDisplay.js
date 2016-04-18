@@ -2,8 +2,8 @@
 
 public var buttons : GameObject[];
 public var autoInstantiate : boolean;
-public var filter : int = 8;
 public var excludeCurrShip : boolean = true;
+public var forTravel : boolean;
 
 private var player : Player;
 private var instantiated : boolean;
@@ -32,10 +32,14 @@ function Instantiate () {
 		var shipType = player.ships[shipIndex].type;
 		var location = player.ships[shipIndex].location;
 
-		if((!player.ships[i].traveling && location == player.location && player.currShip != shipIndex)
-			|| !excludeCurrShip){
+		if(!forTravel){
+			if(((!player.ships[i].traveling && location == player.location && player.currShip != shipIndex)
+				|| !excludeCurrShip)){
+				buttons[i].GetComponent(ShipListButton).SetShip(shipIndex);
+			} else i--;
+		} else if(forTravel && !player.ships[shipIndex].traveling){
 			buttons[i].GetComponent(ShipListButton).SetShip(shipIndex);
-		}else i--;
+		} else i--;
 
 		shipIndex++;
 	}

@@ -3,6 +3,7 @@
 public var container : GameObject;
 public var autoInstantiate : boolean = true;
 public var excludeCurrShip : boolean = true;
+public var forTravel : boolean;
 
 private var shipReference : ShipReference;
 private var player : Player;
@@ -20,10 +21,18 @@ function Start () {
 function Instantiate () {
 	var numShips : int = 0;
 
+	Debug.Log("playerShipsLength: " + player.ships.length);
+
 	for(var i = 0; i < player.ships.length; i++){
-		if	(!player.ships[i].traveling && 
-			player.ships[i].location == player.location
-			&& (player.currShip != i || !excludeCurrShip)){
+
+		if(!forTravel) {
+			if((!player.ships[i].traveling && 
+				player.ships[i].location == player.location
+				&& (player.currShip != i || !excludeCurrShip)) 
+				){
+				numShips++;
+			}
+		} else if(forTravel && !player.ships[i].traveling){
 			numShips++;
 		}
 	}

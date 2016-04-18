@@ -91,23 +91,34 @@ function move(i: int,j: int,boatindex:int,totalTime:float){
 	var cy :float;
 	//var elapsed = Time.time - time_start;
 	var elapsed = Time.time;
+
+	var total_time :float;
+	var voyage_time:float;
+	total_time=player.ships[boatindex].voyageEndTime-player.ships[boatindex].voyageStartTime;
+	voyage_time=elapsed-player.ships[boatindex].voyageStartTime;
+
+
+
+
+
+
+
 	  //Debug.Log( elapsed + "s have elapsed.");
 
 
 				dx=(GetVector3(i).x-GetVector3(j).x);
 				dy=(GetVector3(i).y-GetVector3(j).y);
-				
 				d=Mathf.Sqrt((dx*dx)+(dy*dy)); 
 				cx=dx/d;
 				cy=dy/d;
-				
 
 
 
 
-		if(elapsed<=totalTime){
-		boats[boatindex].position.x=GetVector3(i).x-cx*((elapsed/totalTime)*d);
-		boats[boatindex].position.y=GetVector3(i).y-cy*((elapsed/totalTime)*d);
+
+		if(total_time<=voyage_time && player.ships[boatindex].destination!=-1){
+		boats[boatindex].position.x=GetVector3(i).x-cx*((total_time/voyage_time)*d);
+		boats[boatindex].position.y=GetVector3(i).y-cy*((total_time/voyage_time)*d);
 		player.ships[boatindex].traveling=true;
 		//Debug.Log("moving");
 		}else{
@@ -132,7 +143,7 @@ function move(i: int,j: int,boatindex:int,totalTime:float){
 
 			for(var i=0;i<boats.length;i++){
 				if(player.ships[i].destination>0){
-					move(player.ships[i].location,player.ships[i].destination,i,100/player.ships[i].speed);
+					move(player.ships[i].location,player.ships[i].destination,i,50/player.ships[i].speed);
 				}
 			}
 
