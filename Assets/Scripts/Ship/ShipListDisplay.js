@@ -8,7 +8,7 @@ public var forTravel : boolean;
 private var shipReference : ShipReference;
 private var player : Player;
 
-function Start () {
+function Awake () {
 	player = GameObject.Find("PlayerStatus")
 				.GetComponent(PlayerStatus).player;
 	shipReference = (Resources.Load("Reference/ShipReference") as GameObject)
@@ -20,8 +20,6 @@ function Start () {
 
 function Instantiate () {
 	var numShips : int = 0;
-
-	Debug.Log("playerShipsLength: " + player.ships.length);
 
 	for(var i = 0; i < player.ships.length; i++){
 
