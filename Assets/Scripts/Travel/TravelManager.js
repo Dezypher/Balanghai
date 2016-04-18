@@ -20,7 +20,9 @@ function Send(shipIndex : int){
 	difference=10;
 	player.ships[shipIndex].voyageStartTime=Time.time;
 	player.ships[shipIndex].voyageEndTime=Time.time+difference;
-	Debug.Log("start:"+player.ships[shipIndex].voyageStartTime);
-	Debug.Log("end:"+player.ships[shipIndex].voyageEndTime);
+	Debug.Log("starts at:"+player.ships[shipIndex].voyageStartTime);
+	Debug.Log("ends at:"+player.ships[shipIndex].voyageEndTime);
+	//player.ships[shipIndex].traveling=true;
+
 
 }
