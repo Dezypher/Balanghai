@@ -80,7 +80,7 @@ class QuestAdapter extends MonoBehaviour {
 		if(player != null) {
 			questModel.RewardPlayer(player.GetComponent(PlayerStatus).player);
 			player.GetComponent(PlayerStatus).player.removeQuest(index);
-			var temp : GameObject = Instantiate(Resources.Load("Prefabs/QuestScreen/QuestCompleted"));
+			var temp : GameObject = Instantiate(Resources.Load("Prefabs/QuestScreen/QuestCompleted")) as GameObject;
 			var rewardCargo : Cargo = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos[questModel.rewardCargoID];
 			temp.transform.SetParent(GameObject.Find("Canvas").transform,false);
 			temp.transform.GetChild(2).GetComponent(UI.Image).sprite = rewardCargo.sprite;
