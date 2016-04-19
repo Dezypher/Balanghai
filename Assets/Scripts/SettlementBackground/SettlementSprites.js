@@ -20,21 +20,27 @@ function Start () {
 }
 
 function ChangeSprite (settlementID : int) {
-	var backgroundID = settlements.settlements[settlementID].backgroundID;
+	if(!player.ships[player.currShip].traveling){
+		var backgroundID = settlements.settlements[settlementID].backgroundID;
 
-	if(instantiated){
-		Destroy(currentBackground);
-	}else instantiated = true;
+		if(instantiated){
+			Destroy(currentBackground);
+		} else instantiated = true;
 
-	var background : GameObject = 
-			Instantiate(backgroundReference.backgrounds[backgroundID]);
+		var background : GameObject = 
+				Instantiate(backgroundReference.backgrounds[backgroundID]);
 
-	background.transform.SetParent(backgroundHolder);
-	background.transform.localScale.x = 1;
-	background.transform.localScale.y = 1;
-	background.transform.localScale.z = 1;
-	background.GetComponent(RectTransform).anchoredPosition = 
-		new Vector2 (0, 0);
+		background.transform.SetParent(backgroundHolder);
+		background.transform.localScale.x = 1;
+		background.transform.localScale.y = 1;
+		background.transform.localScale.z = 1;
+		background.GetComponent(RectTransform).anchoredPosition = 
+			new Vector2 (0, 0);
 
-	currentBackground = background;
+		currentBackground = background;
+	} else {
+		if(instantiated){
+			Destroy(currentBackground);
+		} else instantiated = true;
+	}
 }
