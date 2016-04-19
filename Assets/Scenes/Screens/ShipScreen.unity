@@ -698,7 +698,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779018812}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.12510312, y: -312.25}
@@ -1592,6 +1592,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &627745256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 627745257}
+  m_Layer: 5
+  m_Name: Waves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &627745257
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627745256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1779018812}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1280, y: 800}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &688865957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundHolder: {fileID: 1024970246}
+  wavesHolder: {fileID: 627745257}
   currentBackground: {fileID: 0}
   instantiated: 0
   minNumHumans: 2
@@ -3547,6 +3580,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 265948937}
+  - {fileID: 627745257}
   - {fileID: 261558085}
   m_Father: {fileID: 159488293}
   m_RootOrder: 1

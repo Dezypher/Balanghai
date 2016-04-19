@@ -60,7 +60,6 @@ class Player {
 
 	function startTimer(){
 		time_start=Time.time;
-		Debug.Log("timer started:"+time_start);
 	}
 
 	function removeQuest(index : int) {

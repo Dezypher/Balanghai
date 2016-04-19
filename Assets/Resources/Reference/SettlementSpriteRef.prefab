@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129f170cf2f02094a98672f69a8cbfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waves: {fileID: 123184, guid: f756352739f069046b8054d51d1e55dc, type: 2}
   backgrounds:
   - {fileID: 190812, guid: 61945b790decbd943807646957ffb549, type: 2}
   - {fileID: 122026, guid: 12486e1c9b3f45d47a6f566d93016adb, type: 2}
