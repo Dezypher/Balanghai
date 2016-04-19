@@ -468,7 +468,7 @@ RectTransform:
   - {fileID: 2102957480}
   - {fileID: 1412026380}
   m_Father: {fileID: 175191073}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.2981439, y: 0.53800005}
   m_AnchorMax: {x: 0.5, y: 0.6956667}
   m_AnchoredPosition: {x: 319.5, y: -294}
@@ -534,7 +534,7 @@ RectTransform:
   - {fileID: 274967249}
   - {fileID: 42428443}
   m_Father: {fileID: 175191073}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.62200004, y: 0.58666664}
   m_AnchorMax: {x: 0.81600004, y: 0.6716667}
   m_AnchoredPosition: {x: 0, y: -0.1650238}
@@ -639,6 +639,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 126807839}
+  - {fileID: 1820614087}
   - {fileID: 139253478}
   - {fileID: 1324255041}
   - {fileID: 649665144}
@@ -1327,6 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f049f5c21722a4a80a381dd85858ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weight: 100
   destination: 0
 --- !u!4 &460692937
 Transform:
@@ -1763,7 +1765,7 @@ RectTransform:
   - {fileID: 974424308}
   - {fileID: 775864461}
   m_Father: {fileID: 175191073}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 479, y: 35}
@@ -2494,7 +2496,7 @@ RectTransform:
   - {fileID: 405316738}
   - {fileID: 2128322433}
   m_Father: {fileID: 175191073}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.62200004, y: 0.58666664}
   m_AnchorMax: {x: 0.81600004, y: 0.6716667}
   m_AnchoredPosition: {x: 26, y: -268}
@@ -3105,7 +3107,7 @@ RectTransform:
   - {fileID: 1136707468}
   - {fileID: 2090143423}
   m_Father: {fileID: 175191073}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.37914398, y: 0.6956667}
   m_AnchorMax: {x: 0.57033336, y: 0.7736667}
   m_AnchoredPosition: {x: 4.5, y: 0}
@@ -4007,6 +4009,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1280, y: 800}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1820614086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1820614087}
+  m_Layer: 5
+  m_Name: BoatLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1820614087
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820614086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 175191073}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 3000, y: 1500}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1831115110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,7 +4440,7 @@ RectTransform:
   - {fileID: 34888972}
   - {fileID: 545864226}
   m_Father: {fileID: 175191073}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0.329144, y: 0.57910323}
   m_AnchorMax: {x: 0.522, y: 0.66433334}
   m_AnchoredPosition: {x: 57, y: -429.52}

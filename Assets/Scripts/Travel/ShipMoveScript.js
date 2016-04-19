@@ -42,7 +42,7 @@ function loadBoats(){
 		for(var i=0;i<boats.length;i++){
 			var shipPrefab = Instantiate(Resources.Load("Prefabs/MapScreen/boat")) as GameObject;
 
-			shipPrefab.transform.SetParent(GameObject.Find("Map").transform);
+			shipPrefab.transform.SetParent(GameObject.Find("BoatLoader").transform);
 			shipPrefab.transform.localScale.x = 1;
 			shipPrefab.transform.localScale.y = 1;
 			shipPrefab.GetComponent(UI.Image).sprite=shipReference.ships[player.ships[i].type].icon;

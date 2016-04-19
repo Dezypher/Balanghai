@@ -1,6 +1,8 @@
 ﻿#pragma strict
 
 private var player : Player;
+
+public var weight : float;
 public var destination : int;
 
 function Start () {
@@ -13,11 +15,9 @@ function SetDestination(destinationID : int){
 }
 
 function Send(shipIndex : int){
-	var difference : float;
 	player.ships[shipIndex].destination = destination;
 
-
-	difference=10;
+	var difference = weight/player.ships[shipIndex].speed;
 	player.ships[shipIndex].voyageStartTime=Time.time;
 	player.ships[shipIndex].voyageEndTime=Time.time+difference;
 	Debug.Log("starts at:"+player.ships[shipIndex].voyageStartTime);
