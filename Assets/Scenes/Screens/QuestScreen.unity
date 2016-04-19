@@ -1120,7 +1120,7 @@ GameObject:
   - 222: {fileID: 741073279}
   - 114: {fileID: 741073278}
   m_Layer: 5
-  m_Name: Return Text
+  m_Name: Reward Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,7 +1175,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RETURN
+  m_Text: 'REWARD
+
+'
 --- !u!222 &741073279
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1828,7 +1830,7 @@ GameObject:
   - 222: {fileID: 1078043699}
   - 114: {fileID: 1078043698}
   m_Layer: 5
-  m_Name: Trade At Text
+  m_Name: Looking For Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1848,8 +1850,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: 0}
-  m_SizeDelta: {x: 250, y: 60}
+  m_AnchoredPosition: {x: -314, y: 0}
+  m_SizeDelta: {x: 350, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078043698
 MonoBehaviour:
@@ -1883,7 +1885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TRADE AT
+  m_Text: LOOKING FOR
 --- !u!222 &1078043699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1968,7 +1970,7 @@ GameObject:
   - 222: {fileID: 1159104063}
   - 114: {fileID: 1159104062}
   m_Layer: 5
-  m_Name: 'Demand Text '
+  m_Name: At Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2023,7 +2025,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DEMAND
+  m_Text: 'AT
+
+'
 --- !u!222 &1159104063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2214,6 +2218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredAmountMax: 10
   questList: {fileID: 2098499415}
+  availableButton: {fileID: 627112541}
+  currentButton: {fileID: 341528243}
 --- !u!1 &1284304310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2741,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
