@@ -2302,6 +2302,8 @@ MonoBehaviour:
   backgroundHolder: {fileID: 1024970246}
   currentBackground: {fileID: 0}
   instantiated: 0
+  minNumHumans: 2
+  maxNumHumans: 6
 --- !u!1 &1024970245
 GameObject:
   m_ObjectHideFlags: 0
