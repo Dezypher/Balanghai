@@ -114,6 +114,9 @@ function move(boatindex:int){
 
 
 
+				//Debug.DrawLine (GetVector3(player.ships[boatindex].location), GetVector3(player.ships[boatindex].destination), Color.red);
+
+
 
 
 		if(voyage_time<total_time){
@@ -141,7 +144,7 @@ function move(boatindex:int){
 
 
 	function Update(){
-
+	//Debug.DrawLine (Vector3.zero, new Vector3 (500, 500, 0), Color.red);
 
 
 			for(var i=0;i<boats.length;i++){

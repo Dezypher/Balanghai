@@ -1580,8 +1580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648a2a495dcaa6d48a0b6bf86cf102f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockimage: {fileID: 21300000, guid: 7f4a83bee43712343870dfdf346235f9, type: 3}
-  placeimage: {fileID: 21300000, guid: 9e51a54358e9eeb4da44e2fd33de3d67, type: 3}
+  lockimage: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
+  placeimage: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
   currentimage: {fileID: 545864228}
 --- !u!1 &549608814
 GameObject:
@@ -1853,7 +1853,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2332,6 +2331,7 @@ GameObject:
   - 222: {fileID: 775864464}
   - 114: {fileID: 775864463}
   - 114: {fileID: 775864462}
+  - 114: {fileID: 775864465}
   m_Layer: 5
   m_Name: Travel
   m_TagString: Untagged
@@ -2428,6 +2428,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 775864465}
+        m_MethodName: changeimage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &775864463
@@ -2449,7 +2460,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2463,6 +2474,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 775864460}
+--- !u!114 &775864465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775864460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648a2a495dcaa6d48a0b6bf86cf102f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockimage: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
+  placeimage: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
+  currentimage: {fileID: 775864463}
 --- !u!1 &839015400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,7 +3265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1191743566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3260,7 +3285,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: -0.22055817, y: 0.00004482668}
   m_SizeDelta: {x: 1280, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191743567
@@ -3748,6 +3773,7 @@ GameObject:
   - 222: {fileID: 1412026383}
   - 114: {fileID: 1412026382}
   - 114: {fileID: 1412026381}
+  - 114: {fileID: 1412026384}
   m_Layer: 5
   m_Name: Travel
   m_TagString: Untagged
@@ -3844,6 +3870,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1412026384}
+        m_MethodName: changeimage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1412026382
@@ -3865,7 +3902,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3879,6 +3916,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1412026379}
+--- !u!114 &1412026384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412026379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648a2a495dcaa6d48a0b6bf86cf102f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockimage: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
+  placeimage: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
+  currentimage: {fileID: 1412026382}
 --- !u!1 &1452442332
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5797,7 @@ GameObject:
   - 222: {fileID: 2128322436}
   - 114: {fileID: 2128322435}
   - 114: {fileID: 2128322434}
+  - 114: {fileID: 2128322437}
   m_Layer: 5
   m_Name: Travel
   m_TagString: Untagged
@@ -5842,6 +5894,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2128322437}
+        m_MethodName: changeimage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2128322435
@@ -5863,7 +5926,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5877,3 +5940,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2128322432}
+--- !u!114 &2128322437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2128322432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648a2a495dcaa6d48a0b6bf86cf102f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockimage: {fileID: 21300000, guid: a6c7639b335de6744bdffdd431a897b3, type: 3}
+  placeimage: {fileID: 21300000, guid: 0d34674b0d25d674cbe49266a2f0a446, type: 3}
+  currentimage: {fileID: 2128322435}
