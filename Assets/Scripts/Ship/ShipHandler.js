@@ -3,7 +3,6 @@
 public var currShip : int;
 public var baseCapacity : int;
 public var shipSprite : UI.Image;
-public var shipPopup : GameObject;
 public var shipType : UI.Text;
 public var shipCapacity : UI.Text;
 public var hullStrength : UI.Text;
@@ -31,11 +30,9 @@ function SwitchShip (index : int){
 	else if(currShip >= player.ships.length)
 		currShip = 0;
 
-	shipPopup.SetActive(true);
 	shipType.text = shipReference.ships[player.ships[currShip].type].shipName;
 	shipCapacity.text = "" + shipReference.ships[player.ships[currShip].type].capacity;
 	hullStrength.text = "" + shipReference.ships[player.ships[currShip].type].hullStrength;
-	shipPopup.SetActive(false);
 
 	shipSprite.sprite = player.ships[currShip].sprite;
 	shipSprite.GetComponent(RectTransform).sizeDelta.x = 
