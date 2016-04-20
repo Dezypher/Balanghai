@@ -289,7 +289,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2342,6 +2341,8 @@ MonoBehaviour:
     backgroundID: 0
     coordX: 0
     coordY: 0
+    unlocked: 0
+    price: 0
   - name: Sikdagat
     market:
       cargo:
@@ -2361,6 +2362,8 @@ MonoBehaviour:
     backgroundID: 0
     coordX: 1200
     coordY: 800
+    unlocked: 1
+    price: 0
   - name: Kagisnan
     market:
       cargo:
@@ -2380,6 +2383,8 @@ MonoBehaviour:
     backgroundID: 1
     coordX: 900
     coordY: 700
+    unlocked: 1
+    price: 0
   - name: Mapawikan
     market:
       cargo:
@@ -2399,6 +2404,8 @@ MonoBehaviour:
     backgroundID: 1
     coordX: 900
     coordY: 700
+    unlocked: 0
+    price: 100
   - name: Atabay
     market:
       cargo:
@@ -2418,6 +2425,8 @@ MonoBehaviour:
     backgroundID: 1
     coordX: 900
     coordY: 700
+    unlocked: 0
+    price: 300
   - name: Balasin
     market:
       cargo:
@@ -2437,6 +2446,8 @@ MonoBehaviour:
     backgroundID: 1
     coordX: 900
     coordY: 700
+    unlocked: 0
+    price: 500
   - name: Lungon
     market:
       cargo:
@@ -2456,6 +2467,8 @@ MonoBehaviour:
     backgroundID: 1
     coordX: 900
     coordY: 700
+    unlocked: 0
+    price: 900
 --- !u!4 &936437721
 Transform:
   m_ObjectHideFlags: 0
