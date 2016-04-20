@@ -25,7 +25,7 @@ function Start () {
 	settoplace();
 
 	time_start=Time.time;
-	Debug.Log("time at boats"+time_start);
+	//Debug.Log("time at boats"+time_start);
 
 }
 
@@ -120,14 +120,14 @@ function move(boatindex:int){
 		boats[boatindex].position.x=GetVector3(player.ships[boatindex].location).x-cx*((voyage_time/total_time)*d);
 		boats[boatindex].position.y=GetVector3(player.ships[boatindex].location).y-cy*((voyage_time/total_time)*d);
 		player.ships[boatindex].traveling=true;
-		Debug.Log("moving");
+		//Debug.Log("moving");
 		}else{
 		player.ships[boatindex].location=player.ships[boatindex].destination;
 
 		boats[boatindex].position.x=GetVector3(player.ships[boatindex].location).x;
 		boats[boatindex].position.y=GetVector3(player.ships[boatindex].location).y;
 
-		Debug.Log("arrived: at"+player.ships[boatindex].location);
+		//Debug.Log("arrived: at"+player.ships[boatindex].location);
 		player.ships[boatindex].destination=-1;
 		player.ships[boatindex].traveling=false;
 		}

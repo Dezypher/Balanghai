@@ -667,12 +667,12 @@ MonoBehaviour:
   m_Content: {fileID: 175191073}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 0}
+  m_Viewport: {fileID: 1652468703}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 0
@@ -3240,7 +3240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1191743566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4562,7 +4562,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 640, y: 460.21}
+  m_AnchoredPosition: {x: 639.99976, y: 399.99988}
   m_SizeDelta: {x: 1280, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652468704
@@ -4576,7 +4576,7 @@ MonoBehaviour:
   m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
 --- !u!114 &1652468705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4660,6 +4660,7 @@ MonoBehaviour:
   villageName: {fileID: 929479197}
   playerName: {fileID: 55816951}
   goldAmt: {fileID: 676284850}
+  shipScreen: 0
 --- !u!1 &1752531456
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,7 +5531,6 @@ GameObject:
   - 222: {fileID: 2090143426}
   - 114: {fileID: 2090143425}
   - 114: {fileID: 2090143424}
-  - 114: {fileID: 2090143427}
   m_Layer: 5
   m_Name: Travel
   m_TagString: Untagged
@@ -5662,17 +5662,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2090143422}
---- !u!114 &2090143427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2090143422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 757bb1be13ebb10479987d49a9f76fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2102957479
 GameObject:
   m_ObjectHideFlags: 0

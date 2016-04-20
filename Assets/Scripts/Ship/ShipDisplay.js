@@ -26,6 +26,12 @@ function Instantiate () {
 		until the index of the number of buttons.
 	*/
 
+	if(shipReference == null)
+		shipReference = Resources.Load("Reference/ShipReference") as GameObject;
+
+	if(player == null)
+		player = GameObject.Find("PlayerStatus").GetComponent(PlayerStatus).player;
+
 	var shipIndex = 0;
 
 	for(var i = 0; i < buttons.length; i++){

@@ -35,14 +35,20 @@ function Instantiate () {
 		}
 	}
 
-	Debug.Log("Ship Num: " + numShips);
+	//Debug.Log("Ship Num: " + numShips);
 
 	if(numShips > 0){
 		container.GetComponent(PrefabListGenerate).numPrefabs = numShips;
 		container.GetComponent(PrefabListGenerate).Generate();
 		container.GetComponent(ShipDisplay).buttons = container.GetComponent(PrefabListGenerate).generatedPrefabs;
 		container.GetComponent(ShipDisplay).Instantiate();
-	}else {
+	} else {
 		this.gameObject.SetActive(false);
+
+		if(forTravel){
+			AlertHandler.AlertPopup("No ships available to send!");
+		} else {
+			AlertHandler.AlertPopup("No ships in the village to transfer items to!");
+		}
 	}
 }

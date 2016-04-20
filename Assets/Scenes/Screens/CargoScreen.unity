@@ -391,6 +391,7 @@ MonoBehaviour:
   villageName: {fileID: 2137475038}
   playerName: {fileID: 195551159}
   goldAmt: {fileID: 1567358230}
+  shipScreen: 0
 --- !u!1 &89978035
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,8 +466,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1631942885}
   m_HandleRect: {fileID: 1631942884}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.825926
+  m_Value: 0.00000032465508
+  m_Size: 0.82592595
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2356,8 +2357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons: []
   autoInstantiate: 0
-  filter: 8
   excludeCurrShip: 1
+  forTravel: 0
 --- !u!114 &469227325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2442,6 +2443,7 @@ MonoBehaviour:
   container: {fileID: 469227319}
   autoInstantiate: 0
   excludeCurrShip: 1
+  forTravel: 0
 --- !u!114 &475958332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6021,6 +6023,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
