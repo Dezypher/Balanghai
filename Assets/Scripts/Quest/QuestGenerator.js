@@ -27,7 +27,7 @@ class QuestGenerator extends MonoBehaviour {
 		do {
 			locationIndex = Random.Range(1,settlementRef.GetComponent(Trader).settlements.length-1);
 		}while(currLocation == locationIndex);
-		var newQuest = new Quest();
+		var newQuest = new TradeQuest();
 		newQuest.requiredCargoID = requiredCargoID;
 		newQuest.requiredCargoAmount = requiredAmount;
 		newQuest.rewardCargoID = rewardCargoID;
@@ -36,12 +36,22 @@ class QuestGenerator extends MonoBehaviour {
 		availableQuests.push(newQuest);
 	}
 
+	function generateTranslationQuest() {
+		var newQuest = new TranslationQuest();
+		newQuest.stringToTranslate = "Magandang Araw";
+		availableQuests.push(newQuest);
+	}
+
+
 	function DisplayCurrentQuests() {
 		var player : GameObject = GameObject.Find("PlayerStatus"); 
 			questList.GetComponent(PrefabListGenerate).numPrefabs = player.GetComponent(PlayerStatus).player.quests.length;
 			questList.GetComponent(PrefabListGenerate).Generate();
 			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
-				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as Quest;
+				if(availableQuests[i].GetType() == TradeQuest)
+					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TradeQuest;
+				else if(availableQuests[i].GetType() == TranslationQuest)
+					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TranslationQuest;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 2;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
@@ -54,7 +64,10 @@ class QuestGenerator extends MonoBehaviour {
 			questList.GetComponent(PrefabListGenerate).numPrefabs = availableQuests.length;
 			questList.GetComponent(PrefabListGenerate).Generate();
 			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
-				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as Quest;
+				if(availableQuests[i].GetType() == TradeQuest)
+					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TradeQuest;
+				else if(availableQuests[i].GetType() == TranslationQuest)
+					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TranslationQuest;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 1;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
@@ -68,6 +81,7 @@ class QuestGenerator extends MonoBehaviour {
 			for(var i : int = 1; i < 5; i++) {
 				generateQuest();
 			}
+			generateTranslationQuest();
 			GameObject.Find("AvailableQuest").GetComponent(PersistentQuests).availableQuests = this.availableQuests;
 		}
 		else {

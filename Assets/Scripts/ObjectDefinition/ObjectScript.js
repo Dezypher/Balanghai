@@ -68,7 +68,8 @@ class Player {
 
 	function notifyQuests(cargoID : int, quantity : int) {
 		for(var i : int = 0; i < quests.length; i++) {
-			(quests[i]as Quest).notify(cargoID,quantity);
+			if(quests[i].GetType() == TradeQuest)
+				(quests[i]as TradeQuest).notify(cargoID,quantity);
 		}
 	}
 }
@@ -108,13 +109,20 @@ class InventorySlot {
 
 
 class Quest {
-	var requiredCargoID : int;
-	var requiredCargoAmount : int;
 	var rewardCargoID : int;
 	var rewardCargoAmount : int;
-	var location : String;
 	var accomplished : boolean = false;
 	var id : int;
+
+	function RewardPlayer(player : Player) {
+		player.ships[player.currShip].cargo.AddCargo(rewardCargoID,rewardCargoAmount); //rewardCargo
+	}
+}
+
+class TradeQuest extends Quest {
+	var requiredCargoID : int;
+	var requiredCargoAmount : int;
+	var location : String;
 
 	//Check if a ship of a player is located in the location
 	function CheckLocation(player : Player) {
@@ -132,10 +140,6 @@ class Quest {
 		return player.cargo.CheckCargo(requiredCargoID,requiredCargoAmount);
 	}
 
-	function RewardPlayer(player : Player) {
-		player.ships[player.currShip].cargo.AddCargo(rewardCargoID,rewardCargoAmount); //rewardCargo
-	}
-
 	function notify(cargoID : int, amount : int) {
 		if(cargoID == requiredCargoID) {
 			requiredCargoAmount -= amount;
@@ -144,11 +148,11 @@ class Quest {
 			accomplished = true;
 		}
 	}
+
 }
 
-class TranslationQuest {
+class TranslationQuest extends Quest {
 	var stringToTranslate : String;
 	var playerAnswer : String;
-	var rewardCargoID : int;
 	var isCorrect : boolean;
 }
