@@ -66,7 +66,7 @@ MonoBehaviour:
     type: 6
     basePrice: 7
   - cargoName: Coffee
-    sprite: {fileID: 21300000, guid: 3e7d19c080ab2554a9e96ea9c53ac9ee, type: 3}
+    sprite: {fileID: 21300000, guid: 4c155cac789871c499c19ef516816317, type: 3}
     weight: 3
     type: 0
     basePrice: 9
