@@ -38,6 +38,11 @@ class QuestGenerator extends MonoBehaviour {
 
 	function generateTranslationQuest() {
 		var newQuest = new TranslationQuest();
+		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
+		var rewardCargoID : int = Random.Range(1,cargoTypes);
+		var rewardAmount : int = Random.Range(1,requiredAmountMax);
+		newQuest.rewardCargoID = rewardCargoID;
+		newQuest.rewardCargoAmount = rewardAmount;
 		newQuest.stringToTranslate = "Magandang Araw";
 		availableQuests.push(newQuest);
 	}
@@ -45,13 +50,13 @@ class QuestGenerator extends MonoBehaviour {
 
 	function DisplayCurrentQuests() {
 		var player : GameObject = GameObject.Find("PlayerStatus"); 
-			questList.GetComponent(PrefabListGenerate).numPrefabs = player.GetComponent(PlayerStatus).player.quests.length;
-			questList.GetComponent(PrefabListGenerate).Generate();
+		questList.GetComponent(PrefabListGenerate).numPrefabs = player.GetComponent(PlayerStatus).player.quests.length;
+		questList.GetComponent(PrefabListGenerate).Generate();
 			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
-				if(availableQuests[i].GetType() == TradeQuest)
-					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TradeQuest;
-				else if(availableQuests[i].GetType() == TranslationQuest)
-					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TranslationQuest;
+				if(player.GetComponent(PlayerStatus).player.quests[i].GetType() == TradeQuest)
+					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as TradeQuest;
+				else if(player.GetComponent(PlayerStatus).player.quests[i].GetType() == TranslationQuest)
+					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as TranslationQuest;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 2;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
