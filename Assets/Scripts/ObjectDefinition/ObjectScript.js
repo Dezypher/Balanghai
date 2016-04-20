@@ -40,6 +40,8 @@ class Settlement {
 	var backgroundID : int;
 	var coordX : float;
 	var coordY : float;
+	var unlocked :boolean;
+	var price: int;
 }
 
 class Player {
