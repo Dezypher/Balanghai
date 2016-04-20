@@ -46,34 +46,42 @@ class QuestAdapter extends MonoBehaviour {
 			}
 		}
 		else if(questModel.GetType() == TranslationQuest) {
-			questView.transform.GetChild(2).GetComponent(UI.Text).text = (questModel as TranslationQuest).stringToTranslate;
+			questView.transform.GetChild(1).GetComponent(UI.Text).text = "Translation";
+			questView.transform.GetChild(1).transform.localPosition.x = -300;
+			questView.transform.GetChild(2).gameObject.SetActive(false);
+			questView.transform.GetChild(3).transform.GetChild(1).gameObject.SetActive(false);
 		}
 	}
 
 	function onButtonClick() {
-		var questLists : GameObject = GameObject.Find("Quest List");
-		for(var i : int = 0; i < questLists.transform.childCount; i++) {
-			questLists.transform.GetChild(i).gameObject.GetComponent(QuestAdapter).index = i;
-		}
 		if(type == 1) {
 			ClaimQuest();
 		}
 		else if(type == 2) {
-			if(!questModel.accomplished)
-				AbandonQuest();
-			else
-				RewardQuest();
+			if(questModel.GetType() == TradeQuest) {
+				if(!questModel.accomplished)
+					AbandonQuest();
+				else
+					RewardQuest();
+			}
+			else if(questModel.GetType() == TranslationQuest) {
+				TranslationPopup();
+			}
 		}
 	}
 
 	function ClaimQuest() {
 		var player : GameObject = GameObject.Find("PlayerStatus");
 		if(player != null) {
-			player.GetComponent(PlayerStatus).player.addQuest(questModel);
+			if(questModel.GetType() == TradeQuest)
+				player.GetComponent(PlayerStatus).player.addQuest(questModel as TradeQuest);
+			else if(questModel.GetType() == TranslationQuest)
+				player.GetComponent(PlayerStatus).player.addQuest(questModel as TranslationQuest);
 			GameObject.Find("QuestUI").GetComponent(QuestGenerator).RemoveQuest(index);
 			questUI.DisplayAvailableQuests();
 			GameObject.Destroy(this.gameObject);
 		}
+		questUI.DisplayAvailableQuests();
 	}
 
 	function AbandonQuest() {
@@ -83,6 +91,7 @@ class QuestAdapter extends MonoBehaviour {
 			questUI.DisplayCurrentQuests();
 			GameObject.Destroy(this.gameObject);
 		}
+		questUI.DisplayCurrentQuests();
 	}
 
 	function RewardQuest() {
@@ -97,6 +106,22 @@ class QuestAdapter extends MonoBehaviour {
 			temp.transform.GetChild(3).GetComponent(UI.Text).text = "x " + questModel.rewardCargoAmount + " added";
 			GameObject.Destroy(this.gameObject);
 		}
+		questUI.DisplayCurrentQuests();
+	}
+
+	function TranslationPopup() {
+		var temp : GameObject = Instantiate(Resources.Load("Prefabs/QuestScreen/TranslationPopup")) as GameObject;
+		temp.name = "TranslationPopup";
+		temp.transform.SetParent(GameObject.Find("Canvas").transform,false);
+		temp.transform.GetChild(1).transform.GetChild(0).GetComponent(UI.Text).text = (questModel as TranslationQuest).stringToTranslate;
+		temp.transform.GetChild(3).GetComponent(UI.Button).onClick.AddListener(SetAnswer);
+	}
+
+	function SetAnswer() {
+		var Popup : GameObject = GameObject.Find("TranslationPopup") as GameObject;
+		(questModel as TranslationQuest).playerAnswer = Popup.transform.GetChild(2).transform.GetChild(2).GetComponent(UI.Text).text;
+		Destroy(Popup);
+		RewardQuest();
 	}
 
 }
