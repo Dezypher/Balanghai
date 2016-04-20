@@ -41,6 +41,9 @@ function Update () {
 		}
 	}
 
-	playerName.text = player.playerName;
-	goldAmt.text = "" + player.gold;
+	if(playerName != null)
+		playerName.text = player.playerName;
+
+	if(playerName != null)
+		goldAmt.text = "" + player.gold;
 }

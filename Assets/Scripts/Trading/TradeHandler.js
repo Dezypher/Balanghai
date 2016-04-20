@@ -82,7 +82,11 @@ function Buy (itemID : int, qty : int) {
 			
 			//amtPanel.GetComponent(AmtPanelScript).Refresh();
 
+			AlertHandler.AlertPopup("Transaction successful!");
+
 			UpdateElements();
+		} else {
+			AlertHandler.AlertPopup("Insufficient funds!");
 		}
 	}
 }
