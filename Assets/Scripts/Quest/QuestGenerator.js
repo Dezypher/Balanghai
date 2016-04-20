@@ -50,6 +50,7 @@ class QuestGenerator extends MonoBehaviour {
 
 	function DisplayCurrentQuests() {
 		var player : GameObject = GameObject.Find("PlayerStatus"); 
+		questList.GetComponent(PrefabListGenerate).prefabReference.transform.GetChild(0).GetComponent(UI.Image).color = new Color(192/255f,216/255f,125/255f,1f);
 		questList.GetComponent(PrefabListGenerate).numPrefabs = player.GetComponent(PlayerStatus).player.quests.length;
 		questList.GetComponent(PrefabListGenerate).Generate();
 			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
@@ -66,9 +67,10 @@ class QuestGenerator extends MonoBehaviour {
 	}
 
 	function DisplayAvailableQuests() {
-			questList.GetComponent(PrefabListGenerate).numPrefabs = availableQuests.length;
-			questList.GetComponent(PrefabListGenerate).Generate();
-			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
+		questList.GetComponent(PrefabListGenerate).prefabReference.transform.GetChild(0).GetComponent(UI.Image).color = new Color(251/255f,251/255f,157/255f,1f);
+		questList.GetComponent(PrefabListGenerate).numPrefabs = availableQuests.length;
+		questList.GetComponent(PrefabListGenerate).Generate();
+		for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
 				if(availableQuests[i].GetType() == TradeQuest)
 					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = availableQuests[i] as TradeQuest;
 				else if(availableQuests[i].GetType() == TranslationQuest)
@@ -76,7 +78,7 @@ class QuestGenerator extends MonoBehaviour {
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 1;
 				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
-			}
+		}
 		availableButton.interactable = false;
 		currentButton.interactable = true;
 	}
