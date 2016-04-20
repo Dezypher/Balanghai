@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 class QuestGenerator extends MonoBehaviour {
-
+	var noQuestLabel : GameObject;
 	var requiredAmountMax : int = 10;
 	var availableQuests : Array = new Array();
 	var questList : GameObject;
@@ -50,23 +50,31 @@ class QuestGenerator extends MonoBehaviour {
 
 	function DisplayCurrentQuests() {
 		var player : GameObject = GameObject.Find("PlayerStatus"); 
+		if(player.GetComponent(PlayerStatus).player.quests.length > 0)
+			noQuestLabel.SetActive(false);
+		else
+			noQuestLabel.SetActive(true);
 		questList.GetComponent(PrefabListGenerate).prefabReference.transform.GetChild(0).GetComponent(UI.Image).color = new Color(192/255f,216/255f,125/255f,1f);
 		questList.GetComponent(PrefabListGenerate).numPrefabs = player.GetComponent(PlayerStatus).player.quests.length;
 		questList.GetComponent(PrefabListGenerate).Generate();
-			for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
-				if(player.GetComponent(PlayerStatus).player.quests[i].GetType() == TradeQuest)
-					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as TradeQuest;
-				else if(player.GetComponent(PlayerStatus).player.quests[i].GetType() == TranslationQuest)
-					questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as TranslationQuest;
-				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
-				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 2;
-				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
-			}
+		for(var i : int = 0; i < questList.GetComponent(PrefabListGenerate).generatedPrefabs.length; i++) {
+			if(player.GetComponent(PlayerStatus).player.quests[i].GetType() == TradeQuest)
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as TradeQuest;
+			else if(player.GetComponent(PlayerStatus).player.quests[i].GetType() == TranslationQuest)
+				questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).questModel = player.GetComponent(PlayerStatus).player.quests[i] as TranslationQuest;
+			questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).index = i;
+			questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).type = 2;
+			questList.GetComponent(PrefabListGenerate).generatedPrefabs[i].GetComponent(QuestAdapter).DisplayQuestDetails();	
+		}
 		availableButton.interactable = true;
 		currentButton.interactable = false;
 	}
 
 	function DisplayAvailableQuests() {
+		if(availableQuests.length > 0)
+			noQuestLabel.SetActive(false);
+		else
+			noQuestLabel.SetActive(true);
 		questList.GetComponent(PrefabListGenerate).prefabReference.transform.GetChild(0).GetComponent(UI.Image).color = new Color(251/255f,251/255f,157/255f,1f);
 		questList.GetComponent(PrefabListGenerate).numPrefabs = availableQuests.length;
 		questList.GetComponent(PrefabListGenerate).Generate();

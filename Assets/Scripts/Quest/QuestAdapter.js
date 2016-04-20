@@ -38,18 +38,21 @@ class QuestAdapter extends MonoBehaviour {
 				
 			questView.transform.GetChild(1).GetComponent(UI.Text).text = (questModel as TradeQuest).location;
 			if(type == 2) {
-				//questView.transform.GetChild(4).transform.GetChild(0).GetComponent(UI.Text).fontSize = 50;
-				//if(!questModel.accomplished)
-					//questView.transform.GetChild(4).transform.GetChild(0).GetComponent(UI.Text).text = "Abandon";
-				//else
-					//questView.transform.GetChild(4).transform.GetChild(0).GetComponent(UI.Text).text = "Claim";
+				if(!questModel.accomplished)
+					questView.transform.GetChild(4).transform.GetChild(0).GetComponent(UI.Text).text = "Abandon";
+				else
+					questView.transform.GetChild(4).transform.GetChild(0).GetComponent(UI.Text).text = "Claim";
 			}
 		}
 		else if(questModel.GetType() == TranslationQuest) {
 			questView.transform.GetChild(1).GetComponent(UI.Text).text = "Translation";
-			questView.transform.GetChild(1).transform.localPosition.x = -300;
+			questView.transform.GetChild(1).transform.localPosition.x = -350;
 			questView.transform.GetChild(2).gameObject.SetActive(false);
+			questView.transform.GetChild(3).transform.localPosition.x = 205;
 			questView.transform.GetChild(3).transform.GetChild(1).gameObject.SetActive(false);
+			if(type == 2) {
+				questView.transform.GetChild(4).transform.GetChild(0).GetComponent(UI.Text).text = "Translate";
+			}
 		}
 	}
 
