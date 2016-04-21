@@ -289,6 +289,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1257,11 +1258,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: 606fdb88cfe98432bbeee97a7a30a296, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1325,6 +1326,7 @@ GameObject:
   - 114: {fileID: 452423249}
   - 114: {fileID: 452423248}
   - 114: {fileID: 452423252}
+  - 114: {fileID: 452423253}
   m_Layer: 5
   m_Name: ShipsButton
   m_TagString: Untagged
@@ -1346,8 +1348,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 99.5, y: 110}
-  m_SizeDelta: {x: 220, y: 220}
+  m_AnchoredPosition: {x: 80.00001, y: 80}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452423248
 MonoBehaviour:
@@ -1360,7 +1362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b622f74dc6392384382b6f265e435ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelId: 0
+  levelId: 5
 --- !u!114 &452423249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,7 +1397,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 452423250}
   m_OnClick:
     m_PersistentCalls:
@@ -1470,6 +1472,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 561c94511266de84a9bdb38af7bab356, type: 3}
+--- !u!114 &452423253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452423246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cabd798a322b224c9c5ba0aa6c4e4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &494067749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,125 +1590,6 @@ MonoBehaviour:
     totalCapacity: 50
     currShip: 0
     ships:
-    - shipName: Bangka
-      sprite: {fileID: 21300000, guid: b7f8d8273c4e94846997940fbfc268b7, type: 3}
-      icon: {fileID: 21300000, guid: 8baa3df07f78d7940adeef3f4f04d827, type: 3}
-      type: 1
-      speed: 5
-      capacity: 50
-      hullStrength: 20
-      location: 1
-      traveling: 0
-      cargo:
-        capacity: 50
-        amtInCargo: 3
-        currWeight: 0
-        cargo:
-        - itemID: 3
-          quantity: 4
-        - itemID: 5
-          quantity: 3
-        - itemID: 10
-          quantity: 1
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-        - itemID: 0
-          quantity: 0
-      shipWidth: 500
-      shipHeight: 150
-      destination: -1
-      voyageStartTime: 0
-      voyageEndTime: 0
     - shipName: Balanghai
       sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
       icon: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f, type: 3}
@@ -3385,7 +3279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b622f74dc6392384382b6f265e435ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelId: 5
+  levelId: 4
 --- !u!114 &1468333505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,7 +3510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b622f74dc6392384382b6f265e435ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelId: 4
+  levelId: 3
 --- !u!114 &1512545017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4429,6 +4323,7 @@ GameObject:
   - 114: {fileID: 2095164177}
   - 114: {fileID: 2095164176}
   - 114: {fileID: 2095164180}
+  - 114: {fileID: 2095164181}
   m_Layer: 5
   m_Name: TradeButton
   m_TagString: Untagged
@@ -4574,6 +4469,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 561c94511266de84a9bdb38af7bab356, type: 3}
+--- !u!114 &2095164181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095164174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cabd798a322b224c9c5ba0aa6c4e4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2130265616
 GameObject:
   m_ObjectHideFlags: 0

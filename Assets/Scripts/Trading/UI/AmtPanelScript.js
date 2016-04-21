@@ -13,6 +13,7 @@ private var maxQty : int;
 private var pricePerQty : int;
 private var tradeHandler : GameObject;
 private var shipTrader : ShipTradeHandler;
+private var itemMenuHandler : OpenItemMenu;
 private var cargoRef : CargoRefScript;
 
 function Start(){
@@ -21,6 +22,8 @@ function Start(){
 	}else { 
 		shipTrader = GameObject.Find("ShipTradeHandler")
 						.GetComponent(ShipTradeHandler);
+		itemMenuHandler = GameObject.Find("ItemMenuHandler")
+						.GetComponent(OpenItemMenu);
 	}
 
 	cargoRef = (Resources.Load("Reference/CargoReference") as GameObject)
@@ -44,7 +47,7 @@ function Refresh(){
 	if(trading){
 		goldText.text = "Gold: " + (pricePerQty * qty);
 		itemText.text = cargoRef.cargos[itemID].cargoName + " (" + pricePerQty + " each)";
-	}else {
+	} else {
 		itemText.text = cargoRef.cargos[itemID].cargoName;
 	}
 }
@@ -57,6 +60,10 @@ function AddQty(amt : int){
 	Refresh();
 }
 
+function SetCharacter(character : int){
+	this.character = character;
+}
+
 function Accept(){
 	if(character == 0)
  		tradeHandler.GetComponent(TradeHandler).Sell(itemID, qty);
@@ -64,7 +71,10 @@ function Accept(){
 		tradeHandler.GetComponent(TradeHandler).Buy(itemID, qty);
 	else if(character == 2)
 		shipTrader.Trade(qty);
-	
+	else if(character == 3)
+		shipTrader.Throw(itemID, qty);
+		
+
 	gameObject.SetActive(false);
 }
 

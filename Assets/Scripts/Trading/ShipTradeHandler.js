@@ -20,11 +20,17 @@ function Awake () {
 	fromShipID = player.currShip;
 }
 
-function ShowAmountPanel(){
+function ShowAmountPanel(character : int){
 	amtPanel.SetActive(true);
 
 	amtPanel.GetComponent(AmtPanelScript).
-		SetItem(itemID, maxQty, 0, 2);
+		SetItem(itemID, maxQty, 0, character);
+}
+
+function Throw(itemID : int, qty : int){
+	player.ships[player.currShip].cargo.RemoveCargo(itemID, qty);
+	AlertHandler.AlertPopup("Item/s thrown!");
+	shipCargoDisplay.Instantiate();
 }
 
 function SetShipIndex(shipIndex : int){

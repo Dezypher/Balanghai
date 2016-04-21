@@ -13,6 +13,6 @@ function Start () {
 
 function Trade () {
 	shipTradeHandler.SetShipIndex(GetComponent(ShipListButton).shipIndex);
-	shipTradeHandler.ShowAmountPanel();
+	shipTradeHandler.ShowAmountPanel(2);
 	shipTrade.SetActive(false);
 }
