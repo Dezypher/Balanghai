@@ -52,7 +52,7 @@ MonoBehaviour:
     basePrice: 10
   - cargoName: Banana
     sprite: {fileID: 21300000, guid: e1bf663776efc8941a539df7faac3b82, type: 3}
-    weight: 1
+    weight: 3
     type: 0
     basePrice: 4
   - cargoName: Barong
@@ -67,17 +67,17 @@ MonoBehaviour:
     basePrice: 7
   - cargoName: Coffee
     sprite: {fileID: 21300000, guid: 4c155cac789871c499c19ef516816317, type: 3}
-    weight: 3
+    weight: 10
     type: 0
     basePrice: 9
-  - cargoName: Gold
+  - cargoName: Bar of Gold
     sprite: {fileID: 21300000, guid: 2cff1021576a61346bddb9202a3ed578, type: 3}
-    weight: 1
+    weight: 5
     type: 1
     basePrice: 100
   - cargoName: Gold Jewelry
     sprite: {fileID: 21300000, guid: e40eb0ff343431b428d44cf78fc49296, type: 3}
-    weight: 1
+    weight: 2
     type: 6
     basePrice: 50
   - cargoName: Ivory
@@ -92,7 +92,7 @@ MonoBehaviour:
     basePrice: 30
   - cargoName: Leather
     sprite: {fileID: 21300000, guid: 455db8403e889f74fb248c55c1b98bc1, type: 3}
-    weight: 1
+    weight: 2
     type: 6
     basePrice: 10
   cargoSounds: []
