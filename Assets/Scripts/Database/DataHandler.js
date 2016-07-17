@@ -6,7 +6,7 @@
 
  
  function Start () {
-     var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
+     var conn : String = "URI=file:" + Application.dataPath + "/Database/player.s3db"; //Path to database.
      
      var dbconn : IDbConnection;
      dbconn = new SqliteConnection(conn);
