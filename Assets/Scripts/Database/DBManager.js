@@ -1,5 +1,10 @@
 ﻿#pragma strict
 
+
+ import System.Data;
+ import Mono.Data.Sqlite;
+ import System.Collections.Generic;
+
 static function InitializeData () {
 	/*
 		Load all player data from DB 
@@ -8,14 +13,44 @@ static function InitializeData () {
 
 //CREATE PLAYER
 
+
+class dbaccess{
+
+
+
+
+
+
 static function InsertPlayer (playerID : int, gold: int, playerName : String, totalCapacity) {
+
+    var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
+    var reader : IDataReader;
+    var dbconn : IDbConnection;
+    var dbcmd : IDbCommand;
+    dbconn = new SqliteConnection(conn);
+    dbconn.Open();
+
+
+    //wtf do i do with player ID?(auto increment derr);
+    dbcmd = dbconn.CreateCommand();
+    dbcmd.CommandText = "INSERT INTO playerdata(name,gold) VALUES ("+playerName+","+gold+")";
+    reader = dbcmd.ExecuteReader();
+
+
+    reader.Close();
+    reader = null;
+    dbcmd.Dispose();
+    dbcmd = null;
+    dbconn.Close();
+    dbconn = null;
 
 }
 
 //CREATE SHIP
 
 static function InsertShip (playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
-	//Should call InsertCargoHolder 
+    //Should call InsertCargoHolder 
+
 }
 
 //CREATE CARGO
@@ -88,6 +123,8 @@ static function DeleteTradeQuest (playerID : int, questID : int) {
 
 //UPDATE TRANSLATION QUEST
 
-static function FinishTranslationQuest (translationQuestID : int) {
-	//DELETE QUEST
+    static function FinishTranslationQuest (translationQuestID : int) {
+        //DELETE QUEST
+    }
+
 }

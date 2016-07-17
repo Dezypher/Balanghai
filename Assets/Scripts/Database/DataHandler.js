@@ -6,22 +6,30 @@
 
  
  function Start () {
-     var conn : String = "URI=file:" + Application.dataPath + "/Database/player.s3db"; //Path to database.
-     
+     var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
+     var reader : IDataReader;
      var dbconn : IDbConnection;
      dbconn = new SqliteConnection(conn);
      dbconn.Open(); //Open connection to the database.
      var dbcmd : IDbCommand = dbconn.CreateCommand();
  
+
+     //dbcmd.CommandText = "INSERT INTO playerdata(name,gold) VALUES ('dungan',800)";
+     //reader = dbcmd.ExecuteReader();
+
      var sqlQuery : String = "SELECT* From playerdata";
+     dbcmd=dbconn.CreateCommand();
      dbcmd.CommandText = sqlQuery;
-     var reader : IDataReader = dbcmd.ExecuteReader();
+     reader = dbcmd.ExecuteReader();
     
+
+
       
      while (reader.Read())
      {
-         var name : String = reader.GetString(0);
-         var gold : float =reader.GetFloat(1);
+         reader.GetInt32(0);
+         var name : String = reader.GetString(1);
+         var gold : float =reader.GetFloat(2);
                   Debug.Log("PUTA"+name+"GOLD:"+gold);
         // Debug.Log( name+"+" +score );
      }
@@ -35,6 +43,4 @@
       
  }
  
- function Update () {
- 
- }
+
