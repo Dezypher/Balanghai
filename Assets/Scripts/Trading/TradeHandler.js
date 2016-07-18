@@ -45,7 +45,17 @@ function Sell (itemID : int, qty : int) {
 		//trader.cargo.AddCargo(itemID, qty);
 		player.ships[player.currShip].cargo.RemoveCargo(itemID, qty);
 				
-		playerRef.GetComponent(PlayerStatus).player.gold += price;
+		player.gold += price;
+
+		var dbaccess : DBAccess = new DBAccess();
+		var playerID = 2;
+
+		dbaccess.connectDB();
+
+		dbaccess.UpdateGold(playerID, player.gold);
+
+		dbaccess.closeDB();
+
 		//settlementsRef.GetComponent(Trader).settlements[shopIndex].market.gold -= price;
 		
 		//amtPanel.GetComponent(AmtPanelScript).Refresh();
@@ -79,6 +89,15 @@ function Buy (itemID : int, qty : int) {
 			if(result)	
 				player.gold -= price;
 			//trader.gold -= price;
+
+			var dbaccess : DBAccess = new DBAccess();
+			var playerID = 2;
+
+			dbaccess.connectDB();
+
+			dbaccess.UpdateGold(playerID, player.gold);
+
+			dbaccess.closeDB();
 			
 			//amtPanel.GetComponent(AmtPanelScript).Refresh();
 

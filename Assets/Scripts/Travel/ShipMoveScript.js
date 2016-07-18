@@ -98,11 +98,6 @@ function move(boatindex:int){
 	voyage_time=elapsed-player.ships[boatindex].voyageStartTime;
 
 
-
-
-
-
-
 	  //Debug.Log( elapsed + "s have elapsed.");
 
 
@@ -120,19 +115,31 @@ function move(boatindex:int){
 
 
 		if(voyage_time<total_time){
-		boats[boatindex].position.x=GetVector3(player.ships[boatindex].location).x-cx*((voyage_time/total_time)*d);
-		boats[boatindex].position.y=GetVector3(player.ships[boatindex].location).y-cy*((voyage_time/total_time)*d);
-		player.ships[boatindex].traveling=true;
-		//Debug.Log("moving");
-		}else{
-		player.ships[boatindex].location=player.ships[boatindex].destination;
+			boats[boatindex].position.x=GetVector3(player.ships[boatindex].location).x-cx*((voyage_time/total_time)*d);
+			boats[boatindex].position.y=GetVector3(player.ships[boatindex].location).y-cy*((voyage_time/total_time)*d);
+			player.ships[boatindex].traveling=true;
+			//Debug.Log("moving");
+		} else {
+			player.ships[boatindex].location=player.ships[boatindex].destination;
 
-		boats[boatindex].position.x=GetVector3(player.ships[boatindex].location).x;
-		boats[boatindex].position.y=GetVector3(player.ships[boatindex].location).y;
+			boats[boatindex].position.x=GetVector3(player.ships[boatindex].location).x;
+			boats[boatindex].position.y=GetVector3(player.ships[boatindex].location).y;
 
-		//Debug.Log("arrived: at"+player.ships[boatindex].location);
-		player.ships[boatindex].destination=-1;
-		player.ships[boatindex].traveling=false;
+			//Debug.Log("arrived: at"+player.ships[boatindex].location);
+			player.ships[boatindex].destination=-1;
+			player.ships[boatindex].traveling=false;
+
+			var dbaccess : DBAccess = new DBAccess();
+
+			dbaccess.connectDB();
+			var playerID = player.playerID;
+
+			dbaccess.UpdateShipLocation(playerID, boatindex, player.ships[boatindex].location);
+			dbaccess.UpdateShipDestination(playerID, boatindex, -1);
+			dbaccess.UpdateShipVoyageStartTime(playerID, boatindex, 0);
+			dbaccess.UpdateShipVoyageEndTime(playerID, boatindex, 0);
+
+			dbaccess.closeDB();
 		}
 		 
 		

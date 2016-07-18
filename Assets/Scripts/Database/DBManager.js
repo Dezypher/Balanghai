@@ -126,10 +126,10 @@ public class DBAccess{
 
 //CREATE CARGO
 
-	function InsertCargo (shipID : int, cargoID : int, qty : int) {
+	function InsertCargo (playerID : int, shipID : int, cargoID : int, qty : int) {
 
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "INSERT INTO playerdata(shipID,cargoID,qty) VALUES ("+shipID+","+cargoID+","+qty+")";
+	     dbcmd.CommandText = "INSERT INTO Cargo(playerID,shipID,cargoID,qty) VALUES ("+playerID+","+shipID+","+cargoID+","+qty+")";
 	     reader = dbcmd.ExecuteReader();
 
 	}
@@ -161,25 +161,25 @@ public class DBAccess{
 
 	function UpdateShipLocation (playerID : int, shipID : int, location : int) {
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET location = "+location+" WHERE playerID="+playerID+"AND shipID="+shipID;
+	     dbcmd.CommandText = "UPDATE ships SET location = "+location+" WHERE playerID="+playerID+" AND shipID="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 
 	function UpdateShipDestination (playerID : int, shipID : int, destination : int) {
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET destination = "+destination+" WHERE playerID="+playerID+"AND shipID="+shipID;
+	     dbcmd.CommandText = "UPDATE ships SET destination = "+destination+" WHERE playerID="+playerID+" AND shipID="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 
 	function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : int) {
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET voyageStartTime = "+time+" WHERE playerID="+playerID+"AND shipID="+shipID;
+	     dbcmd.CommandText = "UPDATE ships SET voyageStartTime = "+time+" WHERE playerID="+playerID+" AND shipID="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 
 	function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : int) {
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET voyageEndTime = "+time+" WHERE playerID="+playerID+"AND shipID="+shipID;
+	     dbcmd.CommandText = "UPDATE ships SET voyageEndTime = "+time+" WHERE playerID="+playerID+" AND shipID="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 
@@ -188,25 +188,21 @@ public class DBAccess{
 	function UpdateCargo (playerID : int, shipID : int, cargoID : int , qty : int) {
 	    if(qty>0){
 	        dbcmd = dbconn.CreateCommand();
-	        dbcmd.CommandText = "UPDATE Cargo SET qty = "+qty+" WHERE cargoHolderID="+playerID+"AND cargoID="+cargoID;
+	        dbcmd.CommandText = "UPDATE Cargo SET qty = "+qty+" WHERE playerID =" + playerID + "shipID="+shipID+" AND cargoID="+cargoID;
 	        reader = dbcmd.ExecuteReader();}
 	    else{
 	        dbcmd = dbconn.CreateCommand();
-	        dbcmd.CommandText = "DELETE FROM Cargo WHERE cargoHolderID="+playerID+"AND cargoID="+cargoID;
+	        dbcmd.CommandText = "DELETE FROM Cargo WHERE playerID="+playerID+" AND cargoID="+ cargoID + " AND shipID=" + shipID;
 	        reader = dbcmd.ExecuteReader();
 	    
 	    }
-
-
-
-		// IF AMOUNT <= 0 DELETE :)
 	}
 
 //UPDATE TRADE QUEST
 
 	function DeleteTradeQuest (playerID : int, questID : int) {
 		dbcmd = dbconn.CreateCommand();
-	    dbcmd.CommandText = "DELETE FROM TradeQuest WHERE cargoHolderID="+playerID+"AND questID="+questID;
+	    dbcmd.CommandText = "DELETE FROM TradeQuest WHERE cargoHolderID="+playerID+" AND questID="+questID;
 	    reader = dbcmd.ExecuteReader();
 	}
 
@@ -214,7 +210,7 @@ public class DBAccess{
 
     function FinishTranslationQuest (playerID : int, translationQuestID : int, playerAnswer : String) {
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET playerID = "+playerID+" WHERE translationQuestID="+translationQuestID+"AND playerAnswer='"+playerAnswer+"'";
+	     dbcmd.CommandText = "UPDATE ships SET playerID = "+playerID+" WHERE translationQuestID="+translationQuestID+" AND playerAnswer='"+playerAnswer+"'";
 	     reader = dbcmd.ExecuteReader();
     }
 }

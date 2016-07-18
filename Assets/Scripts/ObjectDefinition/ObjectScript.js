@@ -45,6 +45,7 @@ class Settlement {
 }
 
 class Player {
+	var playerID : int;
 	var playerName : String;
 	var gold : int;
 	var totalCapacity : int;

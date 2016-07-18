@@ -5,6 +5,9 @@ class CargoHolder {
 	public var amtInCargo : int;
 	public var currWeight : int;
 
+	public var playerID : int;
+	public var shipID : int;
+
 	public var cargo = new InventorySlot[capacity];
 	private var cargoReference : CargoRefScript;
 
@@ -28,14 +31,24 @@ class CargoHolder {
 					break;
 				}
 			}
-			
+
+			var dbaccess : DBAccess = new DBAccess();
+
+			dbaccess.connectDB();
+
 			if(!hasCargo){
 				var newCargo = new InventorySlot();
 				newCargo.itemID = itemID;
 				newCargo.quantity = qty;
 				cargo[amtInCargo] = newCargo;
 				amtInCargo++;
+
+				dbaccess.InsertCargo(playerID, shipID, itemID, GetCargoQuantityByID(itemID));
+			} else { 
+				dbaccess.UpdateCargo(playerID, shipID, itemID, GetCargoQuantityByID(itemID));
 			}
+
+			dbaccess.closeDB();
 
 			CalculateWeight();
 			return true;
@@ -110,5 +123,15 @@ class CargoHolder {
 
 	function GetCargoQuantity(index : int){
 		return cargo[index].quantity;
+	}
+
+	function GetCargoQuantityByID(itemID : int){
+		for(var i = 0; i < amtInCargo; i++){
+			if(itemID == cargo[i].itemID){
+				return cargo[i].quantity;
+			}
+		}
+
+		return 0;
 	}
 }

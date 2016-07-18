@@ -28,6 +28,19 @@ function Send(shipIndex : int){
 			player.ships[shipIndex].voyageStartTime=Time.time;
 			player.ships[shipIndex].voyageEndTime=Time.time+difference;
 			player.ships[shipIndex].traveling = true;
+
+			var dbaccess : DBAccess = new DBAccess();
+
+			dbaccess.connectDB();
+			var playerID = 2;
+
+			dbaccess.UpdateShipLocation(playerID, shipIndex, -1);
+			dbaccess.UpdateShipDestination(playerID, shipIndex, destination);
+			dbaccess.UpdateShipVoyageStartTime(playerID, shipIndex, player.ships[shipIndex].voyageStartTime);
+			dbaccess.UpdateShipVoyageEndTime(playerID, shipIndex, player.ships[shipIndex].voyageEndTime);
+
+			dbaccess.closeDB();
+
 			SceneManager.LoadScene(0);
 		} else {
 			AlertHandler.AlertPopup("Your ship is already in " + settlements[destination].name + "!");
