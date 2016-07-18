@@ -23,8 +23,9 @@
      dbcmd.CommandText = query; 
      reader = dbcmd.ExecuteReader();
 
+     var wame : String;
 
-     query = "UPDATE playerdata SET gold = 6700 WHERE name='miguel'";
+     query = "UPDATE playerdata SET gold = 100 WHERE name="+wame;
      dbcmd = dbconn.CreateCommand();
      dbcmd.CommandText = query; 
      reader = dbcmd.ExecuteReader();

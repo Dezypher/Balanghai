@@ -5,18 +5,102 @@
  import Mono.Data.Sqlite;
  import System.Collections.Generic;
 
-function InitializeData () {
+
+
+ function Start () {
+     Debug.Log("hahahha");
+     var db:DBAccess;
+     db = new DBAccess();
+
+     db.connectDB();
+     //db.InsertShip ("barbara",2, 1 , 1, -1, 0, 0);
+     db.InitializeData();
+
+     db.closeDB();
+ }
+
+
+ public class DBAccess{
+
+    private var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
+    private var reader : IDataReader;
+    private var dbconn : IDbConnection;
+    private var dbcmd : IDbCommand;
+
+     function InitializeData () {
+      
+         
+
+
 	/*
 		Load all player data from DB 
 	*/
 
-	var player : Player;
+	var player : Player = new Player();
 
-	//Load player name and gold
+         //Load player name and gold
+         
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT* From playerdata";
+	reader = dbcmd.ExecuteReader();
+
+      
+	while (reader.Read())
+	{
+
+	    player.playerName = reader.GetString(1);
+	    player.gold =reader.GetFloat(2);
+	}
+
+
+	Debug.Log(player.gold);
+
 
 	//Load player ships
 
-	var numShips = 0; // Set to num of results
+
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT* From ships";
+	reader = dbcmd.ExecuteReader();
+
+
+    // Set to num of results
+      var numShips = 0;
+	while (reader.Read())
+	{
+	    numShips++;
+	    Debug.Log(reader.GetString(2));
+
+
+	    var shipType = reader.GetInt32(3); // set 0 to ship type
+	    var shipIndex = reader.GetInt32(0);; // set 0 to shipIndex
+
+	    player.ships[shipIndex].location = reader.GetInt32(4);
+	    player.ships[shipIndex].destination = reader.GetInt32(5);
+	    player.ships[shipIndex].voyageStartTime = reader.GetFloat(6);
+	    player.ships[shipIndex].voyageEndTime = reader.GetFloat(7);
+
+	    player.ships[shipIndex] = new Ship();
+
+	    player.ships[shipIndex].shipName = reader.GetString(2); // get shipName from result
+	    player.ships[shipIndex].sprite = shipRef.ships[shipType].sprite;
+	    player.ships[shipIndex].icon = shipRef.ships[shipType].icon;
+	    player.ships[shipIndex].type = shipRef.ships[shipType].type;
+	    player.ships[shipIndex].speed = shipRef.ships[shipType].speed;
+	    player.ships[shipIndex].capacity = shipRef.ships[shipType].capacity;
+	    player.ships[shipIndex].hullStrength = shipRef.ships[shipType].hullStrength;
+	    player.ships[shipIndex].shipWidth = shipRef.ships[shipType].shipWidth;
+	    player.ships[shipIndex].shipHeight = shipRef.ships[shipType].shipHeight;
+
+	    //Get below from resultset
+
+
+
+	}
+
+
+
+	 
 
 	player.ships = new Ship[numShips];
 
@@ -87,11 +171,6 @@ function InitializeData () {
 //CREATE PLAYER
 
 
-public class DBAccess{
-    private var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
-    private var reader : IDataReader;
-    private var dbconn : IDbConnection;
-    private var dbcmd : IDbCommand;
 
 	function connectDB(){  
 	    dbconn = new SqliteConnection(conn);
@@ -116,11 +195,11 @@ public class DBAccess{
 
 //CREATE SHIP
 
-	function InsertShip (playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
+	    function InsertShip (shipName : String,playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
 	    //Should call InsertCargoHolder 
 
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "INSERT INTO ships(playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+playerID+","+type+","+location+","+destination+","+voyageStartTime+","+voyageEndTime+")";
+	     dbcmd.CommandText = "INSERT INTO ships(shipName,playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+shipName+","+playerID+","+type+","+location+","+destination+","+voyageStartTime+","+voyageEndTime+")";
 	     reader = dbcmd.ExecuteReader();
 	}
 
