@@ -17,11 +17,28 @@
      //dbcmd.CommandText = "INSERT INTO playerdata(name,gold) VALUES ('dungan',800)";
      //reader = dbcmd.ExecuteReader();
 
+     //var query : String;
+     //query = "DELETE FROM playerdata WHERE name ='dungan' ";
+     //dbcmd = dbconn.CreateCommand();
+     //dbcmd.CommandText = query; 
+     //reader = dbcmd.ExecuteReader();
+
+
+     var query : String;
+     query = "UPDATE playerdata SET gold = 6700 WHERE name='miguel'";
+     dbcmd = dbconn.CreateCommand();
+     dbcmd.CommandText = query; 
+     reader = dbcmd.ExecuteReader();
+
+
+
      var sqlQuery : String = "SELECT* From playerdata";
      dbcmd=dbconn.CreateCommand();
      dbcmd.CommandText = sqlQuery;
      reader = dbcmd.ExecuteReader();
     
+
+
 
 
       

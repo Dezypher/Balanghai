@@ -9,59 +9,71 @@ static function InitializeData () {
 	/*
 		Load all player data from DB 
 	*/
+
+
+
 }
 
 //CREATE PLAYER
 
 
 class dbaccess{
+    private var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
+    private var reader : IDataReader;
+    private var dbconn : IDbConnection;
+    private var dbcmd : IDbCommand;
 
-
-
-
-
-
-static function InsertPlayer (playerID : int, gold: int, playerName : String, totalCapacity) {
-
-    var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
-    var reader : IDataReader;
-    var dbconn : IDbConnection;
-    var dbcmd : IDbCommand;
+     function connectDB(){  
     dbconn = new SqliteConnection(conn);
     dbconn.Open();
+    }
+    function closeDB(){
+        reader.Close();
+        reader = null;
+        dbcmd.Dispose();
+        dbcmd = null;
+        dbconn.Close();
+        dbconn = null;
+    
+    }
 
 
-    //wtf do i do with player ID?(auto increment derr);
+ function InsertPlayer (playerID : int, gold: int, playerName : String, totalCapacity) {
+
+
+    //wtf do i do with player ID?(auto increment duhrr);
     dbcmd = dbconn.CreateCommand();
     dbcmd.CommandText = "INSERT INTO playerdata(name,gold) VALUES ("+playerName+","+gold+")";
     reader = dbcmd.ExecuteReader();
 
 
-    reader.Close();
-    reader = null;
-    dbcmd.Dispose();
-    dbcmd = null;
-    dbconn.Close();
-    dbconn = null;
-
 }
 
 //CREATE SHIP
 
-static function InsertShip (playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
+ function InsertShip (playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
     //Should call InsertCargoHolder 
+
+     dbcmd = dbconn.CreateCommand();
+     dbcmd.CommandText = "INSERT INTO ships(playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+playerID+","+type+","+location+","+destination+","+voyageStartTime+","+voyageEndTime+")";
+     reader = dbcmd.ExecuteReader();
+
 
 }
 
 //CREATE CARGO
 
-static function InsertCargo (shipID : int, cargoID : int, qty : int) {
+ function InsertCargo (shipID : int, cargoID : int, qty : int) {
+
+     dbcmd = dbconn.CreateCommand();
+     dbcmd.CommandText = "INSERT INTO playerdata(shipID,cargoID,qty) VALUES ("+shipID+","+cargoID+","+qty+")";
+     reader = dbcmd.ExecuteReader();
 
 }
 
 //CREATE TRADE QUEST
 
-static function InsertTradeQuest (playerID : int, rewardCargoID : int, 
+ function InsertTradeQuest (playerID : int, rewardCargoID : int, 
 				rewardCargoAmt : int, requiredCargoID : int, 
 				requiredCargoAmt : int, location : int) {
 
@@ -70,42 +82,46 @@ static function InsertTradeQuest (playerID : int, rewardCargoID : int,
 
 //CREATE TRANSLATION QUEST
 
-static function LoadTranslationQuest () {
+ function LoadTranslationQuest () {
 
 
 }
 
 //UPDATE PLAYER
 
-static function UpdateGold (playerID : int, gold : int) {
+ function UpdateGold (playerID : int, gold : int) {
+
+     dbcmd = dbconn.CreateCommand();
+     dbcmd.CommandText = "UPDATE playerdata SET gold = "+gold+" WHERE playerID="+playerID;
+     reader = dbcmd.ExecuteReader();
 
 }
 
-static function UpdateTotalCapacity (playerID : int, totalCapacity : int) {
+ function UpdateTotalCapacity (playerID : int, totalCapacity : int) {
 
 }	
 
 //UPDATE SHIP
 
-static function UpdateShipLocation (playerID : int, shipID : int, location : int) {
+ function UpdateShipLocation (playerID : int, shipID : int, location : int) {
 	
 }
 
-static function UpdateShipDestination (playerID : int, shipID : int, destination : int) {
+ function UpdateShipDestination (playerID : int, shipID : int, destination : int) {
 	
 }
 
-static function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : int) {
+ function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : int) {
 	
 }
 
-static function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : int) {
+ function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : int) {
 	
 }
 
 //UPDATE CARGO
 
-static function UpdateCargo (shipID : int, cargoID : int , qty : int) {
+ function UpdateCargo (shipID : int, cargoID : int , qty : int) {
 
 
 	// IF AMOUNT <= 0 DELETE :)
@@ -113,17 +129,17 @@ static function UpdateCargo (shipID : int, cargoID : int , qty : int) {
 
 //UPDATE TRADE QUEST
 
-static function InsertTradeQuest (playerID : int, questID : int, amtGiven : int) {
+ function InsertTradeQuest (playerID : int, questID : int, amtGiven : int) {
 	
 }
 
-static function DeleteTradeQuest (playerID : int, questID : int) {
+ function DeleteTradeQuest (playerID : int, questID : int) {
 	
 }
 
 //UPDATE TRANSLATION QUEST
 
-    static function FinishTranslationQuest (translationQuestID : int) {
+     function FinishTranslationQuest (translationQuestID : int) {
         //DELETE QUEST
     }
 
