@@ -111,6 +111,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 0
@@ -178,6 +179,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 412001999}
   m_RootOrder: 1
@@ -302,6 +304,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1024970246}
   - {fileID: 1779018812}
@@ -342,6 +345,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 412001999}
   m_RootOrder: 2
@@ -409,6 +413,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 2
@@ -474,6 +479,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 61464327}
   - {fileID: 1777608427}
@@ -603,6 +609,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -630,6 +637,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 711690689}
   m_Father: {fileID: 1024970246}
@@ -665,6 +673,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1538650433}
   m_RootOrder: 1
@@ -738,6 +747,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1779018812}
   m_RootOrder: 2
@@ -806,6 +816,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1779018812}
   m_RootOrder: 0
@@ -890,6 +901,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1538650433}
   m_RootOrder: 5
@@ -963,6 +975,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1538650433}
   m_RootOrder: 2
@@ -1037,6 +1050,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 979886121}
   m_Father: {fileID: 215936425}
@@ -1157,6 +1171,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2006952674}
   m_RootOrder: 3
@@ -1230,6 +1245,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 3
@@ -1301,6 +1317,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1263001450}
   - {fileID: 109569926}
@@ -1343,6 +1360,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1785596324}
   m_RootOrder: 0
@@ -1472,6 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 561c94511266de84a9bdb38af7bab356, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &452423253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,6 +1502,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cabd798a322b224c9c5ba0aa6c4e4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    playerName: 
+    gold: 0
+    totalCapacity: 0
+    currShip: 0
+    ships: []
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+      cargoReference: {fileID: 0}
+    location: 0
+    time_start: 0
+  button: {fileID: 0}
 --- !u!1 &494067749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1543,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2006952674}
   m_RootOrder: 1
@@ -1585,12 +1620,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player:
-    playerName: Player
+    playerName: 506c61796572
     gold: 500
     totalCapacity: 50
     currShip: 0
     ships:
-    - shipName: Balanghai
+    - shipName: 42616c616e67686169
       sprite: {fileID: 21300000, guid: ee6cb1c6d8adb674b807bdf55f75bdcb, type: 3}
       icon: {fileID: 21300000, guid: 6a432e6e672c116488cfe4bb6330bb7f, type: 3}
       type: 2
@@ -1704,6 +1739,7 @@ MonoBehaviour:
           quantity: 0
         - itemID: 0
           quantity: 0
+        cargoReference: {fileID: 0}
       shipWidth: 700
       shipHeight: 340
       destination: -1
@@ -1714,6 +1750,7 @@ MonoBehaviour:
       amtInCargo: 0
       currWeight: 0
       cargo: []
+      cargoReference: {fileID: 0}
     location: 1
     time_start: 0
 --- !u!4 &509335120
@@ -1725,6 +1762,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 521.2955, y: 313.41986, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1754,6 +1792,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1538650433}
   m_RootOrder: 4
@@ -1825,6 +1864,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1779018812}
   m_RootOrder: 1
@@ -1859,6 +1899,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1538650433}
   m_RootOrder: 3
@@ -1932,6 +1973,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 412001999}
   m_RootOrder: 3
@@ -1999,6 +2041,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 228884675}
   m_RootOrder: 0
@@ -2066,6 +2109,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1118062272}
   m_RootOrder: 0
@@ -2190,6 +2234,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2222,13 +2267,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settlements:
-  - name: PlayerSettlement
+  - name: 506c61796572536574746c656d656e74
     market:
       cargo:
         capacity: 3
         amtInCargo: 3
         currWeight: 0
         cargo: []
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio: []
       gold: 0
@@ -2237,7 +2283,7 @@ MonoBehaviour:
     coordY: 0
     unlocked: 0
     price: 0
-  - name: Sikdagat
+  - name: 53696b6461676174
     market:
       cargo:
         capacity: 3
@@ -2250,6 +2296,7 @@ MonoBehaviour:
           quantity: 100
         - itemID: 7
           quantity: 100
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio:
       - ratio: 1.5
@@ -2264,7 +2311,7 @@ MonoBehaviour:
     coordY: 800
     unlocked: 1
     price: 0
-  - name: Kagisnan
+  - name: 4b616769736e616e
     market:
       cargo:
         capacity: 3
@@ -2277,6 +2324,7 @@ MonoBehaviour:
           quantity: 100
         - itemID: 4
           quantity: 100
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio:
       - ratio: 1.25
@@ -2293,7 +2341,7 @@ MonoBehaviour:
     coordY: 700
     unlocked: 1
     price: 0
-  - name: Mapawikan
+  - name: 4d61706177696b616e
     market:
       cargo:
         capacity: 3
@@ -2306,6 +2354,7 @@ MonoBehaviour:
           quantity: 100
         - itemID: 9
           quantity: 100
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio:
       - ratio: 1.1
@@ -2320,7 +2369,7 @@ MonoBehaviour:
     coordY: 700
     unlocked: 0
     price: 100
-  - name: Atabay
+  - name: 417461626179
     market:
       cargo:
         capacity: 3
@@ -2333,6 +2382,7 @@ MonoBehaviour:
           quantity: 10
         - itemID: 8
           quantity: 10
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio:
       - ratio: 1.1
@@ -2347,7 +2397,7 @@ MonoBehaviour:
     coordY: 700
     unlocked: 0
     price: 300
-  - name: Balasin
+  - name: 42616c6173696e
     market:
       cargo:
         capacity: 3
@@ -2360,6 +2410,7 @@ MonoBehaviour:
           quantity: 10
         - itemID: 4
           quantity: 10
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio:
       - ratio: 0.1
@@ -2374,7 +2425,7 @@ MonoBehaviour:
     coordY: 700
     unlocked: 0
     price: 500
-  - name: Lungon
+  - name: 4c756e676f6e
     market:
       cargo:
         capacity: 3
@@ -2387,6 +2438,7 @@ MonoBehaviour:
           quantity: 100
         - itemID: 5
           quantity: 100
+        cargoReference: {fileID: 0}
       shopPriceRatio: 0.9
       itemPriceRatio:
       - ratio: 1
@@ -2410,6 +2462,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 521.2955, y: 313.41986, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2439,6 +2492,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 356836758}
   m_RootOrder: 0
@@ -2538,6 +2592,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2566,6 +2621,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 564.96936, y: 252.16971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2586,6 +2642,25 @@ MonoBehaviour:
   instantiated: 0
   minNumHumans: 2
   maxNumHumans: 6
+  shipDocked: 0
+  ship: {fileID: 0}
+  water: {fileID: 0}
+  player:
+    playerName: 
+    gold: 0
+    totalCapacity: 0
+    currShip: 0
+    ships: []
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+      cargoReference: {fileID: 0}
+    location: 0
+    time_start: 0
+  backgroundReference: {fileID: 0}
+  settlements: {fileID: 0}
 --- !u!1 &1024970245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,6 +2685,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 228884675}
   m_Father: {fileID: 159488293}
@@ -2646,6 +2722,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 838161519}
   m_Father: {fileID: 1346777307}
@@ -2765,6 +2842,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1785596324}
   - {fileID: 2006952674}
@@ -2790,6 +2868,22 @@ MonoBehaviour:
   playerName: {fileID: 494067751}
   goldAmt: {fileID: 380152985}
   shipScreen: 1
+  player:
+    playerName: 
+    gold: 0
+    totalCapacity: 0
+    currShip: 0
+    ships: []
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+      cargoReference: {fileID: 0}
+    location: 0
+    time_start: 0
+  settlements: []
+  settlementsSpriteHandler: {fileID: 0}
 --- !u!1 &1263001449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2910,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 412001999}
   m_RootOrder: 0
@@ -2883,6 +2978,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2006952674}
   m_RootOrder: 0
@@ -2951,6 +3047,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2130265617}
   m_RootOrder: 0
@@ -3009,6 +3106,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3ac2a873fd37d4c9ec7c37136598c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    playerName: 
+    gold: 0
+    totalCapacity: 0
+    currShip: 0
+    ships: []
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+      cargoReference: {fileID: 0}
+    location: 0
+    time_start: 0
+  shipHandler: {fileID: 0}
 --- !u!1 &1315778923
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3147,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2006952674}
   m_RootOrder: 2
@@ -3101,6 +3214,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1118062272}
   - {fileID: 1921624110}
@@ -3120,7 +3234,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1346777306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04b506042fc4cf41a88a19a769b49f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a325920cf25f4cdfb377a4699f68da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1348352784
@@ -3152,6 +3266,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1785596324}
   m_RootOrder: 2
@@ -3281,6 +3396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 561c94511266de84a9bdb38af7bab356, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1468333502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,6 +3426,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 7
@@ -3439,6 +3556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 8d2e451265199f74ab7cda2a85590a41, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1485599497
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,6 +3583,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1538650433}
   m_RootOrder: 0
@@ -3541,6 +3660,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 8
@@ -3670,6 +3790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 1e69a661595154f4e8e9d0089db0b6c9, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1538650432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3817,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1485599498}
   - {fileID: 238950804}
@@ -3772,6 +3894,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 6
@@ -3901,6 +4024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 561c94511266de84a9bdb38af7bab356, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1777608426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,6 +4051,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 215936425}
   m_RootOrder: 1
@@ -3992,6 +4117,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 265948937}
   - {fileID: 627745257}
@@ -4027,6 +4153,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 452423247}
   - {fileID: 2095164175}
@@ -4072,6 +4199,22 @@ MonoBehaviour:
   shipCapacity: {fileID: 325533095}
   hullStrength: {fileID: 580820820}
   settlementSprites: {fileID: 1021599712}
+  player:
+    playerName: 
+    gold: 0
+    totalCapacity: 0
+    currShip: 0
+    ships: []
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+      cargoReference: {fileID: 0}
+    location: 0
+    time_start: 0
+  shipReference: {fileID: 0}
+  settlements: {fileID: 0}
 --- !u!4 &1796466066
 Transform:
   m_ObjectHideFlags: 0
@@ -4081,6 +4224,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1380.4255, y: 400.0001, z: 0}
   m_LocalScale: {x: 0.47, y: 0.47, z: 0.47}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -4111,6 +4255,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1346777307}
   m_RootOrder: 1
@@ -4231,6 +4376,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1346777307}
   m_RootOrder: 2
@@ -4348,6 +4494,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1287135967}
   - {fileID: 494067750}
@@ -4390,6 +4537,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1785596324}
   m_RootOrder: 1
@@ -4519,6 +4667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 561c94511266de84a9bdb38af7bab356, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &2095164181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4530,6 +4679,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cabd798a322b224c9c5ba0aa6c4e4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    playerName: 
+    gold: 0
+    totalCapacity: 0
+    currShip: 0
+    ships: []
+    cargo:
+      capacity: 0
+      amtInCargo: 0
+      currWeight: 0
+      cargo: []
+      cargoReference: {fileID: 0}
+    location: 0
+    time_start: 0
+  button: {fileID: 0}
 --- !u!1 &2130265616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4556,6 +4720,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1302171584}
   m_Father: {fileID: 215936425}
