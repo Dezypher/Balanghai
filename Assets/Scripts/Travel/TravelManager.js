@@ -32,7 +32,7 @@ function Send(shipIndex : int){
 			var dbaccess : DBAccess = new DBAccess();
 
 			dbaccess.connectDB();
-			var playerID = 2;
+			var playerID = player.playerID;
 
 			dbaccess.UpdateShipLocation(playerID, shipIndex, -1);
 			dbaccess.UpdateShipDestination(playerID, shipIndex, destination);

@@ -111,7 +111,15 @@ class CargoHolder {
 					cargo[amtInCargo].quantity = 0;
 					amtInCargo--;
 				}
-				
+
+
+				var dbaccess : DBAccess = new DBAccess();
+
+				dbaccess.connectDB();
+				dbaccess.UpdateCargo(playerID, shipID, itemID, GetCargoQuantityByID(itemID));
+				dbaccess.closeDB();
+
+
 				break;
 			}
 		}
