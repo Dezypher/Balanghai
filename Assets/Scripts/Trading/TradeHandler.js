@@ -48,11 +48,10 @@ function Sell (itemID : int, qty : int) {
 		player.gold += price;
 
 		var dbaccess : DBAccess = new DBAccess();
-		var playerID = 2;
 
 		dbaccess.connectDB();
 
-		dbaccess.UpdateGold(playerID, player.gold);
+		dbaccess.UpdateGold(player.playerID, player.gold);
 
 		dbaccess.closeDB();
 
@@ -91,11 +90,10 @@ function Buy (itemID : int, qty : int) {
 			//trader.gold -= price;
 
 			var dbaccess : DBAccess = new DBAccess();
-			var playerID = 2;
 
 			dbaccess.connectDB();
 
-			dbaccess.UpdateGold(playerID, player.gold);
+			dbaccess.UpdateGold(player.playerID, player.gold);
 
 			dbaccess.closeDB();
 			

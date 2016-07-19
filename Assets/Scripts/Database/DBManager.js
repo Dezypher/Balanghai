@@ -5,20 +5,18 @@
  import Mono.Data.Sqlite;
  import System.Collections.Generic;
 
-
-
- function Start () {
-     Debug.Log("hahahha");
+function Awake () {
      var db:DBAccess;
      db = new DBAccess();
 
+     var playerStatus : PlayerStatus = GetComponent(PlayerStatus);
+
      db.connectDB();
-     //db.InsertShip ("barbara",2, 1 , 1, -1, 0, 0);
-     db.InitializeData();
-
+     db.InitializeData(playerStatus);
      db.closeDB();
- }
 
+     playerStatus.Instantiate();
+ }
 
  public class DBAccess{
 
@@ -27,9 +25,26 @@
     private var dbconn : IDbConnection;
     private var dbcmd : IDbCommand;
 
-     function InitializeData () {
+    function FillBaseData() {
+
+    }
+
+    function InitializeData (playerStatus : PlayerStatus) {
       
-         
+    //Check if there is already a player
+
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT* From playerdata";
+	reader = dbcmd.ExecuteReader();
+
+	if(!reader.Read()){
+		Debug.Log("DB is Empty, making new Player");
+
+		//Insert Base Player (500 Gold)
+		InsertPlayer (0, 500, "Player", 0);
+		//Insert Balanghai Ship
+		InsertShip (0,"Balanghai",0, 2, 1, -1, 0, 0);
+	}
 
 
 	/*
@@ -41,13 +56,12 @@
          //Load player name and gold
          
 	dbcmd=dbconn.CreateCommand();
-	dbcmd.CommandText = "SELECT* From playerdata";
+	dbcmd.CommandText = "SELECT * From playerdata";
 	reader = dbcmd.ExecuteReader();
 
-      
 	while (reader.Read())
-	{
-
+	{	
+		player.playerID = reader.GetInt32(0);
 	    player.playerName = reader.GetString(1);
 	    player.gold =reader.GetFloat(2);
 	}
@@ -58,114 +72,110 @@
 
 	//Load player ships
 
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT COUNT(*) from ships";
+	reader = dbcmd.ExecuteReader();
+
+	reader.Read();
+
+    // Set to num of results
+	var numShips = reader.GetInt32(0);	
+	player.ships = new Ship[numShips];
+
+	Debug.Log(numShips);
+
+
+	var shipRef : ShipReference = (Resources.Load("Reference/ShipReference") as GameObject)
+										.GetComponent(ShipReference);
 
 	dbcmd=dbconn.CreateCommand();
 	dbcmd.CommandText = "SELECT* From ships";
 	reader = dbcmd.ExecuteReader();
 
+	var shipIndex = 0;
 
-    // Set to num of results
-      var numShips = 0;
 	while (reader.Read())
-	{
-	    numShips++;
-	    Debug.Log(reader.GetString(2));
-
+	{	
 
 	    var shipType = reader.GetInt32(3); // set 0 to ship type
-	    var shipIndex = reader.GetInt32(0);; // set 0 to shipIndex
+	    player.ships[shipIndex] = new Ship();
 
 	    player.ships[shipIndex].location = reader.GetInt32(4);
 	    player.ships[shipIndex].destination = reader.GetInt32(5);
 	    player.ships[shipIndex].voyageStartTime = reader.GetFloat(6);
 	    player.ships[shipIndex].voyageEndTime = reader.GetFloat(7);
 
-	    player.ships[shipIndex] = new Ship();
+	    
 
 	    player.ships[shipIndex].shipName = reader.GetString(2); // get shipName from result
+	    player.ships[shipIndex].type = shipRef.ships[shipType].type;
 	    player.ships[shipIndex].sprite = shipRef.ships[shipType].sprite;
 	    player.ships[shipIndex].icon = shipRef.ships[shipType].icon;
-	    player.ships[shipIndex].type = shipRef.ships[shipType].type;
 	    player.ships[shipIndex].speed = shipRef.ships[shipType].speed;
 	    player.ships[shipIndex].capacity = shipRef.ships[shipType].capacity;
 	    player.ships[shipIndex].hullStrength = shipRef.ships[shipType].hullStrength;
 	    player.ships[shipIndex].shipWidth = shipRef.ships[shipType].shipWidth;
 	    player.ships[shipIndex].shipHeight = shipRef.ships[shipType].shipHeight;
 
+	    player.ships[shipIndex].cargo = new CargoHolder();
+	    player.ships[shipIndex].cargo.capacity = player.ships[shipIndex].capacity;
+	    player.ships[shipIndex].cargo.Start();
+
 	    //Get below from resultset
-
-
-
+	    shipIndex++;
 	}
 
 
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT * From Cargo where playerID = " + player.playerID;
+	reader = dbcmd.ExecuteReader();
 
-	 
+	while (reader.Read()){
+		Debug.Log("LOADED");
 
-	player.ships = new Ship[numShips];
+	    var shipID =  reader.GetInt32(0); 
+	    var itemID = reader.GetInt32(2); 
+	    var qty = reader.GetInt32(3); 
 
-	var shipRef : ShipReference = (Resources.Load("Reference/ShipReference") as GameObject)
-										.GetComponent(ShipReference);
+	    Debug.Log(shipID);
+	    Debug.Log(itemID);
+	    Debug.Log(qty);
+	    player.ships[shipID].cargo.AddCargoNoDB(itemID, qty);
 
-	//WHILE LOOP ( there is still ships )
-	//{
-		var shipType = 0; // set 0 to ship type
-		var shipIndex = 0; // set 0 to shipIndex
+	}
+    
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT* From TradeQuest";
+	reader = dbcmd.ExecuteReader();
 
-		player.ships[shipIndex] = new Ship();
+	while (reader.Read()){
+	    var tradeQuest : TradeQuest;
 
-		player.ships[shipIndex].shipName = ""; // get shipName from result
-		player.ships[shipIndex].sprite = shipRef.ships[shipType].sprite;
-		player.ships[shipIndex].icon = shipRef.ships[shipType].icon;
-		player.ships[shipIndex].type = shipRef.ships[shipType].type;
-		player.ships[shipIndex].speed = shipRef.ships[shipType].speed;
-		player.ships[shipIndex].capacity = shipRef.ships[shipType].capacity;
-		player.ships[shipIndex].hullStrength = shipRef.ships[shipType].hullStrength;
-		player.ships[shipIndex].shipWidth = shipRef.ships[shipType].shipWidth;
-		player.ships[shipIndex].shipHeight = shipRef.ships[shipType].shipHeight;
+	    tradeQuest.rewardCargoID = reader.GetInt32(2);
+	    tradeQuest.rewardCargoAmount = reader.GetInt32(3);
+	    tradeQuest.requiredCargoID = reader.GetInt32(4);
+	    tradeQuest.requiredCargoAmount = reader.GetInt32(5);
+	    //tradeQuest.location = 0;
 
-		//Get below from resultset
-		player.ships[shipIndex].location = 0;
-		player.ships[shipIndex].destination = 0;
-		player.ships[shipIndex].voyageStartTime = 0;
-		player.ships[shipIndex].voyageEndTime = 0;
-	//}
+	    player.quests.Add(tradeQuest);
+    }
 
-	//WHILE LOOP ( there is still cargo where playerID = 0 or wtvr )
-	//{
-		var shipID = 0; // SHIP ID from table
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT* From TranslationQuest";
+	reader = dbcmd.ExecuteReader();
 
-		var itemID = 0; // ITEM ID
-		var qty = 0; // QTY
+	while (reader.Read()){
+	
+			var translationQuest : TranslationQuest;
 
-		player.ships[shipID].cargo.AddCargo(itemID, qty);
-	//}
-
-	//TradeQuest Load
-
-	//WHILE LOOP ( there is still trade quest where playerID = 0 or wtvr )
-	//{
-		var tradeQuest : TradeQuest;
-
-		tradeQuest.rewardCargoID = 0;
-		tradeQuest.rewardCargoAmount = 0;
-		tradeQuest.requiredCargoID = 0;
-		tradeQuest.requiredCargoAmount = 0;
-		//tradeQuest.location = 0;
-
-		player.quests.Add(tradeQuest);
-	//}
-
-	//WHILE LOOP ( there is still translation quest where playerID = 0 or wtvr )
-	//{
-		var translationQuest : TranslationQuest;
-
-		var toBeTranslated = "";
+			var toBeTranslated = reader.GetString(4);
 		//var rewardCargoID = 0;
 		//var rewardCargoAmt = 0;
 
 		player.quests.Add(translationQuest);
-	//}
+	}
+
+	playerStatus.player = player;
 }
 
 //CREATE PLAYER
@@ -195,11 +205,11 @@
 
 //CREATE SHIP
 
-	    function InsertShip (shipName : String,playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
+	function InsertShip (shipID : int,shipName : String,playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
 	    //Should call InsertCargoHolder 
 
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "INSERT INTO ships(shipName,playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+shipName+","+playerID+","+type+","+location+","+destination+","+voyageStartTime+","+voyageEndTime+")";
+	     dbcmd.CommandText = "INSERT INTO ships(id,shipName,playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+shipID+",'"+shipName+"',"+playerID+","+type+","+location+","+destination+","+voyageStartTime+","+voyageEndTime+")";
 	     reader = dbcmd.ExecuteReader();
 	}
 
@@ -208,9 +218,8 @@
 	function InsertCargo (playerID : int, shipID : int, cargoID : int, qty : int) {
 
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "INSERT INTO Cargo(playerID,shipID,cargoID,qty) VALUES ("+playerID+","+shipID+","+cargoID+","+qty+")";
+	     dbcmd.CommandText = "INSERT INTO Cargo(playerID, shipID,cargoID,qty) VALUES ("+playerID+","+shipID+","+cargoID+","+qty+")";
 	     reader = dbcmd.ExecuteReader();
-
 	}
 
 //CREATE TRADE QUEST
@@ -267,14 +276,18 @@
 	function UpdateCargo (playerID : int, shipID : int, cargoID : int , qty : int) {
 	    if(qty>0){
 	        dbcmd = dbconn.CreateCommand();
-	        dbcmd.CommandText = "UPDATE Cargo SET qty = "+qty+" WHERE playerID =" + playerID + "shipID="+shipID+" AND cargoID="+cargoID;
+	        dbcmd.CommandText = "UPDATE Cargo SET qty = "+qty+" WHERE cargoHolderID="+playerID+" AND cargoID="+cargoID;
 	        reader = dbcmd.ExecuteReader();}
 	    else{
 	        dbcmd = dbconn.CreateCommand();
-	        dbcmd.CommandText = "DELETE FROM Cargo WHERE playerID="+playerID+" AND cargoID="+ cargoID + " AND shipID=" + shipID;
+	        dbcmd.CommandText = "DELETE FROM Cargo WHERE cargoHolderID="+playerID+" AND cargoID="+cargoID;
 	        reader = dbcmd.ExecuteReader();
 	    
 	    }
+
+
+
+		// IF AMOUNT <= 0 DELETE 🙂
 	}
 
 //UPDATE TRADE QUEST

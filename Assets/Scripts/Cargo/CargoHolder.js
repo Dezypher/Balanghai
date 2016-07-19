@@ -8,7 +8,7 @@ class CargoHolder {
 	public var playerID : int;
 	public var shipID : int;
 
-	public var cargo = new InventorySlot[capacity];
+	public var cargo = new InventorySlot[50];
 	private var cargoReference : CargoRefScript;
 
 	function Start(){
@@ -17,7 +17,41 @@ class CargoHolder {
 		currWeight = 0;
 		CalculateWeight();
 	}
-	
+
+	function AddCargoNoDB(itemID : int, qty : int){
+		var hasCargo = false;
+		var itemWeight = cargoReference.cargos[itemID].weight * qty; 
+
+		if(currWeight + itemWeight < capacity){
+			for(var i = 0; i < amtInCargo; i++){
+				if(itemID == cargo[i].itemID){
+					hasCargo = true;
+					cargo[i].quantity += qty;
+					
+					break;
+				}
+			}
+
+			var dbaccess : DBAccess = new DBAccess();
+
+			if(!hasCargo){
+				var newCargo = new InventorySlot();
+				newCargo.itemID = itemID;
+				newCargo.quantity = qty;
+				cargo[amtInCargo] = newCargo;
+				amtInCargo++;
+			}
+
+			CalculateWeight();
+			return true;
+		}else {
+			// SEND BACK A MESSAGE THAT CAPACITY IS FULL
+			Debug.Log("Cargo is full!");
+			AlertHandler.AlertPopup("Your cargo cannot hold that much!");
+			return false;
+		}
+	}
+
 	function AddCargo(itemID : int, qty : int){
 		var hasCargo = false;
 		var itemWeight = cargoReference.cargos[itemID].weight * qty; 
