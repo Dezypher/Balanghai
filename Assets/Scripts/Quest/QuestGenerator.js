@@ -41,9 +41,17 @@ class QuestGenerator extends MonoBehaviour {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
 		var rewardCargoID : int = Random.Range(1,cargoTypes);
 		var rewardAmount : int = Random.Range(1,requiredAmountMax);
+		var url = "http://127.0.0.1:8081/get_translation_quest";
+		var www = new WWW(url);
+		yield www;
+		if(www.error == null) {
+		    newQuest.stringToTranslate = www.text;
+		}
+		else {
+		    Debug.Log("WWW Error: "+ www.error);
+		}
 		newQuest.rewardCargoID = rewardCargoID;
 		newQuest.rewardCargoAmount = rewardAmount;
-		newQuest.stringToTranslate = "Magandang Araw";
 		availableQuests.push(newQuest);
 	}
 
