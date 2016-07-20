@@ -35,6 +35,15 @@ function Unlock(){
 		currentimage[location].sprite = placeimage;
 		settlements[location].unlocked= true;
 		settlements[location].price=0;
+
+		var dbaccess : DBAccess = new DBAccess();
+
+		dbaccess.connectDB();
+
+		dbaccess.UpdateGold(player.playerID, player.gold);
+
+		dbaccess.closeDB();
+		
 		//Debug.Log("BAUGHT");
 		AlertHandler.AlertPopup("You have unlocked " + settlements[location].name + "!");
 	} else {

@@ -34,6 +34,8 @@ function Send(shipIndex : int){
 			dbaccess.connectDB();
 			var playerID = player.playerID;
 
+			Debug.Log("DERP");
+
 			dbaccess.UpdateShipLocation(playerID, shipIndex, -1);
 			dbaccess.UpdateShipDestination(playerID, shipIndex, destination);
 			dbaccess.UpdateShipVoyageStartTime(playerID, shipIndex, player.ships[shipIndex].voyageStartTime);

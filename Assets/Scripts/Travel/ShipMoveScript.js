@@ -141,8 +141,6 @@ function move(boatindex:int){
 
 			dbaccess.closeDB();
 		}
-		 
-		
 	}
 
 

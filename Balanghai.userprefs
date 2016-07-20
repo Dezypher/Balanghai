@@ -1,14 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp-Editor.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Database/DBManager.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trading/TradeHandler.js">
     <Files>
-      <File FileName="Assets/Scripts/Database/DBManager.js" Line="211" Column="31" />
-      <File FileName="Assets/Scripts/Cargo/CargoHolder.js" Line="21" Column="19" />
-      <File FileName="Assets/Scripts/ActorScripts/PlayerStatus.js" Line="6" Column="21" />
+      <File FileName="Assets/Scripts/Database/DBManager.js" Line="26" Column="36" />
+      <File FileName="Assets/Scripts/Cargo/CargoHolder.js" Line="112" Column="19" />
+      <File FileName="Assets/Scripts/ActorScripts/PlayerStatus.js" Line="8" Column="26" />
+      <File FileName="Assets/Scripts/UI/Cargo/WeightScript.js" Line="15" Column="2" />
+      <File FileName="Assets/Scripts/Trading/TradeHandler.js" Line="103" Column="1" />
+      <File FileName="Assets/Scripts/Ship/ShipHandler.js" Line="1" Column="5" />
+      <File FileName="Assets/Scripts/Travel/ShipMoveScript.js" Line="136" Column="4" />
+      <File FileName="Assets/Scripts/Travel/TravelManager.js" Line="29" Column="63" />
+      <File FileName="Assets/Scripts/Buttons/Overlay/OverlayText.js" Line="20" Column="26" />
+      <File FileName="Assets/Scripts/unlocking/unlockIslandManager.js" Line="45" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/Solomon/Balanghai/Assets/Scripts/Buttons/Overlay/OverlayText.js" line="13" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -25,10 +25,6 @@ function Awake () {
     private var dbconn : IDbConnection;
     private var dbcmd : IDbCommand;
 
-    function FillBaseData() {
-
-    }
-
     function InitializeData (playerStatus : PlayerStatus) {
       
     //Check if there is already a player
@@ -67,9 +63,6 @@ function Awake () {
 	}
 
 
-	Debug.Log(player.gold);
-
-
 	//Load player ships
 
 	dbcmd=dbconn.CreateCommand();
@@ -81,9 +74,6 @@ function Awake () {
     // Set to num of results
 	var numShips = reader.GetInt32(0);	
 	player.ships = new Ship[numShips];
-
-	Debug.Log(numShips);
-
 
 	var shipRef : ShipReference = (Resources.Load("Reference/ShipReference") as GameObject)
 										.GetComponent(ShipReference);
@@ -131,15 +121,10 @@ function Awake () {
 	reader = dbcmd.ExecuteReader();
 
 	while (reader.Read()){
-		Debug.Log("LOADED");
-
 	    var shipID =  reader.GetInt32(0); 
 	    var itemID = reader.GetInt32(2); 
 	    var qty = reader.GetInt32(3); 
 
-	    Debug.Log(shipID);
-	    Debug.Log(itemID);
-	    Debug.Log(qty);
 	    player.ships[shipID].cargo.AddCargoNoDB(itemID, qty);
 
 	}
@@ -238,18 +223,17 @@ function Awake () {
 //UPDATE PLAYER
 
 	function UpdateGold (playerID : int, gold : int) {
-
-	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE playerdata SET gold = "+gold+" WHERE playerID="+playerID;
-	     reader = dbcmd.ExecuteReader();
+		
+	    dbcmd = dbconn.CreateCommand();
+	    var query : String = "UPDATE playerdata SET gold = "+gold+" WHERE playerID=" + playerID;
+	    dbcmd.CommandText = query;
+	    reader = dbcmd.ExecuteReader();
 
 	}
 
 //UPDATE SHIP
 
 	function UpdateShipLocation (playerID : int, shipID : int, location : int) {
-		Debug.Log("Muhm");
-
 	     dbcmd = dbconn.CreateCommand();
 	     dbcmd.CommandText = "UPDATE ships SET location = "+location+" WHERE playerID="+playerID+" AND id="+shipID;
 	     reader = dbcmd.ExecuteReader();
@@ -261,13 +245,13 @@ function Awake () {
 	     reader = dbcmd.ExecuteReader();
 	}
 
-	function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : int) {
+	function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : float) {
 	     dbcmd = dbconn.CreateCommand();
 	     dbcmd.CommandText = "UPDATE ships SET voyageStartTime = "+time+" WHERE playerID="+playerID+" AND id="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 
-	function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : int) {
+	function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : float) {
 	     dbcmd = dbconn.CreateCommand();
 	     dbcmd.CommandText = "UPDATE ships SET voyageEndTime = "+time+" WHERE playerID="+playerID+" AND id="+shipID;
 	     reader = dbcmd.ExecuteReader();
@@ -287,9 +271,7 @@ function Awake () {
 	    
 	    }
 
-
-
-		// IF AMOUNT <= 0 DELETE 🙂
+		// IF AMOUNT <= 0 DELETE 🙂 
 	}
 
 //UPDATE TRADE QUEST
