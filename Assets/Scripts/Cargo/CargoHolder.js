@@ -107,8 +107,8 @@ class CargoHolder {
 						cargo[j] = cargo[j + 1];
 					}
 					
-					cargo[amtInCargo].itemID = 0;
-					cargo[amtInCargo].quantity = 0;
+					cargo[amtInCargo - 1].itemID = 0;
+					cargo[amtInCargo - 1].quantity = 0;
 					amtInCargo--;
 				}
 

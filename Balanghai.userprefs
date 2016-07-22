@@ -1,17 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp-Editor.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trading/TradeHandler.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SettlementBackground/SettlementSprites.js">
     <Files>
-      <File FileName="Assets/Scripts/Database/DBManager.js" Line="26" Column="36" />
-      <File FileName="Assets/Scripts/Cargo/CargoHolder.js" Line="112" Column="19" />
-      <File FileName="Assets/Scripts/ActorScripts/PlayerStatus.js" Line="8" Column="26" />
-      <File FileName="Assets/Scripts/UI/Cargo/WeightScript.js" Line="15" Column="2" />
-      <File FileName="Assets/Scripts/Trading/TradeHandler.js" Line="103" Column="1" />
-      <File FileName="Assets/Scripts/Ship/ShipHandler.js" Line="1" Column="5" />
-      <File FileName="Assets/Scripts/Travel/ShipMoveScript.js" Line="136" Column="4" />
-      <File FileName="Assets/Scripts/Travel/TravelManager.js" Line="29" Column="63" />
-      <File FileName="Assets/Scripts/Buttons/Overlay/OverlayText.js" Line="20" Column="26" />
-      <File FileName="Assets/Scripts/unlocking/unlockIslandManager.js" Line="45" Column="22" />
+      <File FileName="Assets/Scripts/Database/DBManager.js" Line="290" Column="27" />
+      <File FileName="Assets/Scripts/Cargo/CargoHolder.js" Line="111" Column="26" />
+      <File FileName="Assets/Scripts/unlocking/unlockIslandManager.js" Line="44" Column="66" />
+      <File FileName="Assets/Scripts/UI/Ships/ShipName.js" Line="17" Column="1" />
+      <File FileName="Assets/Scripts/CustomDisable/DisableWhenTraveling.js" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/SettlementBackground/SettlementSprites.js" Line="44" Column="1" />
+      <File FileName="Assets/Scripts/Buttons/Overlay/OverlayText.js" Line="28" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

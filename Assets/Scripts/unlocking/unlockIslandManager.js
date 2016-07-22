@@ -41,6 +41,7 @@ function Unlock(){
 		dbaccess.connectDB();
 
 		dbaccess.UpdateGold(player.playerID, player.gold);
+		dbaccess.UpdateSettlementUnlocked(location,player.playerID, 1);
 
 		dbaccess.closeDB();
 		

@@ -10,9 +10,10 @@ function Awake () {
      db = new DBAccess();
 
      var playerStatus : PlayerStatus = GetComponent(PlayerStatus);
+     var settlements : Trader = GameObject.Find("Settlements").GetComponent(Trader);
 
      db.connectDB();
-     db.InitializeData(playerStatus);
+     db.InitializeData(playerStatus, settlements);
      db.closeDB();
 
      playerStatus.Instantiate();
@@ -25,34 +26,34 @@ function Awake () {
     private var dbconn : IDbConnection;
     private var dbcmd : IDbCommand;
 
-    function InitializeData (playerStatus : PlayerStatus) {
-      
+    function InitializeData (playerStatus : PlayerStatus, settlements : Trader) {
+
     //Check if there is already a player
 
 	dbcmd=dbconn.CreateCommand();
 	dbcmd.CommandText = "SELECT* From playerdata";
 	reader = dbcmd.ExecuteReader();
 
+	var player : Player = new Player();
+	var instantiateDB : boolean = false;
+
 	if(!reader.Read()){
 		Debug.Log("DB is Empty, making new Player");
 
+		instantiateDB = true;
+
 		//Insert Base Player (500 Gold)
 		InsertPlayer (0, 500, "Player", 0);
-		//Insert Balanghai Ship
-		InsertShip (0,"Balanghai",0, 2, 1, -1, 0, 0);
 	}
-
 
 	/*
 		Load all player data from DB 
 	*/
 
-	var player : Player = new Player();
+	//Load player name and gold
 
-         //Load player name and gold
-         
 	dbcmd=dbconn.CreateCommand();
-	dbcmd.CommandText = "SELECT * From playerdata";
+	dbcmd.CommandText = "SELECT* From playerdata";
 	reader = dbcmd.ExecuteReader();
 
 	while (reader.Read())
@@ -62,11 +63,57 @@ function Awake () {
 	    player.gold =reader.GetFloat(2);
 	}
 
+	if(instantiateDB){
+		//Insert Balanghai Ship
+		InsertShip (0,"Balanghai",player.playerID, 2, 1, -1, 0, 0);
+	}
+
+
+    //Instantiate Settlements Table if empty
+
+    Debug.Log("PlayerID : " + player.playerID);
+
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT * From Settlements where playerID = " + player.playerID;
+	reader = dbcmd.ExecuteReader();
+
+	if(!reader.Read()){
+		Debug.Log("Settlements is Empty, filling table. #Settlements: " + settlements.settlements.length);
+
+		for(var i = 0; i < settlements.settlements.length; i++){
+			if(i == 0 || i == 1)
+				InsertSettlement(i, player.playerID, 1, 0);
+			else
+				InsertSettlement(i, player.playerID, 0, 0);
+
+		}
+	}
+    
+	dbcmd=dbconn.CreateCommand();
+	dbcmd.CommandText = "SELECT unlocked From Settlements where playerID = " + player.playerID;
+	reader = dbcmd.ExecuteReader();
+
+
+	var j = 0;
+
+	while (reader.Read())
+	{	
+		var result : int = reader.GetInt32(0);
+
+		Debug.Log("j = " + j + " result = " + result);
+
+		if(result == 0)
+			settlements.settlements[j].unlocked = false;
+		else 
+			settlements.settlements[j].unlocked = true;
+
+		j++;
+	}
 
 	//Load player ships
 
 	dbcmd=dbconn.CreateCommand();
-	dbcmd.CommandText = "SELECT COUNT(*) from ships";
+	dbcmd.CommandText = "SELECT COUNT(*) from ships WHERE playerID = " + player.playerID;
 	reader = dbcmd.ExecuteReader();
 
 	reader.Read();
@@ -79,7 +126,7 @@ function Awake () {
 										.GetComponent(ShipReference);
 
 	dbcmd=dbconn.CreateCommand();
-	dbcmd.CommandText = "SELECT* From ships";
+	dbcmd.CommandText = "SELECT* From ships where playerID = " + player.playerID;
 	reader = dbcmd.ExecuteReader();
 
 	var shipIndex = 0;
@@ -126,11 +173,10 @@ function Awake () {
 	    var qty = reader.GetInt32(3); 
 
 	    player.ships[shipID].cargo.AddCargoNoDB(itemID, qty);
-
 	}
     
 	dbcmd=dbconn.CreateCommand();
-	dbcmd.CommandText = "SELECT* From TradeQuest";
+	dbcmd.CommandText = "SELECT* From TradeQuest where playerID = " + player.playerID;
 	reader = dbcmd.ExecuteReader();
 
 	while (reader.Read()){
@@ -146,7 +192,7 @@ function Awake () {
     }
 
 	dbcmd=dbconn.CreateCommand();
-	dbcmd.CommandText = "SELECT* From TranslationQuest";
+	dbcmd.CommandText = "SELECT* From TranslationQuest where playerID = " + player.playerID;
 	reader = dbcmd.ExecuteReader();
 
 	while (reader.Read()){
@@ -185,6 +231,14 @@ function Awake () {
 	function InsertPlayer (playerID : int, gold: int, playerName : String, totalCapacity) {
 	    dbcmd = dbconn.CreateCommand();
 	    dbcmd.CommandText = "INSERT INTO playerdata(name,gold) VALUES ('"+playerName+"',"+gold+")";
+	    reader = dbcmd.ExecuteReader();
+	}
+
+//CREATE SETTLEMENT
+
+	function InsertSettlement(settlementID : int, playerID : int, unlocked : int, influence : float) {
+	    dbcmd = dbconn.CreateCommand();
+	    dbcmd.CommandText = "INSERT INTO Settlements(settlementID,playerID,unlocked,influence) VALUES ("+settlementID+","+playerID+","+unlocked+","+influence+")";
 	    reader = dbcmd.ExecuteReader();
 	}
 
@@ -229,6 +283,20 @@ function Awake () {
 	    dbcmd.CommandText = query;
 	    reader = dbcmd.ExecuteReader();
 
+	}
+
+//UPDATE SETTLEMENT
+
+	function UpdateSettlementUnlocked(settlementID : int, playerID : int, unlocked : int) {
+	     dbcmd = dbconn.CreateCommand();
+	     dbcmd.CommandText = "UPDATE Settlements SET unlocked = "+unlocked+" WHERE settlementID="+settlementID+" AND playerID="+playerID;
+	     reader = dbcmd.ExecuteReader();
+	}
+
+	function UpdateSettlementInfluence(settlementID : int, playerID : int, influence : float) {
+	     dbcmd = dbconn.CreateCommand();
+	     dbcmd.CommandText = "UPDATE Settlements SET influence = "+influence+" WHERE playerID="+playerID+" AND settlementID="+settlementID;
+	     reader = dbcmd.ExecuteReader();
 	}
 
 //UPDATE SHIP
