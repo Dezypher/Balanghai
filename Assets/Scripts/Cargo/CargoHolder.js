@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+import System.Collections.Generic;
+
 class CargoHolder {
 	public var capacity : int;
 	public var amtInCargo : int;
@@ -8,7 +10,7 @@ class CargoHolder {
 	public var playerID : int;
 	public var shipID : int;
 
-	public var cargo = new InventorySlot[50];
+	public var cargo : List.<InventorySlot>;
 	private var cargoReference : CargoRefScript;
 
 	function Start(){
@@ -16,6 +18,7 @@ class CargoHolder {
 		cargoReference = cargoPrefab.GetComponent(CargoRefScript);
 		currWeight = 0;
 		CalculateWeight();
+		cargo = new List.<InventorySlot>();
 	}
 
 	function AddCargoNoDB(itemID : int, qty : int){
@@ -32,13 +35,11 @@ class CargoHolder {
 				}
 			}
 
-			var dbaccess : DBAccess = new DBAccess();
-
 			if(!hasCargo){
-				var newCargo = new InventorySlot();
+				var newCargo : InventorySlot = new InventorySlot();
 				newCargo.itemID = itemID;
 				newCargo.quantity = qty;
-				cargo[amtInCargo] = newCargo;
+				cargo.Add(newCargo);
 				amtInCargo++;
 			}
 
@@ -71,10 +72,10 @@ class CargoHolder {
 			dbaccess.connectDB();
 
 			if(!hasCargo){
-				var newCargo = new InventorySlot();
+				var newCargo : InventorySlot = new InventorySlot();
 				newCargo.itemID = itemID;
 				newCargo.quantity = qty;
-				cargo[amtInCargo] = newCargo;
+				cargo.Add(newCargo);
 				amtInCargo++;
 
 				dbaccess.InsertCargo(playerID, shipID, itemID, GetCargoQuantityByID(itemID));
@@ -103,15 +104,9 @@ class CargoHolder {
 				cargo[i].quantity -= qty;
 					
 				if(cargo[i].quantity <= 0){
-					for(var j = i; j < amtInCargo; j++){
-						cargo[j] = cargo[j + 1];
-					}
-					
-					cargo[amtInCargo - 1].itemID = 0;
-					cargo[amtInCargo - 1].quantity = 0;
+					cargo.RemoveAt(i);
 					amtInCargo--;
 				}
-
 
 				var dbaccess : DBAccess = new DBAccess();
 

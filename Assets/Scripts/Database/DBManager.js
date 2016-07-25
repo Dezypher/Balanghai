@@ -100,7 +100,7 @@ function Awake () {
 	{	
 		var result : int = reader.GetInt32(0);
 
-		Debug.Log("j = " + j + " result = " + result);
+		//Debug.Log("j = " + j + " result = " + result);
 
 		if(result == 0)
 			settlements.settlements[j].unlocked = false;
@@ -153,6 +153,10 @@ function Awake () {
 	    player.ships[shipIndex].hullStrength = shipRef.ships[shipType].hullStrength;
 	    player.ships[shipIndex].shipWidth = shipRef.ships[shipType].shipWidth;
 	    player.ships[shipIndex].shipHeight = shipRef.ships[shipType].shipHeight;
+
+	    if(player.ships[shipIndex].location == -1) {
+	    	player.ships[shipIndex].traveling = true;
+	    }
 
 	    player.ships[shipIndex].cargo = new CargoHolder();
 	    player.ships[shipIndex].cargo.capacity = player.ships[shipIndex].capacity;

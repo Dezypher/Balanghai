@@ -127,7 +127,6 @@ function move(boatindex:int){
 
 			//Debug.Log("arrived: at"+player.ships[boatindex].location);
 			player.ships[boatindex].destination=-1;
-			player.ships[boatindex].traveling=false;
 
 			var dbaccess : DBAccess = new DBAccess();
 
@@ -140,6 +139,8 @@ function move(boatindex:int){
 			dbaccess.UpdateShipVoyageEndTime(playerID, boatindex, 0);
 
 			dbaccess.closeDB();
+
+			player.ships[boatindex].traveling=false;
 		}
 	}
 

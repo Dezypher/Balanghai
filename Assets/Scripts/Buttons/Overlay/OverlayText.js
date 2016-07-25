@@ -36,6 +36,19 @@ function Update () {
 			player.ships[player.currShip].traveling = false;
 			player.ships[player.currShip].location = player.ships[player.currShip].destination;
 			player.ships[player.currShip].destination = -1;
+
+			var dbaccess : DBAccess = new DBAccess();
+
+			dbaccess.connectDB();
+			var playerID = player.playerID;
+
+			dbaccess.UpdateShipLocation(playerID, player.currShip, player.ships[player.currShip].location);
+			dbaccess.UpdateShipDestination(playerID, player.currShip, -1);
+			dbaccess.UpdateShipVoyageStartTime(playerID, player.currShip, 0);
+			dbaccess.UpdateShipVoyageEndTime(playerID, player.currShip, 0);
+
+			dbaccess.closeDB();
+
 			player.location = player.ships[player.currShip].location;
 			settlementsSpriteHandler.ChangeSprite(player.ships[player.currShip].location);
 		}
