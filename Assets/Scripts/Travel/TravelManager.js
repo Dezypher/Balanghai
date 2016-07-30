@@ -25,8 +25,13 @@ function Send(shipIndex : int){
 			player.ships[shipIndex].destination = destination;
 
 			var difference = weight/player.ships[shipIndex].speed;
-			player.ships[shipIndex].voyageStartTime=Time.time;
-			player.ships[shipIndex].voyageEndTime=Time.time+difference;
+			player.ships[shipIndex].voyageStartTime=System.DateTime.Now;
+
+			var endTime : System.DateTime = System.DateTime.Now;
+
+			endTime = endTime.AddSeconds(difference);
+
+			player.ships[shipIndex].voyageEndTime=endTime;
 			player.ships[shipIndex].traveling = true;
 
 			var dbaccess : DBAccess = new DBAccess();

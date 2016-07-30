@@ -65,7 +65,7 @@ function Awake () {
 
 	if(instantiateDB){
 		//Insert Balanghai Ship
-		InsertShip (0,"Balanghai",player.playerID, 2, 1, -1, 0, 0);
+		InsertShip (0,"Balanghai",player.playerID, 2, 1, -1, "", "");
 	}
 
 
@@ -133,16 +133,55 @@ function Awake () {
 
 	while (reader.Read())
 	{	
-
+		
 	    var shipType = reader.GetInt32(3); // set 0 to ship type
 	    player.ships[shipIndex] = new Ship();
 
 	    player.ships[shipIndex].location = reader.GetInt32(4);
 	    player.ships[shipIndex].destination = reader.GetInt32(5);
-	    player.ships[shipIndex].voyageStartTime = reader.GetFloat(6);
-	    player.ships[shipIndex].voyageEndTime = reader.GetFloat(7);
 
-	    
+	    var timeStart : String = reader.GetString(6);
+	    var timeEnd : String = reader.GetString(7);
+
+	    /* 
+	    	Date and Time format to String
+	    	yyyy-MM-dd-HH-mm-SS-sss
+	    */
+
+	    var partsStartTime 	: String[] = timeStart.Split("-"[0]);
+	    var partsEndTime 	: String[] = timeEnd.Split("-"[0]);
+	    var voyageStartTime : System.DateTime;
+	    var voyageEndTime : System.DateTime;
+
+	    Debug.Log("pst: " + partsStartTime.Length + " pet: " + partsEndTime.Length);
+
+	    if(partsStartTime.Length == 7 && partsEndTime.Length == 7) {
+
+		    voyageStartTime = new System.DateTime(
+		    								int.Parse(partsStartTime[0]),
+		    								int.Parse(partsStartTime[1]),
+		    								int.Parse(partsStartTime[2]),
+		    								int.Parse(partsStartTime[3]),
+		    								int.Parse(partsStartTime[4]),
+		    								int.Parse(partsStartTime[5]),
+		    								int.Parse(partsStartTime[6]));
+
+		    voyageEndTime = new System.DateTime(
+		    								int.Parse(partsEndTime[0]),
+		    								int.Parse(partsEndTime[1]),
+		    								int.Parse(partsEndTime[2]),
+		    								int.Parse(partsEndTime[3]),
+		    								int.Parse(partsEndTime[4]),
+		    								int.Parse(partsEndTime[5]),
+		    								int.Parse(partsEndTime[6]));
+
+		} else {
+			voyageStartTime = System.DateTime.Now;
+			voyageEndTime = System.DateTime.Now;
+		}
+
+	    player.ships[shipIndex].voyageStartTime = voyageStartTime;
+	    player.ships[shipIndex].voyageEndTime = voyageEndTime;
 
 	    player.ships[shipIndex].shipName = reader.GetString(2); // get shipName from result
 	    player.ships[shipIndex].type = shipRef.ships[shipType].type;
@@ -248,11 +287,11 @@ function Awake () {
 
 //CREATE SHIP
 
-	function InsertShip (shipID : int,shipName : String,playerID : int, type : int, location : int, destination : int, voyageStartTime : int, voyageEndTime : int) {
+	function InsertShip (shipID : int,shipName : String,playerID : int, type : int, location : int, destination : int, voyageStartTime : String, voyageEndTime : String) {
 	    //Should call InsertCargoHolder 
 
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "INSERT INTO ships(id,shipName,playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+shipID+",'"+shipName+"',"+playerID+","+type+","+location+","+destination+","+voyageStartTime+","+voyageEndTime+")";
+	     dbcmd.CommandText = "INSERT INTO ships(id,shipName,playerID,type,location,destination,voyageStartTime,voyageEndTime) VALUES ("+shipID+",'"+shipName+"',"+playerID+","+type+","+location+","+destination+",'"+voyageStartTime+"','"+voyageEndTime+"')";
 	     reader = dbcmd.ExecuteReader();
 	}
 
@@ -317,15 +356,25 @@ function Awake () {
 	     reader = dbcmd.ExecuteReader();
 	}
 
-	function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : float) {
+	function UpdateShipVoyageStartTime (playerID : int, shipID : int, time : System.DateTime) {
+		var timeString = time.Year + "-" + 
+							time.Month + "-" + time.Day + "-" + 
+							time.Hour + "-" + time.Minute + "-" + 
+							time.Second + "-" + time.Millisecond;
+
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET voyageStartTime = "+time+" WHERE playerID="+playerID+" AND id="+shipID;
+	     dbcmd.CommandText = "UPDATE ships SET voyageStartTime = '"+timeString+"' WHERE playerID="+playerID+" AND id="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 
-	function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : float) {
+	function UpdateShipVoyageEndTime (playerID : int, shipID : int, time : System.DateTime) {
+		var timeString = time.Year + "-" + 
+							time.Month + "-" + time.Day + "-" + 
+							time.Hour + "-" + time.Minute + "-" + 
+							time.Second + "-" + time.Millisecond;
+
 	     dbcmd = dbconn.CreateCommand();
-	     dbcmd.CommandText = "UPDATE ships SET voyageEndTime = "+time+" WHERE playerID="+playerID+" AND id="+shipID;
+	     dbcmd.CommandText = "UPDATE ships SET voyageEndTime = '"+timeString+"' WHERE playerID="+playerID+" AND id="+shipID;
 	     reader = dbcmd.ExecuteReader();
 	}
 

@@ -1,4 +1,4 @@
-﻿#pragma strict
+﻿	#pragma strict
 
 public var container : GameObject;
 public var autoInstantiate : boolean = true;

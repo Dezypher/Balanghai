@@ -17,17 +17,17 @@ function Awake () {
 }
 
 function Update () {
-	var total_time  : float;
-	var voyage_time : float;
-	var elapsed = Time.time - player.time_start;
+	var total_time  : System.TimeSpan;
+	var voyage_time : System.TimeSpan;
 	total_time = player.ships[player.currShip].voyageEndTime - player.ships[player.currShip].voyageStartTime;
-	voyage_time = elapsed - player.ships[player.currShip].voyageStartTime;
+	voyage_time = System.DateTime.Now - player.ships[player.currShip].voyageStartTime;
 
 	if(!player.ships[player.currShip].traveling){
 		villageName.fontSize = 50;
 		villageName.text = settlements[player.location].name;
 	} else {
-		var time : int = total_time - voyage_time;
+		var diff : System.TimeSpan = total_time - voyage_time;
+		var time : int = diff.TotalSeconds;
 		villageName.fontSize = 30;
 		villageName.text = "Arriving at " 
 			+ settlements[player.ships[player.currShip].destination].name
@@ -44,8 +44,6 @@ function Update () {
 
 			dbaccess.UpdateShipLocation(playerID, player.currShip, player.ships[player.currShip].location);
 			dbaccess.UpdateShipDestination(playerID, player.currShip, -1);
-			dbaccess.UpdateShipVoyageStartTime(playerID, player.currShip, 0);
-			dbaccess.UpdateShipVoyageEndTime(playerID, player.currShip, 0);
 
 			dbaccess.closeDB();
 

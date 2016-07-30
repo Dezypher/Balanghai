@@ -30,8 +30,10 @@ class Ship {
 	var shipWidth : int;
 	var shipHeight : int;
 	var destination : int = -1;
-	var voyageStartTime :float;
-	var voyageEndTime :float;
+	var voyageStartTime : System.DateTime;
+	var voyageEndTime : System.DateTime;
+
+
 }
 
 class Settlement {

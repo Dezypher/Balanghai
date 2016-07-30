@@ -10,7 +10,7 @@ class CargoHolder {
 	public var playerID : int;
 	public var shipID : int;
 
-	public var cargo : List.<InventorySlot>;
+	public var cargo : List.<InventorySlot> = new List.<InventorySlot>();
 	private var cargoReference : CargoRefScript;
 
 	function Start(){
@@ -18,7 +18,6 @@ class CargoHolder {
 		cargoReference = cargoPrefab.GetComponent(CargoRefScript);
 		currWeight = 0;
 		CalculateWeight();
-		cargo = new List.<InventorySlot>();
 	}
 
 	function AddCargoNoDB(itemID : int, qty : int){
@@ -41,6 +40,9 @@ class CargoHolder {
 				newCargo.quantity = qty;
 				cargo.Add(newCargo);
 				amtInCargo++;
+
+				Debug.Log("Adding itemID: " + itemID + " with the qty: " + qty + ".");
+				Debug.Log("Cargo ID:  " + cargo[0].itemID);
 			}
 
 			CalculateWeight();

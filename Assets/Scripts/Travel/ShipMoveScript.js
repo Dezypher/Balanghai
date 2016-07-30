@@ -90,12 +90,17 @@ function move(boatindex:int){
 	var cx :float;
 	var cy :float;
 	//var elapsed = Time.time - time_start;
-	var elapsed = Time.time;
+	var elapsed = System.DateTime.Now;
 
-	var total_time :float;
-	var voyage_time:float;
-	total_time=player.ships[boatindex].voyageEndTime-player.ships[boatindex].voyageStartTime;
-	voyage_time=elapsed-player.ships[boatindex].voyageStartTime;
+	var total_timeTS 	: System.TimeSpan;
+	var voyage_timeTS	: System.TimeSpan;
+	var total_time 	: float;
+	var voyage_time	: float;
+	total_timeTS  = player.ships[boatindex].voyageEndTime-player.ships[boatindex].voyageStartTime;
+	voyage_timeTS = elapsed - player.ships[boatindex].voyageStartTime;
+
+	total_time = total_timeTS.TotalSeconds;
+	voyage_time = voyage_timeTS.TotalSeconds;
 
 
 	  //Debug.Log( elapsed + "s have elapsed.");
@@ -135,8 +140,6 @@ function move(boatindex:int){
 
 			dbaccess.UpdateShipLocation(playerID, boatindex, player.ships[boatindex].location);
 			dbaccess.UpdateShipDestination(playerID, boatindex, -1);
-			dbaccess.UpdateShipVoyageStartTime(playerID, boatindex, 0);
-			dbaccess.UpdateShipVoyageEndTime(playerID, boatindex, 0);
 
 			dbaccess.closeDB();
 
