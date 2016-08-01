@@ -1,17 +1,17 @@
-﻿<Properties StartupItem="Assembly-CSharp-Editor.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Quest/QuestGenerator.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Database\DBManager.js">
     <Files>
-      <File FileName="Assets/Scripts/Buttons/Overlay/OverlayText.js" Line="40" Column="1" />
-      <File FileName="Assets/Scripts/Quest/QuestGenerator.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Cargo/CargoHolder.js" Line="50" Column="32" />
-      <File FileName="Assets/Scripts/unlocking/unlockIslandManager.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/Ships/ShipName.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CustomDisable/DisableWhenTraveling.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SettlementBackground/SettlementSprites.js" Line="44" Column="17" />
-      <File FileName="Assets/Scripts/Travel/TravelManager.js" Line="35" Column="35" />
-      <File FileName="Assets/Scripts/Travel/ShipMoveScript.js" Line="132" Column="1" />
-      <File FileName="Assets/Scripts/Cargo/CargoDisplay.js" Line="30" Column="1" />
+      <File FileName="Assets\Scripts\Database\DBManager.js" Line="17" Column="33" />
+      <File FileName="Assets\Scripts\Buttons\Overlay\OverlayText.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Cargo\CargoHolder.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\unlocking\unlockIslandManager.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Ships\ShipName.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CustomDisable\DisableWhenTraveling.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SettlementBackground\SettlementSprites.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Travel\TravelManager.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Travel\ShipMoveScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Cargo\CargoDisplay.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

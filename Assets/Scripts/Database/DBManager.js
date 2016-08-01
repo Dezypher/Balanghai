@@ -5,8 +5,6 @@
  import Mono.Data.Sqlite;
  import System.Collections.Generic;
 
-public var mobile : boolean;
-
 function Awake () {
      var db:DBAccess;
      db = new DBAccess();
@@ -14,25 +12,33 @@ function Awake () {
      var playerStatus : PlayerStatus = GetComponent(PlayerStatus);
      var settlements : Trader = GameObject.Find("Settlements").GetComponent(Trader);
 
-     db.InitializeData(playerStatus, settlements, mobile);
+     db.InitializeData(playerStatus, settlements);
 
      playerStatus.Instantiate();
  }
 
  public class DBAccess{
 
-    private var conn : String = "URI=file:" + Application.dataPath + "/Database/balanghai.s3db"; //Path to database.
+    private var conn : String = "URI=file:" + Application.persistentDataPath + System.IO.Path.DirectorySeparatorChar + "balanghai.s3db"; //Path to database.
     private var reader : IDataReader;
     private var dbconn : IDbConnection;
     private var dbcmd : IDbCommand;
 
-    function InitializeData (playerStatus : PlayerStatus, settlements : Trader, mobile : boolean) {
+    function InitializeData (playerStatus : PlayerStatus, settlements : Trader) {
 
 	    // check if file exists in Application.persistentDataPath
 
-	    if(mobile) {
-			var filepath : String = Application.persistentDataPath + "/balanghai.s3db";
-			 
+			var filepath : String = Application.persistentDataPath + System.IO.Path.DirectorySeparatorChar + "balanghai.s3db";
+
+
+			Debug.Log("FilePath: " + filepath);
+			/*
+			var filepath : String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)
+								    + System.IO.Path.DirectorySeparatorChar + "balanghai.s3db";
+			*/
+
+			Debug.Log("LINE 40");
+
 			if(!System.IO.File.Exists(filepath))
 			{
 		    	SqliteConnection.CreateFile(filepath);
@@ -43,15 +49,14 @@ function Awake () {
 
 				dbcmd=dbconn.CreateCommand();
 				dbcmd.CommandText = "CREATE TABLE playerdata( "
-				   +"playerID INT PRIMARY KEY    NOT NULL, "
-				   +"name        STRING, "
+				   +"playerID INT PRIMARY KEY, "
+				   +"name        	STRING, "
 				   +"gold           INT    NOT NULL "
 				+");"
 
 				+"CREATE TABLE ships( "
-				   +"ID              INT    PRIMARY KEY    NOT NULL, "
+				   +"id              INT    PRIMARY KEY    NOT NULL, "
 				   +"playerID        INT    NOT NULL, "
-				   +"cargoID         INT    NOT NULL, "
 				   +"shipName        STRING, "
 				   +"type            INT, "
 				   +"location        INT, "
@@ -91,7 +96,7 @@ function Awake () {
 					+"settlementID  INT 	     PRIMARY KEY    NOT NULL, "
 					+"playerID      INT       NOT NULL, "
 					+"unlocked      INT       NOT NULL, "        
-					+"influence     DECIMAL   NOT NULL, "        
+					+"influence     DECIMAL   NOT NULL "        
 				+");";
 
 				reader = dbcmd.ExecuteReader();
@@ -102,7 +107,8 @@ function Awake () {
 		    	conn = "URI=file:" + filepath;
 
 			}
-		}
+
+		Debug.Log("LINE 111");
 
 	    //Check if there is already a player
 
@@ -122,8 +128,10 @@ function Awake () {
 			instantiateDB = true;
 
 			//Insert Base Player (500 Gold)
-			InsertPlayer (0, 500, "Player", 0);
+			InsertPlayer (0, 500, "Player");
 		}
+
+		Debug.Log("LINE 134");
 
 		/*
 			Load all player data from DB 
@@ -146,6 +154,8 @@ function Awake () {
 			//Insert Balanghai Ship
 			InsertShip (0,"Balanghai",player.playerID, 2, 1, -1, "", "");
 		}
+
+		Debug.Log("LINE 158");
 
 
 	    //Instantiate Settlements Table if empty
@@ -172,6 +182,8 @@ function Awake () {
 		dbcmd.CommandText = "SELECT unlocked From Settlements where playerID = " + player.playerID;
 		reader = dbcmd.ExecuteReader();
 
+		Debug.Log("LINE 185");
+
 
 		var j = 0;
 
@@ -188,6 +200,8 @@ function Awake () {
 
 			j++;
 		}
+
+		Debug.Log("LINE 204");
 
 		//Load player ships
 
@@ -207,6 +221,8 @@ function Awake () {
 		dbcmd=dbconn.CreateCommand();
 		dbcmd.CommandText = "SELECT* From ships where playerID = " + player.playerID;
 		reader = dbcmd.ExecuteReader();
+
+		Debug.Log("LINE 225");
 
 		var shipIndex = 0;
 
@@ -230,7 +246,7 @@ function Awake () {
 		    var partsStartTime 	: String[] = timeStart.Split("-"[0]);
 		    var partsEndTime 	: String[] = timeEnd.Split("-"[0]);
 		    var voyageStartTime : System.DateTime;
-		    var voyageEndTime : System.DateTime;
+		    var voyageEndTime 	: System.DateTime;
 
 		    Debug.Log("pst: " + partsStartTime.Length + " pet: " + partsEndTime.Length);
 
@@ -284,6 +300,8 @@ function Awake () {
 		    shipIndex++;
 		}
 
+		Debug.Log("LINE 303");
+
 
 		dbcmd=dbconn.CreateCommand();
 		dbcmd.CommandText = "SELECT * From Cargo where playerID = " + player.playerID;
@@ -296,6 +314,8 @@ function Awake () {
 
 		    player.ships[shipID].cargo.AddCargoNoDB(itemID, qty);
 		}
+
+		Debug.Log("LINE 318");
 	    
 		dbcmd=dbconn.CreateCommand();
 		dbcmd.CommandText = "SELECT* From TradeQuest where playerID = " + player.playerID;
@@ -313,6 +333,8 @@ function Awake () {
 		    player.quests.Add(tradeQuest);
 	    }
 
+		Debug.Log("LINE 336");
+
 		dbcmd=dbconn.CreateCommand();
 		dbcmd.CommandText = "SELECT* From TranslationQuest where playerID = " + player.playerID;
 		reader = dbcmd.ExecuteReader();
@@ -328,7 +350,11 @@ function Awake () {
 			player.quests.Add(translationQuest);
 		}
 
+		Debug.Log("LINE 353");
+
 		playerStatus.player = player;
+
+		Debug.Log("LINE 357");
 
      	closeDB();
 	}
@@ -352,9 +378,9 @@ function Awake () {
     }
 
 
-	function InsertPlayer (playerID : int, gold: int, playerName : String, totalCapacity) {
+	function InsertPlayer (playerID : int, gold: int, playerName : String) {
 	    dbcmd = dbconn.CreateCommand();
-	    dbcmd.CommandText = "INSERT INTO playerdata(name,gold) VALUES ('"+playerName+"',"+gold+")";
+	    dbcmd.CommandText = "INSERT INTO playerdata(playerID,name,gold) VALUES ("+playerID+",'"+playerName+"',"+gold+")";
 	    reader = dbcmd.ExecuteReader();
 	}
 

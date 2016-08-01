@@ -1,7 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{D3742E4E-87EF-89AC-3BF8-1410F523565A}") = "Balanghai", "Assembly-CSharp.csproj", "{647C099E-8253-D8A6-6F95-751825398217}"
+EndProject
 Project("{D3742E4E-87EF-89AC-3BF8-1410F523565A}") = "Balanghai", "Assembly-CSharp-Editor.csproj", "{E6A36591-67FA-24B4-28A0-A89D5C18270C}"
+EndProject
+Project("{D3742E4E-87EF-89AC-3BF8-1410F523565A}") = "Balanghai", "Assembly-UnityScript.unityproj", "{34E72104-39D6-6012-0160-8372653A9243}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{647C099E-8253-D8A6-6F95-751825398217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647C099E-8253-D8A6-6F95-751825398217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647C099E-8253-D8A6-6F95-751825398217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647C099E-8253-D8A6-6F95-751825398217}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6A36591-67FA-24B4-28A0-A89D5C18270C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6A36591-67FA-24B4-28A0-A89D5C18270C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6A36591-67FA-24B4-28A0-A89D5C18270C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6A36591-67FA-24B4-28A0-A89D5C18270C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E72104-39D6-6012-0160-8372653A9243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E72104-39D6-6012-0160-8372653A9243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E72104-39D6-6012-0160-8372653A9243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E72104-39D6-6012-0160-8372653A9243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
