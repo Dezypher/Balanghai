@@ -5,6 +5,10 @@ function OnClick(){
     Destroy(this.gameObject);
 }
 
+function CloseOnClick() {
+    Destroy(this.gameObject);
+}
+
 function SubmitAnswer() {
     var url = "http://127.0.0.1:8081/post_answer";
     var answer = GameObject.Find("InputField").GetComponent(UnityEngine.UI.InputField).text;

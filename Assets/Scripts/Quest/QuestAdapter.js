@@ -121,8 +121,9 @@ class QuestAdapter extends MonoBehaviour {
 	}
 
 	function SetAnswer() {
-		var Popup : GameObject = GameObject.Find("TranslationPopup") as GameObject;
-		(questModel as TranslationQuest).playerAnswer = Popup.transform.GetChild(2).transform.GetChild(2).GetComponent(UI.Text).text;
+	    var Popup : GameObject = GameObject.Find("TranslationPopup") as GameObject;
+	    var InputField : GameObject = GameObject.Find("InputField") as GameObject;
+		(questModel as TranslationQuest).playerAnswer = InputField.transform.Find("Text").GetComponent(UI.Text).text;
 		Destroy(Popup);
 		RewardQuest();
 	}

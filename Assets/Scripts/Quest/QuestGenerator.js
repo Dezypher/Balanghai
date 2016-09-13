@@ -41,7 +41,7 @@ class QuestGenerator extends MonoBehaviour {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
 		var rewardCargoID : int = Random.Range(1,cargoTypes);
 		var rewardAmount : int = Random.Range(1,requiredAmountMax);
-		var url = "http://127.0.0.1:8081/get_translation_quest";
+		var url = "http://localhost:8081/get_translation_quest";
 		var www = new WWW(url);
 		yield www;
 		if(www.error == null) {
