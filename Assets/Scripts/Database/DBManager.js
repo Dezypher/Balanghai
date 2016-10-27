@@ -66,7 +66,7 @@ function Awake () {
 				+");"
 
 				+"CREATE TABLE Cargo( "
-					+"shipID           	INT     PRIMARY KEY    NOT NULL, "
+					+"shipID           	INT     NOT NULL, "
 					+"playerID         	INT     NOT NULL, "
 				    +"cargoID    		INT     NOT NULL, "
 				    +"qty  			 	INT     NOT NULL "

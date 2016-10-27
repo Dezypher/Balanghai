@@ -11,6 +11,7 @@ class QuestAdapter extends MonoBehaviour {
 	function Awake(){
 		questUI = GameObject.Find("QuestUI")
 					.GetComponent(QuestGenerator);
+        
 	}
 
 	function AddQuest(newQuest : Quest) {
@@ -57,7 +58,8 @@ class QuestAdapter extends MonoBehaviour {
 	}
 
 	function onButtonClick() {
-		if(type == 1) {
+	    Debug.Log("Tapped");
+	    if(type == 1) {
 			ClaimQuest();
 		}
 		else if(type == 2) {
@@ -68,7 +70,8 @@ class QuestAdapter extends MonoBehaviour {
 					RewardQuest();
 			}
 			else if(questModel.GetType() == TranslationQuest) {
-				TranslationPopup();
+			    Debug.Log("Translation Popup");
+			    TranslationPopup();
 			}
 		}
 	}
@@ -113,18 +116,16 @@ class QuestAdapter extends MonoBehaviour {
 	}
 
 	function TranslationPopup() {
-		var temp : GameObject = Instantiate(Resources.Load("Prefabs/QuestScreen/TranslationPopup")) as GameObject;
-		temp.name = "TranslationPopup";
-		temp.transform.SetParent(GameObject.Find("Canvas").transform,false);
-		temp.transform.GetChild(1).transform.GetChild(0).GetComponent(UI.Text).text = (questModel as TranslationQuest).stringToTranslate;
-		temp.transform.GetChild(3).GetComponent(UI.Button).onClick.AddListener(SetAnswer);
+	    var translationPopup = questUI.translationPopup;
+	    translationPopup.SetActive(true);
+	    translationPopup.transform.GetChild(1).transform.GetChild(0).GetComponent(UI.Text).text = (questModel as TranslationQuest).stringToTranslate;
+	    translationPopup.transform.GetChild(3).GetComponent(UI.Button).onClick.AddListener(SetAnswer);
 	}
 
 	function SetAnswer() {
 	    var Popup : GameObject = GameObject.Find("TranslationPopup") as GameObject;
 	    var InputField : GameObject = GameObject.Find("InputField") as GameObject;
 		(questModel as TranslationQuest).playerAnswer = InputField.transform.Find("Text").GetComponent(UI.Text).text;
-		Destroy(Popup);
 		RewardQuest();
 	}
 

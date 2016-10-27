@@ -7,6 +7,7 @@ class QuestGenerator extends MonoBehaviour {
 	var questList : GameObject;
 	var availableButton : UI.Button;
 	var currentButton : UI.Button;
+	var translationPopup : GameObject;
 
 	function generateQuest() {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
@@ -41,7 +42,7 @@ class QuestGenerator extends MonoBehaviour {
 		var cargoTypes = (Resources.Load("Reference/CargoReference") as GameObject).GetComponent(CargoRefScript).cargos.Length;
 		var rewardCargoID : int = Random.Range(1,cargoTypes);
 		var rewardAmount : int = Random.Range(1,requiredAmountMax);
-		var url = "http://localhost:8081/get_translation_quest";
+		var url = "http://10.100.202.5:8081/get_translation_quest";
 		var www = new WWW(url);
 		yield www;
 		if(www.error == null) {
